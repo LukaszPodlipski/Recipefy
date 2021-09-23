@@ -1,0 +1,30 @@
+.headimage {
+  width: 100%;
+}
+.headingText {
+  font-family: $heading-font;
+  text-align: center;
+}
+.headingText h1 {
+  font-size: 120px;
+}
+.headingText h2 {
+  margin-top: 10px;
+  font-size: 42px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+.profileImage {
+  width: 40px;
+  margin-right: 10px;
+  border-radius: 100%;
+}
+
+.profileText {
+  font-family: $regular-font;
+}

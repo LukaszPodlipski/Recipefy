@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f1e9fb;
+}
+
+body {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headimage {
+  width: 100%;
+}
+
+.headingText {
+  font-family: "Lobster", arial;
+  text-align: center;
+}
+
+.headingText h1 {
+  font-size: 120px;
+}
+
+.headingText h2 {
+  margin-top: 10px;
+  font-size: 42px;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 35px;
+}
+
+.profileImage {
+  width: 40px;
+  margin-right: 10px;
+  border-radius: 100%;
+}
+
+.profileText {
+  font-family: "Roboto", arial;
+}
+
+.controlsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Roboto", arial;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  width: 30%;
+}
+
+.form__field:required, .form__field:invalid {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form__field {
+  font-family: "Roboto", arial;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #555555;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #252525;
+  padding: 7px 0;
+  background: transparent;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+.form__field::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form__field:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form__field::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #555555;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  -o-border-image: linear-gradient(to right, #3e57e6, #6513b1);
+     border-image: -webkit-gradient(linear, left top, right top, from(#3e57e6), to(#6513b1));
+     border-image: linear-gradient(to right, #3e57e6, #6513b1);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #3e57e6;
+}
+
+/* reset input */
+.controlButton {
+  margin-left: 20px;
+  padding: 10px 15px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 16px;
+  border-radius: 50px;
+  border-color: #5200ff;
+  background: #fbf8ff;
+  color: #5200ff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.controlButton:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.controlButton img {
+  margin-right: 7px;
+}
+
+.searchButton {
+  background: #8148fd;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-left: 20px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.searchButton:hover {
+  background: #5200ff;
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.searchButton img {
+  height: 22px;
+  -webkit-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+}
+
+.addRecipeButton img {
+  height: 14px;
+  margin-right: 5px;
+}
+
+.bookmarksButton img {
+  -webkit-transform: translate(0, 3px);
+          transform: translate(0, 3px);
+}
+
+.recipesContainer {
+  width: 64%;
+  height: auto;
+  margin: 40px auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+.recipeResult {
+  -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  margin: 0 10px;
+}
+
+.recipeBoard {
+  width: 160px;
+  height: 260px;
+  background-color: #ffffff;
+  position: relative;
+}
+/*# sourceMappingURL=main.css.map */

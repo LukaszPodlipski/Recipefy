@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipefy - Simple Cook Book</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="head">
+      <div>
+        <img
+          class="headimage"
+          src="/src/img/vegetables_heading.png"
+          alt="fruits"
+        />
+      </div>
+      <div class="headingText">
+        <h1>Simple recipes</h1>
+        <h2>from around the world</h2>
+      </div>
+      <div class="profile">
+        <img
+          class="profileImage"
+          src="src/img/lukasz_podlipski_profile.jpg"
+          alt="author_profile"
+        />
+        <p class="profileText">by Łukasz Podlipski</p>
+      </div>
+    </div>
+
+    <div class="controlsContainer">
+      <div class="form__group field">
+        <input
+          type="input"
+          class="form__field"
+          placeholder="Search for recipe"
+          name="Search for recipe"
+          id="Search for recipe"
+          required
+        />
+        <label for="Search for recipe" class="form__label"
+          >Search for recipe</label
+        >
+      </div>
+      <div class="searchButton">
+        <img
+          class="searchIcon"
+          src="/src/img/search_icon.svg"
+          alt="search_icon"
+        />
+      </div>
+
+      <button class="addRecipeButton controlButton">
+        <img src="/src/img/add_recipe_icon.svg" alt="recipe_icon" />
+        <span>ADD RECIPE</span>
+      </button>
+      <button class="bookmarksButton controlButton">
+        <img src="/src/img/bookmarks_icon.svg" alt="bookmarks_icon" />
+        <span>BOOKMARKS</span>
+      </button>
+    </div>
+    <div class="recipesContainer">
+      <div class="recipeResult">
+        <div class="recipeBoard"></div>
+      </div>
+      <div class="recipeResult">
+        <div class="recipeBoard"></div>
+      </div>
+      <div class="recipeResult">
+        <div class="recipeBoard"></div>
+      </div>
+      <div class="recipeResult">
+        <div class="recipeBoard"></div>
+      </div>
+    </div>
+  </body>
+</html>
