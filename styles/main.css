@@ -476,7 +476,7 @@ html .animatedGradientBackground {
   height: 180px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("/src/img/example.jpeg");
+  background-image: url("../src/img/example.jpeg");
   background-position: center;
   background-size: cover;
   border-radius: 50%;
@@ -624,7 +624,7 @@ html .animatedGradientBackground {
 .recipeDescription .recipeTitleContainer .bookmarkContainer .bookmark {
   height: 30px;
   width: 30px;
-  background-image: url("/src/img/bookmark_unsigned.svg");
+  background-image: url("../src/img/bookmark_unsigned.svg");
   background-position: center;
   background-size: cover;
   cursor: pointer;
