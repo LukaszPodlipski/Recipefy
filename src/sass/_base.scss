@@ -1,9 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 $heading-font: "Lobster", arial;
 $regular-font: "Roboto", arial;
-$color-primary: #f1e9fb;
+$description-estralight-font: "Poppins", arial;
+$color-primary: #dfccf5;
+$blue: #3e57e6;
+$purpleDark: #7f3ebd;
+$purpleLight: #a57dfa;
+$searchFieldColor: rgb(2, 2, 2);
+$gray: #555555;
+$grayLight: #bbb8b8;
+$white: #ffffff;
+$boxShadowColor: rgba(0, 0, 0, 0.15);
 
 * {
   margin: 0;
@@ -17,12 +27,106 @@ $color-primary: #f1e9fb;
 }
 
 html {
+  min-height: 100vh;
   box-sizing: border-box;
-  background-color: $color-primary;
-}
+  background: rgb(245, 204, 255);
+  background: linear-gradient(
+    155deg,
+    rgba(245, 204, 255, 1) 0%,
+    rgba(220, 168, 255, 1) 48%,
+    rgba(175, 220, 255, 1) 100%
+  );
 
-body {
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
+  body {
+    max-width: 1000px;
+    min-height: 84vh;
+    margin: 80px auto;
+    padding: 80px 0 10px 0;
+    border-radius: 20px;
+    background-color: #f5eafd;
+
+    .letsStartText {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 0;
+      margin: 100px auto 0 auto;
+      padding: 20px 30px;
+      border-radius: 5px;
+      color: black;
+      font-family: $heading-font;
+      font-size: 30px;
+      text-align: center;
+      line-height: 150%;
+      text-shadow: 0px 1px 3px $purpleLight;
+      backdrop-filter: blur(10px);
+      transition: 0.5s ease-in-out;
+      animation: MoveUpDown s linear infinite;
+    }
+    .bookmarkAlert {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 0;
+      width: 90%;
+      z-index: -1;
+      margin: 80px auto;
+      padding: 12px 0;
+      border-radius: 5px;
+      color: $white;
+      font-family: $regular-font;
+      font-size: 20px;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+
+      transition: 0.5s ease-in-out;
+    }
+    .notificationActive {
+      height: auto;
+      display: flex;
+    }
+  }
+  .animatedGradientBackground {
+    background-image: linear-gradient(
+      155deg,
+      rgba(245, 204, 255, 1) 0%,
+      rgba(220, 168, 255, 1) 48%,
+      rgba(175, 220, 255, 1) 100%
+    );
+    background-size: 600%;
+    background-position: 0 0;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-name: gradients;
+  }
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
+
+  @keyframes gradients {
+    0% {
+      background-position: 0 0;
+    }
+    25% {
+      background-position: 50% 0;
+    }
+    50% {
+      background-position: 90% 0;
+    }
+    60% {
+      background-position: 60%;
+    }
+    75% {
+      background-position: 40%;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
 }

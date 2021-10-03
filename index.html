@@ -1,79 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipefy - Simple Cook Book</title>
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  <body>
-    <div class="head">
-      <div>
-        <img
-          class="headimage"
-          src="/src/img/vegetables_heading.png"
-          alt="fruits"
-        />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipefy - Simple Cook Book</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <script defer type="module" src="/src/js/script.js"></script>
+</head>
+
+<body>
+  <div class="head">
+    <div class="burger">
+      <div class="roll roll--top">
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
+        <div class="roll__sesame"></div>
       </div>
-      <div class="headingText">
-        <h1>Simple recipes</h1>
-        <h2>from around the world</h2>
+      <div class="tomato-section">
+        <div class="tomato-section__el"></div>
+        <div class="tomato-section__el"></div>
+        <div class="tomato-section__el"></div>
       </div>
-      <div class="profile">
-        <img
-          class="profileImage"
-          src="src/img/lukasz_podlipski_profile.jpg"
-          alt="author_profile"
-        />
-        <p class="profileText">by Łukasz Podlipski</p>
+      <div class="lettuce">
+        <div class="lettuce__top">
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+        </div>
+        <div class="lettuce__bottom">
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+          <div class="lettuce__el"></div>
+        </div>
       </div>
+      <div class="cheese">
+        <div class="cheese__el cheese__el--big"></div>
+        <div class="cheese__el cheese__el--small cheese__el--right"></div>
+        <div class="cheese__el cheese__el--small cheese__el--left"></div>
+      </div>
+      <div class="chop">
+        <div class="chop__top">
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+        </div>
+        <div class="chop__bottom">
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+          <div class="chop__trace"></div>
+        </div>
+      </div>
+      <div class="roll roll--bottom"></div>
+    </div>
+    <div class="headingText">
+      <h1>Simple recipes</h1>
+      <h2>from around the world</h2>
+    </div>
+    <div class="profile">
+      <img class="profileImage" src="src/img/lukasz_podlipski_profile.jpg" alt="author_profile" />
+      <p class="profileText">by Łukasz Podlipski</p>
+    </div>
+  </div>
+
+  <div class="controlsContainer">
+    <div class="form__group">
+      <input type="input" class="form__field" placeholder="Search for recipe" name="Search for recipe"
+        id="Search for recipe" required />
+      <label for="Search for recipe" class="form__label">Search for recipe</label>
+    </div>
+    <div class="searchButton">
+      <img class="searchIcon" src="/src/img/search_icon.svg" alt="search_icon" />
     </div>
 
-    <div class="controlsContainer">
-      <div class="form__group field">
-        <input
-          type="input"
-          class="form__field"
-          placeholder="Search for recipe"
-          name="Search for recipe"
-          id="Search for recipe"
-          required
-        />
-        <label for="Search for recipe" class="form__label"
-          >Search for recipe</label
-        >
-      </div>
-      <div class="searchButton">
-        <img
-          class="searchIcon"
-          src="/src/img/search_icon.svg"
-          alt="search_icon"
-        />
+    <button class="addRecipeButton controlButton">
+      <img src="/src/img/add_recipe_icon.svg" alt="recipe_icon" />
+      <span>ADD RECIPE</span>
+    </button>
+    <button class="bookmarksButton controlButton">
+      <img src="/src/img/bookmarks_icon.svg" alt="bookmarks_icon" />
+      <span>BOOKMARKS</span>
+    </button>
+  </div>
+  <p class="bookmarkAlert animatedGradientBackground">
+    You don't have any bookmarks!</p>
+  <div class="letsStartText notificationActive ">
+    <p>Start by searching for a recipe or an ingredient. Have fun!</p>
+  </div>
+  <div class="bookmarkListBox">
+    <div class="bookmarkResult">
+      <img src="/src/img/example.jpeg" alt="bookmark_recipe_image" class="bookmarkImage">
+      <p class="bookmarkTitle">Lasagne co kurwa</p>
+      <p class="bookmarkAuthor">Papo ragane</p>
+    </div>
+    <div class="bookmarkResult">
+      <img src="/src/img/example.jpeg" alt="bookmark_recipe_image" class="bookmarkImage">
+      <p class="bookmarkTitle">Lasagne</p>
+      <p class="bookmarkAuthor">Papo ragane</p>
+    </div>
+    <div class="bookmarkResult">
+      <img src="/src/img/example.jpeg" alt="bookmark_recipe_image" class="bookmarkImage">
+      <p class="bookmarkTitle">Lasagne</p>
+      <p class="bookmarkAuthor">Papo ragane</p>
+    </div>
+    <div class="bookmarkResult">
+      <img src="/src/img/example.jpeg" alt="bookmark_recipe_image" class="bookmarkImage">
+      <p class="bookmarkTitle">Lasagne</p>
+      <p class="bookmarkAuthor">Papo ragane</p>
+    </div>
+  </div>
+  <div class="addRecipeContainer">
+    <div class="addrecipeContainerHead">
+      <p>Add Recipe</p><img src="/src/img/x_icon.svg" alt="closeIcon" class="closeAddRecipeContainer">
+    </div>
+    <div class="addRecipeContentBox">
+      <div class="recipeData">
+        <p>RECIPE DATA</p>
+        <label for="recipeTitle">Title:</label>
+        <input type="text" id="recipeTitle" name="recipeTitle"><br><br>
+
+        <label for="recipeURL">URL:</label>
+        <input type="text" id="recipeURL" name="recipeURL"><br><br>
+
+        <label for="recipeURLImage">Image URL:</label>
+        <input type="text" id="recipeURLImage" name="recipeURLImage"><br><br>
+
+        <label for="recipeAuthor">Author:</label>
+        <input type="text" id="recipeAuthor" name="recipeAuthor"><br><br>
+
+        <label for="recipeTime">Preparation time:</label>
+        <input type="text" id="recipeTime" name="recipeTime"><br><br>
+
+        <label for="recipeServings">Servings:</label>
+        <input type="text" id="recipeServings" name="recipeServings"><br><br>
       </div>
 
-      <button class="addRecipeButton controlButton">
-        <img src="/src/img/add_recipe_icon.svg" alt="recipe_icon" />
-        <span>ADD RECIPE</span>
-      </button>
-      <button class="bookmarksButton controlButton">
-        <img src="/src/img/bookmarks_icon.svg" alt="bookmarks_icon" />
-        <span>BOOKMARKS</span>
-      </button>
+      <div class="ingradients">
+        <p>INGRADIENTS</p>
+
+        <label for="recipeIngradient1">Ingradient 1:</label>
+        <input type="text" id="recipeIngradient1" name="recipeIngradient1"><br><br>
+
+        <label for="recipeIngradient2">Ingradient 2:</label>
+        <input type="text" id="recipeIngradient2" name="recipeIngradient2"><br><br>
+
+        <label for="recipeIngradient3">Ingradient 3:</label>
+        <input type="text" id="recipeIngradient3" name="recipeIngradient3"><br><br>
+
+        <label for="recipeIngradient4">Ingradient 4:</label>
+        <input type="text" id="recipeIngradient4" name="recipeIngradient4"><br><br>
+
+        <label for="recipeIngradient5">Ingradient 5:</label>
+        <input type="text" id="recipeIngradient5" name="recipeIngradient5"><br><br>
+
+        <label for="recipeIngradient6">Ingradient 6:</label>
+        <input type="text" id="recipeIngradient6" name="recipeIngradient6"><br><br>
+      </div>
+
     </div>
+    <div class="uploadRecipeButton"><img src="/src/img/upload_icon.svg" alt="upload_icon">
+      <p> UPLOAD RECIPE</p>
+    </div>
+
+  </div>
+  </div>
+  <div class="recipesBox">
+    <img class="arrowLeft arrow" src="/src/img/arrow_left.svg" alt="arrow_left" />
     <div class="recipesContainer">
       <div class="recipeResult">
-        <div class="recipeBoard"></div>
+        <div class="recipeImage"></div>
+        <div class="recipeBoard">
+          <div class="recipeContent">
+            <p class="recipeTitle">Filet Mignon</p>
+            <p class="recipeAuthor">by Marco Polo</p>
+            <hr class="line" />
+            <div class="recipeInfo">
+              <p class="timeTitle">Time</p>
+              <p class="servingsTitle">Servings</p>
+            </div>
+            <div class="recipeInfo setInfoText">
+              <p class="timeSet">30 min</p>
+              <p class="servingsSet">4 persons</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="recipeResult">
-        <div class="recipeBoard"></div>
+        <div class="recipeImage"></div>
+        <div class="recipeBoard">
+          <div class="recipeContent">
+            <p class="recipeTitle">Filet Mignon</p>
+            <p class="recipeAuthor">by Marco Polo</p>
+            <hr class="line" />
+            <div class="recipeInfo">
+              <p class="timeTitle">Time</p>
+              <p class="servingsTitle">Servings</p>
+            </div>
+            <div class="recipeInfo setInfoText">
+              <p class="timeSet">30 min</p>
+              <p class="servingsSet">4 persons</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="recipeResult">
-        <div class="recipeBoard"></div>
+        <div class="recipeImage"></div>
+        <div class="recipeBoard">
+          <div class="recipeContent">
+            <p class="recipeTitle">Filet Mignon</p>
+            <p class="recipeAuthor">by Marco Polo</p>
+            <hr class="line" />
+            <div class="recipeInfo">
+              <p class="timeTitle">Time</p>
+              <p class="servingsTitle">Servings</p>
+            </div>
+            <div class="recipeInfo setInfoText">
+              <p class="timeSet">30 min</p>
+              <p class="servingsSet">4 persons</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="recipeResult">
-        <div class="recipeBoard"></div>
+        <div class="recipeImage"></div>
+        <div class="recipeBoard">
+          <div class="recipeContent">
+            <p class="recipeTitle">Filet Mignon</p>
+            <p class="recipeAuthor">by Marco Polo</p>
+            <hr class="line" />
+            <div class="recipeInfo">
+              <p class="timeTitle">Time</p>
+              <p class="servingsTitle">Servings</p>
+            </div>
+            <div class="recipeInfo setInfoText">
+              <p class="timeSet">30 min</p>
+              <p class="servingsSet">4 persons</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </body>
+    <img class="arrowRight arrow" src="/src/img/arrow_right.svg" alt="arrow_right" />
+  </div>
+  <div class="recipeDescription">
+    <img src="/src/img/example.jpeg" class="recipeDescriptionImage" alt="example_photo"></img>
+    <div class="recipeTitleContainer">
+      <p>Fish and chips</p>
+      <div class="bookmarkContainer">
+        <p>BOOKMARK</p>
+        <div class="bookmark">
+
+        </div>
+      </div>
+    </div>
+    <div class="additionalRecipeInfo">
+      <div class="additionalInfoContainer">
+        <img src="/src/img/people_icon.svg" alt="people_icon" class="peopleIcon">
+        <img src="/src/img/arrow_quantity_left.svg" alt="arrow_left" class="servingsArrowLeft arrowQuantity">
+        <p class="servingsQuantity">2</p>
+        <img src="/src/img/arrow_quantity_right.svg" alt="arrow_right" class="servingsArrowRight arrowQuantity">
+        <p class="personsWord">persons</p>
+        <img src="/src/img/time_icon.svg" alt="time_icon" class="timeIcon">
+        <p>15</p>
+        <p class="minWord">min</p>
+      </div>
+    </div>
+    <div class="recipeTextBox">
+      <div class="recipeText">
+        <p class="ingradientsTitle">RECIPE INGRADIENTS</p>
+        <div class="ingradients">
+          <p> <span>✔ </span> 4 (7-ounce) fish fillets (thick, white fish)</p>
+          <p> <span>✔ </span>1/3 cup sparkling water, cold</p>
+          <p> <span>✔ </span>7 tablespoons (55 grams) all-purpose flour, divided</p>
+          <p> <span>✔ </span>7 tablespoons (55 grams) cornstarch</p>
+        </div>
+        <p class="howToCookIt">HOW TO COOK IT</p>
+        <div class="linkBox">
+          <p>This recipe was created by Eric Sanches
+            Please check out directions at their website.</p>
+          <a href="" class="linkButton"><div ><span>DIRECTIONS</span></div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
