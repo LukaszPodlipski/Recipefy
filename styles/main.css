@@ -1525,4 +1525,180 @@ html .animatedGradientBackground {
   display: -ms-flexbox;
   display: flex;
 }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+svg {
+  /* border: 1px solid black; */
+  height: 80px;
+  width: 80px;
+}
+
+.loader {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 200px 0;
+}
+
+.pizza {
+  fill: #ffb86d;
+  /* stroke: rgb(0, 0, 0);
+  stroke-width: 3; */
+  -webkit-transform-origin: right bottom;
+          transform-origin: right bottom;
+  transform-box: fill-box;
+}
+
+.cheese {
+  fill: #fcf764;
+  /* stroke-width: 3;
+  stroke: black; */
+  -webkit-transform-origin: right bottom;
+          transform-origin: right bottom;
+  transform-box: fill-box;
+}
+
+.pepperoni {
+  fill: #f15a46;
+  /* stroke-width: 5;
+  stroke: #601107; */
+}
+
+.slice2,
+.cheese2 {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.slice3,
+.cheese3 {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.slice4,
+.cheese4 {
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.slice5,
+.cheese5 {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.slice6,
+.cheese6 {
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.slice7,
+.cheese7 {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.slice8,
+.cheese8 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.part1 {
+  -webkit-animation: loader 4s ease-in-out forwards infinite;
+          animation: loader 4s ease-in-out forwards infinite;
+  opacity: 1;
+}
+
+.part2 {
+  -webkit-animation: loader 4s ease-in-out forwards 0.25s infinite;
+          animation: loader 4s ease-in-out forwards 0.25s infinite;
+  opacity: 1;
+}
+
+.part3 {
+  -webkit-animation: loader 4s ease-in-out forwards 0.5s infinite;
+          animation: loader 4s ease-in-out forwards 0.5s infinite;
+  opacity: 1;
+}
+
+.part4 {
+  -webkit-animation: loader 4s ease-in-out forwards 0.75s infinite;
+          animation: loader 4s ease-in-out forwards 0.75s infinite;
+  opacity: 1;
+}
+
+.part5 {
+  -webkit-animation: loader 4s ease-in-out forwards 1s infinite;
+          animation: loader 4s ease-in-out forwards 1s infinite;
+  opacity: 1;
+}
+
+.part6 {
+  -webkit-animation: loader 4s ease-in-out forwards 1.25s infinite;
+          animation: loader 4s ease-in-out forwards 1.25s infinite;
+  opacity: 1;
+}
+
+.part7 {
+  -webkit-animation: loader 4s ease-in-out forwards 1.5s infinite;
+          animation: loader 4s ease-in-out forwards 1.5s infinite;
+  opacity: 1;
+}
+
+.part8 {
+  -webkit-animation: loader 4s ease-in-out forwards 1.75s infinite;
+          animation: loader 4s ease-in-out forwards 1.75s infinite;
+  opacity: 1;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=main.css.map */
