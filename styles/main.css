@@ -476,9 +476,6 @@ html .animatedGradientBackground {
   height: 180px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("../src/img/example.jpeg");
-  background-position: center;
-  background-size: cover;
   border-radius: 50%;
   -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.15);
@@ -562,19 +559,11 @@ html .animatedGradientBackground {
 .recipeDescription {
   position: relative;
   width: 90%;
-  height: 450px;
+  height: auto;
   margin: 50px auto;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
-}
-
-.recipeDescription .recipeDescriptionImage {
-  position: absolute;
-  left: 0%;
-  height: 100%;
-  -webkit-clip-path: circle(70.3% at 0 51%);
-          clip-path: circle(70.3% at 0 51%);
 }
 
 .recipeDescription .recipeTitleContainer {
@@ -585,12 +574,12 @@ html .animatedGradientBackground {
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   gap: 0px 0px;
-      grid-template-areas: ". p bookmark";
+      grid-template-areas: "p p bookmark";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 17%;
+  height: 80px;
   background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #0038ff), color-stop(-0.85%, rgba(112, 0, 255, 0.97)), color-stop(18.58%, rgba(104, 62, 255, 0.955208)), to(rgba(91, 167, 255, 0.23)));
   background: linear-gradient(90deg, #0038ff -0.85%, rgba(112, 0, 255, 0.97) -0.85%, rgba(104, 62, 255, 0.955208) 18.58%, rgba(91, 167, 255, 0.23) 100%);
   -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
@@ -599,22 +588,33 @@ html .animatedGradientBackground {
 
 .recipeDescription .recipeTitleContainer p {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: p;
+  margin-left: 50px;
   text-transform: uppercase;
   font-size: 24px;
   letter-spacing: 2px;
   font-family: "Poppins", arial;
   color: #ffffff;
+  width: 600px;
+  height: 35px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .recipeDescription .recipeTitleContainer .bookmarkContainer {
+  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   margin-right: 20px;
   -ms-grid-row: 1;
   -ms-grid-column: 3;
@@ -639,8 +639,11 @@ html .animatedGradientBackground {
 
 .recipeDescription .recipeTitleContainer .bookmarkContainer p {
   font-size: 12px;
+  width: 100px;
   margin-right: 10px;
+  line-height: 35px;
   font-family: "Roboto", arial;
+  text-align: right;
 }
 
 .recipeDescription .additionalRecipeInfo {
@@ -651,12 +654,12 @@ html .animatedGradientBackground {
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   gap: 0px 0px;
-      grid-template-areas: ". container";
+      grid-template-areas: "container container";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 10%;
+  height: 50px;
   background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #3b61e9), color-stop(-0.85%, rgba(112, 0, 255, 0.97)), to(rgba(59, 170, 233, 0.38)));
   background: linear-gradient(90deg, #3b61e9 -0.85%, rgba(112, 0, 255, 0.97) -0.85%, rgba(59, 170, 233, 0.38) 100%);
   -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
@@ -665,8 +668,10 @@ html .animatedGradientBackground {
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: container;
+  margin-left: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -689,10 +694,16 @@ html .animatedGradientBackground {
   font-family: "Roboto", arial;
 }
 
+.recipeDescription .additionalRecipeInfo .additionalInfoContainer .servingsQuantity {
+  font-size: 20px;
+}
+
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer .arrowQuantity {
-  height: 14px;
+  height: 12px;
   margin: 8px;
   cursor: pointer;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer .personsWord {
@@ -714,53 +725,99 @@ html .animatedGradientBackground {
 .recipeDescription .recipeTextBox {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1.5fr 1.9fr;
-      grid-template-columns: 1.5fr 1.9fr;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 200px auto;
+      grid-template-rows: 200px auto;
   gap: 0px 0px;
-      grid-template-areas: ". recipeText";
+      grid-template-areas: "recipeImg" "recipeText";
   font-family: "Roboto", arial;
 }
 
-.recipeDescription .recipeTextBox .recipeText {
+.recipeDescription .recipeTextBox .recipeDescriptionImage {
   -ms-grid-row: 1;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
+  grid-area: recipeImg;
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recipeDescription .recipeTextBox .recipeText {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: recipeText;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .recipeDescription .recipeTextBox .recipeText .ingradientsTitle,
 .recipeDescription .recipeTextBox .recipeText .howToCookIt {
+  width: 100%;
   font-size: 22px;
-  margin-top: 25px;
-  margin-bottom: 15px;
 }
 
 .recipeDescription .recipeTextBox .recipeText .ingradients {
   font-size: 16px;
+  width: 100%;
+  padding-left: 40px;
+  padding-bottom: 30px;
 }
 
 .recipeDescription .recipeTextBox .recipeText .ingradients p {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .recipeDescription .recipeTextBox .recipeText .ingradients p span {
   color: #a57dfa;
 }
 
+.recipeDescription .recipeTextBox .recipeText .ingradients .ingradientsTitle {
+  margin: 35px 0;
+  margin-bottom: 15px;
+}
+
 .recipeDescription .recipeTextBox .recipeText .linkBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  width: 100%;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  background-color: #fbfbfb;
 }
 
-.recipeDescription .recipeTextBox .recipeText .linkBox p {
-  width: 60%;
-  line-height: 150%;
+.recipeDescription .recipeTextBox .recipeText .linkBox .howToCookIt {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.recipeDescription .recipeTextBox .recipeText .linkBox .recipeCopyright {
+  width: 90%;
+  margin: 15px 0;
+  text-align: right;
 }
 
 .recipeDescription .recipeTextBox .recipeText .linkBox .linkButton {
   text-decoration: none;
+  width: 150px;
+  height: 40px;
+  margin-top: 20px;
 }
 
 .recipeDescription .recipeTextBox .recipeText .linkBox .linkButton div {
@@ -773,9 +830,8 @@ html .animatedGradientBackground {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 120px;
+  width: 150px;
   height: 40px;
-  margin-left: 50px;
   border-radius: 50px;
   background: -webkit-gradient(linear, left top, right top, from(#4987fd), to(rgba(66, 0, 255, 0.65)));
   background: linear-gradient(90deg, #4987fd 0%, rgba(66, 0, 255, 0.65) 100%);
@@ -1524,5 +1580,30 @@ html .animatedGradientBackground {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+svg {
+  height: 80px;
+  width: 80px;
+}
+
+.loader {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 100px 0;
 }
 /*# sourceMappingURL=main.css.map */

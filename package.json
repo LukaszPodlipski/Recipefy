@@ -1,0 +1,29 @@
+{
+  "name": "recipefy",
+  "version": "1.0.0",
+  "description": "Recipe App",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html ",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukaszPodlipski/Recipefy.git"
+  },
+  "author": "LukaszPodlipski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukaszPodlipski/Recipefy/issues"
+  },
+  "homepage": "https://github.com/LukaszPodlipski/Recipefy#readme",
+  "dependencies": {
+    "core-js": "^3.18.1",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@types/node": "^16.10.2",
+    "parcel": "^2.0.0-rc.0"
+  }
+}
