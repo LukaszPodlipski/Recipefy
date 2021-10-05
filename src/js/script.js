@@ -1,4 +1,10 @@
-"use strict";
+import peopleIcon from "url:../img/people_icon.svg";
+import arrowLeft from "url:../img/arrow_left.svg";
+import arrowRight from "url:../img/arrow_right.svg";
+import timeIcon from "url:../img/time_icon.svg";
+
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 const bookmark = false;
 
@@ -31,136 +37,110 @@ const closeAddRecipeContainer = document
   });
 
 //////
-("use strict");
 
-let toRadians = deg => (deg * Math.PI) / 180;
-let map = (val, a1, a2, b1, b2) => b1 + ((val - a1) * (b2 - b1)) / (a2 - a1);
+const recipeContainer = document.querySelector(".recipeFullBox");
 
-class Pizza {
-  constructor(id) {
-    this.canvas = document.getElementById(id);
-    this.ctx = this.canvas.getContext("2d");
+const renderSpinner = function (parentEl) {
+  const markup = `  <div class="loader activeLoader">
+    <div class="loader loader--style1" title="0">
+      <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40"
+        xml:space="preserve">
+        <path opacity="0.2" fill="#000"
+          d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                C22.32,8.481,24.301,9.057,26.013,10.047z">
+          <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20"
+            dur="0.5s" repeatCount="indefinite" />
+        </path>
+      </svg>
+    </div>
+  </div>`;
+  parentEl.innerHTML = "";
+  parentEl.insertAdjacentHTML("afterbegin", markup);
+};
 
-    this.sliceCount = 6;
-    this.sliceSize = 80;
+const showRecipe = async function () {
+  try {
+    //1. Loading recipe
+    renderSpinner(recipeContainer);
+    const res = await fetch(
+      "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcc3e"
+    );
+    const data = await res.json();
 
-    this.width =
-      this.height =
-      this.canvas.height =
-      this.canvas.width =
-        this.sliceSize * 2 + 50;
-    this.center = (this.height / 2) | 0;
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
 
-    this.sliceDegree = 360 / this.sliceCount;
-    this.sliceRadians = toRadians(this.sliceDegree);
-    this.progress = 0;
-    this.cooldown = 10;
+    let { recipe } = data.data;
+    recipe = {
+      id: recipe.id,
+      title: recipe.title,
+      publisher: recipe.publisher,
+      sourceUrl: recipe.source_url,
+      image: recipe.image_url,
+      servings: recipe.servings,
+      cookingTime: recipe.cooking_time,
+      ingredients: recipe.ingredients,
+    };
+    console.log(recipe);
+    //2 Render recipe
+    const markup = `
+  <div class="recipeDescription">
+      <div class="recipeTitleContainer">
+        <p>${recipe.title}</p>
+        <div class="bookmarkContainer">
+          <p>BOOKMARK</p>
+          <div class="bookmark">
+
+          </div>
+        </div>
+      </div>
+      <div class="additionalRecipeInfo">
+        <div class="additionalInfoContainer">
+          <img src="${peopleIcon}" alt="people_icon" class="peopleIcon">
+          <img src="${arrowLeft}" alt="arrow_left" class="servingsArrowLeft arrowQuantity">
+          <p class="servingsQuantity">${recipe.servings}</p>
+          <img src="${arrowRight}" alt="arrow_right" class="servingsArrowRight arrowQuantity">
+          <p class="personsWord">persons</p>
+          <img src="${timeIcon}" alt="time_icon" class="timeIcon">
+          <p>${recipe.cookingTime}</p>
+          <p class="minWord">min</p>
+        </div>
+      </div>
+      <div class="recipeTextBox">
+        <img src="${
+          recipe.image
+        }" class="recipeDescriptionImage" alt="recipe photo"></img>
+
+        <div class="recipeText">
+          <div class="ingradients">
+            <p class="ingradientsTitle">RECIPE INGRADIENTS</p>
+            ${recipe.ingredients
+              .map(ing => {
+                return `            <p> <span>✔ </span> ${ing.quantity} ${ing.unit} ${ing.description}</p>`;
+              })
+              .join("")}
+          </div>
+          <div class="linkBox">
+            <p class="howToCookIt">HOW TO COOK IT</p>
+
+            <p class="recipeCopyright">This recipe was created by ${
+              recipe.publisher
+            }
+              Please check out directions at their website.</p>
+            <a href="${
+              recipe.sourceUrl
+            }" class="linkButton"><div ><span>DIRECTIONS</span></div></a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    recipeContainer.innerHTML = "";
+    recipeContainer.insertAdjacentHTML("afterbegin", markup);
+  } catch (err) {
+    alert(err);
   }
-
-  update() {
-    let ctx = this.ctx;
-    ctx.clearRect(0, 0, this.width, this.height);
-
-    if (--this.cooldown < 0)
-      this.progress += this.sliceRadians * 0.01 + this.progress * 0.07;
-
-    ctx.save();
-    ctx.translate(this.center, this.center);
-
-    for (let i = this.sliceCount - 1; i > 0; i--) {
-      let rad;
-      if (i === this.sliceCount - 1) {
-        let ii = this.sliceCount - 1;
-
-        rad = this.sliceRadians * i + this.progress;
-
-        ctx.strokeStyle = "#FBC02D";
-        cheese(ctx, rad, 0.9, ii, this.sliceSize, this.sliceDegree);
-        cheese(ctx, rad, 0.6, ii, this.sliceSize, this.sliceDegree);
-        cheese(ctx, rad, 0.5, ii, this.sliceSize, this.sliceDegree);
-        cheese(ctx, rad, 0.3, ii, this.sliceSize, this.sliceDegree);
-      } else rad = this.sliceRadians * i;
-
-      // border
-      ctx.beginPath();
-      ctx.lineCap = "butt";
-      ctx.lineWidth = 11;
-      ctx.arc(0, 0, this.sliceSize, rad, rad + this.sliceRadians);
-      ctx.strokeStyle = "#F57F17";
-      ctx.stroke();
-
-      // slice
-      let startX = this.sliceSize * Math.cos(rad);
-      let startY = this.sliceSize * Math.sin(rad);
-      let endX = this.sliceSize * Math.cos(rad + this.sliceRadians);
-      let endY = this.sliceSize * Math.sin(rad + this.sliceRadians);
-      let varriation = [0.9, 0.7, 1.1, 1.2];
-      ctx.fillStyle = "#FBC02D";
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(startX, startY);
-      ctx.arc(0, 0, this.sliceSize, rad, rad + this.sliceRadians);
-      ctx.lineTo(0, 0);
-      ctx.closePath();
-      ctx.fill();
-      ctx.lineWidth = 0.3;
-      ctx.stroke();
-
-      // meat
-      let x = this.sliceSize * 0.65 * Math.cos(rad + this.sliceRadians / 2);
-      let y = this.sliceSize * 0.65 * Math.sin(rad + this.sliceRadians / 2);
-      ctx.beginPath();
-      ctx.arc(x, y, this.sliceDegree / 6, 0, 2 * Math.PI);
-      ctx.fillStyle = "#D84315";
-      ctx.fill();
-    }
-
-    ctx.restore();
-
-    if (this.progress > this.sliceRadians) {
-      ctx.translate(this.center, this.center);
-      ctx.rotate((-this.sliceDegree * Math.PI) / 180);
-      ctx.translate(-this.center, -this.center);
-
-      this.progress = 0;
-      this.cooldown = 20;
-    }
-  }
-}
-
-function cheese(ctx, rad, multi, ii, sliceSize, sliceDegree) {
-  let x1 = sliceSize * multi * Math.cos(toRadians(ii * sliceDegree) - 0.2);
-  let y1 = sliceSize * multi * Math.sin(toRadians(ii * sliceDegree) - 0.2);
-  let x2 = sliceSize * multi * Math.cos(rad + 0.2);
-  let y2 = sliceSize * multi * Math.sin(rad + 0.2);
-
-  let csx = sliceSize * Math.cos(rad);
-  let csy = sliceSize * Math.sin(rad);
-
-  var d = Math.sqrt((x1 - csx) * (x1 - csx) + (y1 - csy) * (y1 - csy));
-  ctx.beginPath();
-  ctx.lineCap = "round";
-
-  let percentage = map(d, 15, 70, 1.2, 0.2);
-
-  let tx = x1 + (x2 - x1) * percentage;
-  let ty = y1 + (y2 - y1) * percentage;
-  ctx.moveTo(x1, y1);
-  ctx.lineTo(tx, ty);
-
-  tx = x2 + (x1 - x2) * percentage;
-  ty = y2 + (y1 - y2) * percentage;
-  ctx.moveTo(x2, y2);
-  ctx.lineTo(tx, ty);
-
-  ctx.lineWidth = map(d, 0, 100, 20, 2);
-  ctx.stroke();
-}
-
-let pizza = new Pizza("pizza");
-
-(function update() {
-  requestAnimationFrame(update);
-  pizza.update();
-})();
-////
+};
+showRecipe();
