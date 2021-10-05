@@ -56,6 +56,7 @@ html body .letsStartText {
           animation: MoveUpDown s linear infinite;
 }
 
+html body .noresultAlert,
 html body .bookmarkAlert {
   display: none;
   -webkit-box-pack: center;
@@ -406,6 +407,8 @@ html .animatedGradientBackground {
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
   margin-right: 2%;
+  -webkit-filter: invert(50%);
+          filter: invert(50%);
 }
 
 .recipesBox .arrowRight:hover {
@@ -417,6 +420,8 @@ html .animatedGradientBackground {
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
   margin-left: 2%;
+  -webkit-filter: invert(50%);
+          filter: invert(50%);
 }
 
 .recipesBox .arrowLeft:hover {
@@ -628,13 +633,15 @@ html .animatedGradientBackground {
   background-position: center;
   background-size: cover;
   cursor: pointer;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .recipeDescription .recipeTitleContainer .bookmarkContainer .bookmark:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+  -webkit-filter: saturate(5);
+          filter: saturate(5);
 }
 
 .recipeDescription .recipeTitleContainer .bookmarkContainer p {
@@ -741,6 +748,7 @@ html .animatedGradientBackground {
   display: block;
   height: 100%;
   width: 100%;
+  background-color: #a57dfa;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -811,6 +819,7 @@ html .animatedGradientBackground {
   width: 90%;
   margin: 15px 0;
   text-align: right;
+  line-height: 150%;
 }
 
 .recipeDescription .recipeTextBox .recipeText .linkBox .linkButton {

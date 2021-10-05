@@ -112,14 +112,16 @@ const showRecipe = async function () {
       <div class="recipeTextBox">
         <img src="${
           recipe.image
-        }" class="recipeDescriptionImage" alt="recipe photo"></img>
+        }"  crossOrigin="anonymous" class="recipeDescriptionImage" ></img>
 
         <div class="recipeText">
           <div class="ingradients">
             <p class="ingradientsTitle">RECIPE INGRADIENTS</p>
             ${recipe.ingredients
               .map(ing => {
-                return `            <p> <span>✔ </span> ${ing.quantity} ${ing.unit} ${ing.description}</p>`;
+                return `            <p> <span>✔ </span> ${
+                  ing.quantity === null ? "" : ing.quantity
+                } ${ing.unit} ${ing.description}</p>`;
               })
               .join("")}
           </div>

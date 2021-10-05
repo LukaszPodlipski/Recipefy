@@ -53,9 +53,10 @@
         background-position: center;
         background-size: cover;
         cursor: pointer;
-        transition: 0.5s ease-in-out;
+        transition: 0.2s ease-in-out;
         &:hover {
           transform: scale(1.05);
+          filter: saturate(5);
         }
       }
       p {
@@ -134,14 +135,11 @@
     grid-template-areas: "recipeImg" "recipeText";
     font-family: $regular-font;
     .recipeDescriptionImage {
-      // align-self: center;
-      // justify-self: center;
       grid-area: recipeImg;
       display: block;
       height: 100%;
       width: 100%;
-      // background-image: url("../src/img/example.jpeg");
-
+      background-color: $purpleLight;
       object-fit: cover;
     }
     .recipeText {
@@ -187,6 +185,7 @@
           width: 90%;
           margin: 15px 0;
           text-align: right;
+          line-height: 150%;
         }
 
         .linkButton {
