@@ -112,7 +112,7 @@ const showRecipe = async function () {
       <div class="recipeTextBox">
         <img src="${
           recipe.image
-        }" class="recipeDescriptionImage" alt="recipe photo"></img>
+        }"  crossOrigin="anonymous" class="recipeDescriptionImage" alt="recipe photo"></img>
 
         <div class="recipeText">
           <div class="ingradients">
