@@ -6,3 +6,6 @@ dist
 .parcel-cache/lock.mdb
 node_modules/@parcel/fs-search
 .cache
+.parcel-cache/lock.mdb
+.parcel-cache/data.mdb
+*.mdb
