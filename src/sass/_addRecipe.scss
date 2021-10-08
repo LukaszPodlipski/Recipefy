@@ -19,18 +19,18 @@
     height: 15%;
     background: linear-gradient(
       90deg,
-      #0038ff -0.85%,
-      rgba(112, 0, 255, 0.97) -0.85%,
-      rgba(104, 62, 255, 0.955208) 18.58%,
-      rgba(101, 173, 255, 0.596) 100%
+      #ff7b00 -0.85%,
+      rgb(255, 145, 0) -0.85%,
+      rgb(231, 131, 18) 18.58%,
+      rgb(238, 182, 0) 100%
     );
 
     p {
       grid-area: title;
       justify-self: center;
       width: 200px;
-      color: white;
-      font-family: $heading-font;
+      color: $white;
+      font-family: $headingFont;
       font-size: 38px;
       text-align: center;
     }
@@ -60,7 +60,7 @@
       height: 100%;
       width: 50%;
       padding: 20px;
-      font-family: $regular-font;
+      font-family: $regularFont;
       label {
         margin: 10px 0;
       }
@@ -88,10 +88,10 @@
     opacity: 0.8;
     background: linear-gradient(
       90deg,
-      #0038ff -0.85%,
-      rgba(112, 0, 255, 0.97) -0.85%,
-      rgba(104, 62, 255, 0.955208) 18.58%,
-      rgba(101, 173, 255, 0.952) 100%
+      #ff7b00 -0.85%,
+      rgb(255, 145, 0) -0.85%,
+      rgb(231, 131, 18) 18.58%,
+      rgb(238, 182, 0) 100%
     );
     color: $white;
     cursor: pointer;
@@ -103,7 +103,7 @@
     p {
       display: block;
       margin-left: 10px;
-      font-family: $regular-font;
+      font-family: $regularFont;
     }
     img {
       height: 16px;

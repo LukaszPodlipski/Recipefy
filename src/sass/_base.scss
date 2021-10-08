@@ -2,19 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
-$heading-font: "Lobster", arial;
-$regular-font: "Roboto", arial;
-$description-estralight-font: "Poppins", arial;
-$color-primary: #dfccf5;
-$blue: #3e57e6;
-$purpleDark: #7f3ebd;
-$purpleLight: #a57dfa;
-$searchFieldColor: rgb(2, 2, 2);
+$headingFont: "Lobster", arial;
+$regularFont: "Roboto", arial;
+$descriptionEstralightFont: "Poppins", arial;
+$mainOrangeLight: #f3a156;
+$orangeDark: #e27f0d;
 $gray: #555555;
 $grayLight: #bbb8b8;
 $white: #ffffff;
+$black: #000000;
 $boxShadowColor: rgba(0, 0, 0, 0.15);
-
 * {
   margin: 0;
   padding: 0;
@@ -29,13 +26,9 @@ $boxShadowColor: rgba(0, 0, 0, 0.15);
 html {
   min-height: 100vh;
   box-sizing: border-box;
-  background: rgb(245, 204, 255);
-  background: linear-gradient(
-    155deg,
-    rgba(245, 204, 255, 1) 0%,
-    rgba(220, 168, 255, 1) 48%,
-    rgba(175, 220, 255, 1) 100%
-  );
+  background: #f2994a;
+  background: -webkit-linear-gradient(to right, #f2c94c, #f2994a);
+  background: linear-gradient(to right, #f2c94c, #f2994a);
 
   body {
     max-width: 1000px;
@@ -43,25 +36,34 @@ html {
     margin: 80px auto;
     padding: 80px 0 10px 0;
     border-radius: 20px;
-    background-color: #f5eafd;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
+    display: flex;
+    flex-direction: column;
     .letsStartText {
       display: none;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
       justify-content: center;
       align-items: center;
-      height: 0;
-      margin: 100px auto 0 auto;
-      padding: 20px 30px;
-      border-radius: 5px;
+      margin: 50px 0;
       color: black;
-      font-family: $heading-font;
+      font-family: $headingFont;
       font-size: 30px;
       text-align: center;
       line-height: 150%;
-      text-shadow: 0px 1px 3px $purpleLight;
       backdrop-filter: blur(10px);
       transition: 0.5s ease-in-out;
       animation: MoveUpDown s linear infinite;
+    }
+    .letsstartActive {
+      display: flex;
     }
     .noresultAlert,
     .bookmarkAlert {
@@ -75,25 +77,26 @@ html {
       padding: 12px 0;
       border-radius: 5px;
       color: $white;
-      font-family: $regular-font;
+      font-family: $regularFont;
       font-size: 20px;
       box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
       backdrop-filter: blur(10px);
 
       transition: 0.5s ease-in-out;
     }
-
     .notificationActive {
       height: auto;
       display: flex;
+      flex-shrink: 1;
     }
   }
   .animatedGradientBackground {
-    background-image: linear-gradient(
-      155deg,
-      rgba(245, 204, 255, 1) 0%,
-      rgba(220, 168, 255, 1) 48%,
-      rgba(175, 220, 255, 1) 100%
+    background: linear-gradient(
+      90deg,
+      #ff7b00 -0.85%,
+      rgb(255, 145, 0) -0.85%,
+      rgb(231, 131, 18) 18.58%,
+      rgb(238, 182, 0) 100%
     );
     background-size: 600%;
     background-position: 0 0;
@@ -110,7 +113,6 @@ html {
       transform: translateY(5px);
     }
   }
-
   @keyframes gradients {
     0% {
       background-position: 0 0;

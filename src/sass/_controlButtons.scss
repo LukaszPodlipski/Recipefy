@@ -9,38 +9,35 @@
     padding: 10px;
     margin-left: 20px;
     border-radius: 50%;
-    border: 2px solid $purpleLight;
     background: $white;
     cursor: pointer;
-    box-shadow: 0px 4px 24px -1px $boxShadowColor;
+    box-shadow: 0px 4px 24px -10px $boxShadowColor;
     backdrop-filter: blur(40px);
-    transition: 0.3s ease-in-out;
+    transition: 0.1s ease-in-out;
     &:hover {
       transform: scale(1.04);
     }
     img {
-      height: 100%;
-      transition: 0.3s ease-in-out;
-      &:hover {
-        transform: scale(0.9);
-      }
+      height: 90%;
+      margin: 1px 0 0 2px;
     }
   }
 
   .controlButton {
     align-self: flex-end;
     margin-left: 20px;
+    height: 45px;
     padding: 10px 15px;
     border-radius: 50px;
-    border-color: $purpleLight;
     background: $white;
-    box-shadow: 0px 4px 24px -1px $boxShadowColor;
+    box-shadow: 0px 4px 24px -10px $boxShadowColor;
     backdrop-filter: blur(40px);
     font-size: 16px;
-    color: $purpleLight;
+    color: $orangeDark;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-
+    border: 0;
     img {
       margin-right: 7px;
     }

@@ -22,11 +22,9 @@
     box-shadow: 0px 4px 24px -1px $boxShadowColor;
     cursor: pointer;
     transition: 0.3s ease-in;
-
     &:hover {
       transform: translateY(3px) scale(1.03);
     }
-
     .bookmarkImage {
       grid-area: bookmarkImg;
       align-self: center;
@@ -47,16 +45,16 @@
       font-size: 17px;
       text-overflow: ellipsis;
       overflow: hidden;
-      font-family: $regular-font;
+      font-family: regularFont;
       margin-left: 10px;
-      color: $purpleDark;
+      color: $orangeDark;
     }
     .bookmarkAuthor {
       grid-area: bookmarkAuthor;
       justify-self: start;
       align-self: start;
       font-size: 14px;
-      font-family: $regular-font;
+      font-family: $regularFont;
       margin-left: 10px;
       margin-top: 5px;
     }
