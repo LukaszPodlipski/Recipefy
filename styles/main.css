@@ -17,8 +17,9 @@ html {
   min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #f5ccff;
-  background: linear-gradient(155deg, #f5ccff 0%, #dca8ff 48%, #afdcff 100%);
+  background: #f2994a;
+  background: -webkit-gradient(linear, left top, right top, from(#f2c94c), to(#f2994a));
+  background: linear-gradient(to right, #f2c94c, #f2994a);
 }
 
 html body {
@@ -27,33 +28,55 @@ html body {
   margin: 80px auto;
   padding: 80px 0 10px 0;
   border-radius: 20px;
-  background-color: #f5eafd;
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 html body .letsStartText {
   display: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 0;
-  margin: 100px auto 0 auto;
-  padding: 20px 30px;
-  border-radius: 5px;
+  margin: 50px 0;
   color: black;
   font-family: "Lobster", arial;
   font-size: 30px;
   text-align: center;
   line-height: 150%;
-  text-shadow: 0px 1px 3px #a57dfa;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   -webkit-animation: MoveUpDown s linear infinite;
           animation: MoveUpDown s linear infinite;
+}
+
+html body .letsstartActive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 html body .noresultAlert,
@@ -87,10 +110,13 @@ html body .notificationActive {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
 }
 
 html .animatedGradientBackground {
-  background-image: linear-gradient(155deg, #f5ccff 0%, #dca8ff 48%, #afdcff 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
   background-size: 600%;
   background-position: 0 0;
   -webkit-animation-duration: 20s;
@@ -177,8 +203,8 @@ html .animatedGradientBackground {
   margin-top: 30px;
   font-family: "Lobster", arial;
   text-align: center;
-  text-shadow: 0px 1px 3px #a57dfa;
-  color: #402946;
+  text-shadow: 0px 1px 10px #facd93;
+  color: #000000 22, 15, 0;
 }
 
 .head .headingText h1 {
@@ -219,19 +245,19 @@ html .animatedGradientBackground {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 40px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-family: "Roboto", arial;
   -ms-flex-line-pack: end;
       align-content: flex-end;
+  margin-top: 40px;
+  font-family: "Roboto", arial;
 }
 
 .form__group {
   position: relative;
-  padding: 15px 0 0;
   width: 43%;
+  padding: 15px 0 0;
 }
 
 .form__group .form__field:required, .form__group .form__field:invalid {
@@ -240,15 +266,15 @@ html .animatedGradientBackground {
 }
 
 .form__group .form__field {
-  font-family: "Roboto", arial;
   width: 100%;
   border: 0;
-  border-bottom: 2px solid #7f3ebd;
-  outline: 0;
-  font-size: 1.3rem;
-  color: #020202;
+  border-bottom: 2px solid #000000;
   padding: 7px 0;
+  outline: 0;
   background: transparent;
+  font-family: "Roboto", arial;
+  font-size: 1.3rem;
+  color: #000000;
   -webkit-transition: border-color 0.2s;
   transition: border-color 0.2s;
 }
@@ -270,9 +296,9 @@ html .animatedGradientBackground {
 }
 
 .form__group .form__field:placeholder-shown ~ .form__label {
+  top: 20px;
   font-size: 1.3rem;
   cursor: text;
-  top: 20px;
 }
 
 .form__group .form__label {
@@ -282,15 +308,15 @@ html .animatedGradientBackground {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 1rem;
-  color: #7f3ebd;
+  color: #000000;
 }
 
 .form__field:focus {
   padding-bottom: 6px;
   border-width: 3px;
-  -o-border-image: linear-gradient(to right, #3e57e6, #7f3ebd);
-     border-image: -webkit-gradient(linear, left top, right top, from(#3e57e6), to(#7f3ebd));
-     border-image: linear-gradient(to right, #3e57e6, #7f3ebd);
+  -o-border-image: linear-gradient(to left, #f3a156, #e27f0d);
+     border-image: -webkit-gradient(linear, right top, left top, from(#f3a156), to(#e27f0d));
+     border-image: linear-gradient(to left, #f3a156, #e27f0d);
   border-image-slice: 1;
 }
 
@@ -301,7 +327,7 @@ html .animatedGradientBackground {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 1rem;
-  color: #3e57e6;
+  color: #e27f0d;
 }
 
 .controlsContainer .searchButton {
@@ -320,15 +346,14 @@ html .animatedGradientBackground {
   padding: 10px;
   margin-left: 20px;
   border-radius: 50%;
-  border: 2px solid #a57dfa;
   background: #ffffff;
   cursor: pointer;
-  -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .controlsContainer .searchButton:hover {
@@ -337,33 +362,29 @@ html .animatedGradientBackground {
 }
 
 .controlsContainer .searchButton img {
-  height: 100%;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-.controlsContainer .searchButton img:hover {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  height: 90%;
+  margin: 1px 0 0 2px;
 }
 
 .controlsContainer .controlButton {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-left: 20px;
+  height: 45px;
   padding: 10px 15px;
   border-radius: 50px;
-  border-color: #a57dfa;
   background: #ffffff;
-  -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
   font-size: 16px;
-  color: #a57dfa;
+  color: #e27f0d;
+  letter-spacing: 1px;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  border: 0;
 }
 
 .controlsContainer .controlButton img {
@@ -395,7 +416,7 @@ html .animatedGradientBackground {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 150px auto 50px auto;
+  margin-top: 160px;
   font-family: "Roboto", arial;
 }
 
@@ -407,6 +428,10 @@ html .animatedGradientBackground {
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
   margin-right: 2%;
+  height: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -webkit-filter: invert(50%);
           filter: invert(50%);
 }
@@ -420,6 +445,10 @@ html .animatedGradientBackground {
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
   margin-left: 2%;
+  height: 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -webkit-filter: invert(50%);
           filter: invert(50%);
 }
@@ -454,18 +483,21 @@ html .animatedGradientBackground {
 .recipesBox .recipesContainer .recipeResult {
   position: relative;
   margin: 0 10px;
-  -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 4px 24px -5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -5px rgba(0, 0, 0, 0.15);
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
   cursor: pointer;
-  -webkit-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 .recipesBox .recipesContainer .recipeResult:hover {
   -webkit-transform: translateY(3px) scale(1.03);
           transform: translateY(3px) scale(1.03);
+  -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
 }
 
 .recipesBox .recipesContainer .recipeResult .recipeImage {
@@ -527,6 +559,7 @@ html .animatedGradientBackground {
 
 .recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .recipeTitle {
   font-size: 20px;
+  color: black;
 }
 
 .recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .recipeAuthor {
@@ -558,17 +591,15 @@ html .animatedGradientBackground {
 }
 
 .recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .setInfoText {
-  color: black;
+  color: #000000;
 }
 
 .recipeDescription {
   position: relative;
   width: 90%;
   height: auto;
-  margin: 50px auto;
+  margin: 80px auto 50px auto;
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
 }
 
 .recipeDescription .recipeTitleContainer {
@@ -585,10 +616,8 @@ html .animatedGradientBackground {
           align-items: center;
   width: 100%;
   height: 80px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #0038ff), color-stop(-0.85%, rgba(112, 0, 255, 0.97)), color-stop(18.58%, rgba(104, 62, 255, 0.955208)), to(rgba(91, 167, 255, 0.23)));
-  background: linear-gradient(90deg, #0038ff -0.85%, rgba(112, 0, 255, 0.97) -0.85%, rgba(104, 62, 255, 0.955208) 18.58%, rgba(91, 167, 255, 0.23) 100%);
-  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
 .recipeDescription .recipeTitleContainer p {
@@ -633,8 +662,8 @@ html .animatedGradientBackground {
   background-position: center;
   background-size: cover;
   cursor: pointer;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .recipeDescription .recipeTitleContainer .bookmarkContainer .bookmark:hover {
@@ -667,10 +696,8 @@ html .animatedGradientBackground {
           align-items: center;
   width: 100%;
   height: 50px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #3b61e9), color-stop(-0.85%, rgba(112, 0, 255, 0.97)), to(rgba(59, 170, 233, 0.38)));
-  background: linear-gradient(90deg, #3b61e9 -0.85%, rgba(112, 0, 255, 0.97) -0.85%, rgba(59, 170, 233, 0.38) 100%);
-  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.15);
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ffbd7f), color-stop(-0.85%, #ffb759), color-stop(18.58%, #f6b060), to(rgba(255, 174, 23, 0.719)));
+  background: linear-gradient(90deg, #ffbd7f -0.85%, #ffb759 -0.85%, #f6b060 18.58%, rgba(255, 174, 23, 0.719) 100%);
 }
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer {
@@ -697,7 +724,7 @@ html .animatedGradientBackground {
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer p {
   font-size: 18px;
-  color: white;
+  color: #ffffff;
   font-family: "Roboto", arial;
 }
 
@@ -748,7 +775,7 @@ html .animatedGradientBackground {
   display: block;
   height: 100%;
   width: 100%;
-  background-color: #a57dfa;
+  background-color: #f3a156;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -775,8 +802,7 @@ html .animatedGradientBackground {
 .recipeDescription .recipeTextBox .recipeText .ingradients {
   font-size: 16px;
   width: 100%;
-  padding-left: 40px;
-  padding-bottom: 30px;
+  padding: 0 30px 30px 40px;
 }
 
 .recipeDescription .recipeTextBox .recipeText .ingradients p {
@@ -784,7 +810,7 @@ html .animatedGradientBackground {
 }
 
 .recipeDescription .recipeTextBox .recipeText .ingradients p span {
-  color: #a57dfa;
+  color: #e27f0d;
 }
 
 .recipeDescription .recipeTextBox .recipeText .ingradients .ingradientsTitle {
@@ -804,9 +830,8 @@ html .animatedGradientBackground {
       -ms-flex-align: end;
           align-items: end;
   width: 100%;
-  padding-right: 40px;
-  padding-bottom: 30px;
-  background-color: #fbfbfb;
+  padding: 0 40px 30px 30px;
+  background-color: #ffe6b811;
 }
 
 .recipeDescription .recipeTextBox .recipeText .linkBox .howToCookIt {
@@ -842,15 +867,15 @@ html .animatedGradientBackground {
   width: 150px;
   height: 40px;
   border-radius: 50px;
-  background: -webkit-gradient(linear, left top, right top, from(#4987fd), to(rgba(66, 0, 255, 0.65)));
-  background: linear-gradient(90deg, #4987fd 0%, rgba(66, 0, 255, 0.65) 100%);
-  opacity: 0.5;
+  background: -webkit-gradient(linear, left top, right top, from(#ec9e21), to(rgba(255, 174, 0, 0.945)));
+  background: linear-gradient(90deg, #ec9e21 0%, rgba(255, 174, 0, 0.945) 100%);
+  opacity: 0.8;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   cursor: pointer;
-  color: white;
+  color: #ffffff;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
@@ -889,8 +914,8 @@ html .animatedGradientBackground {
           align-items: center;
   width: 100%;
   height: 15%;
-  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #0038ff), color-stop(-0.85%, rgba(112, 0, 255, 0.97)), color-stop(18.58%, rgba(104, 62, 255, 0.955208)), to(rgba(101, 173, 255, 0.596)));
-  background: linear-gradient(90deg, #0038ff -0.85%, rgba(112, 0, 255, 0.97) -0.85%, rgba(104, 62, 255, 0.955208) 18.58%, rgba(101, 173, 255, 0.596) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
 .addRecipeContainer .addrecipeContainerHead p {
@@ -900,7 +925,7 @@ html .animatedGradientBackground {
   -ms-grid-column-align: center;
       justify-self: center;
   width: 200px;
-  color: white;
+  color: #ffffff;
   font-family: "Lobster", arial;
   font-size: 38px;
   text-align: center;
@@ -987,8 +1012,8 @@ html .animatedGradientBackground {
   border-radius: 50px;
   border: 0;
   opacity: 0.8;
-  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #0038ff), color-stop(-0.85%, rgba(112, 0, 255, 0.97)), color-stop(18.58%, rgba(104, 62, 255, 0.955208)), to(rgba(101, 173, 255, 0.952)));
-  background: linear-gradient(90deg, #0038ff -0.85%, rgba(112, 0, 255, 0.97) -0.85%, rgba(104, 62, 255, 0.955208) 18.58%, rgba(101, 173, 255, 0.952) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
   color: #ffffff;
   cursor: pointer;
   -webkit-backdrop-filter: blur(40px);
@@ -1564,9 +1589,9 @@ html .animatedGradientBackground {
   font-size: 17px;
   text-overflow: ellipsis;
   overflow: hidden;
-  font-family: "Roboto", arial;
+  font-family: regularFont;
   margin-left: 10px;
-  color: #7f3ebd;
+  color: #e27f0d;
 }
 
 .bookmarkListBox .bookmarkResult .bookmarkAuthor {
@@ -1613,6 +1638,6 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 100px 0;
+  margin: 130px 0;
 }
 /*# sourceMappingURL=main.css.map */

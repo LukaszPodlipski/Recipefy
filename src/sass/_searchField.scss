@@ -1,15 +1,14 @@
 .controlsContainer {
   display: flex;
-  margin-top: 40px;
   justify-content: center;
-  font-family: $regular-font;
   align-content: flex-end;
+  margin-top: 40px;
+  font-family: $regularFont;
 }
 .form__group {
   position: relative;
-  padding: 15px 0 0;
   width: 43%;
-
+  padding: 15px 0 0;
   .form__field {
     &:required,
     &:invalid {
@@ -18,15 +17,15 @@
   }
 
   .form__field {
-    font-family: $regular-font;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid $purpleDark;
-    outline: 0;
-    font-size: 1.3rem;
-    color: $searchFieldColor;
+    border-bottom: 2px solid $black;
     padding: 7px 0;
+    outline: 0;
     background: transparent;
+    font-family: $regularFont;
+    font-size: 1.3rem;
+    color: $black;
     transition: border-color 0.2s;
 
     &::placeholder {
@@ -34,9 +33,9 @@
     }
 
     &:placeholder-shown ~ .form__label {
+      top: 20px;
       font-size: 1.3rem;
       cursor: text;
-      top: 20px;
     }
   }
   .form__label {
@@ -45,7 +44,7 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: $purpleDark;
+    color: $black;
   }
 }
 
@@ -56,10 +55,10 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: $blue;
+    color: $orangeDark;
   }
   padding-bottom: 6px;
   border-width: 3px;
-  border-image: linear-gradient(to right, $blue, $purpleDark);
+  border-image: linear-gradient(to left, $mainOrangeLight, $orangeDark);
   border-image-slice: 1;
 }

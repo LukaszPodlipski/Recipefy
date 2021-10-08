@@ -2,9 +2,8 @@
   position: relative;
   width: 90%;
   height: auto;
-  margin: 50px auto;
+  margin: 80px auto 50px auto;
   background-color: $white;
-  box-shadow: 0px 1px 10px $boxShadowColor;
 
   .recipeTitleContainer {
     display: grid;
@@ -17,12 +16,11 @@
     height: 80px;
     background: linear-gradient(
       90deg,
-      #0038ff -0.85%,
-      rgba(112, 0, 255, 0.97) -0.85%,
-      rgba(104, 62, 255, 0.955208) 18.58%,
-      rgba(91, 167, 255, 0.23) 100%
+      #ff7b00 -0.85%,
+      rgb(255, 145, 0) -0.85%,
+      rgb(231, 131, 18) 18.58%,
+      rgb(238, 182, 0) 100%
     );
-    box-shadow: 0px 1px 10px $boxShadowColor;
 
     p {
       grid-area: p;
@@ -30,7 +28,7 @@
       text-transform: uppercase;
       font-size: 24px;
       letter-spacing: 2px;
-      font-family: $description-estralight-font;
+      font-family: $descriptionEstralightFont;
       color: $white;
       width: 600px;
       height: 35px;
@@ -53,7 +51,7 @@
         background-position: center;
         background-size: cover;
         cursor: pointer;
-        transition: 0.2s ease-in-out;
+        transition: 0.4s ease-in-out;
         &:hover {
           transform: scale(1.05);
           filter: saturate(5);
@@ -64,7 +62,7 @@
         width: 100px;
         margin-right: 10px;
         line-height: 35px;
-        font-family: $regular-font;
+        font-family: $regularFont;
         text-align: right;
       }
     }
@@ -81,11 +79,11 @@
 
     background: linear-gradient(
       90deg,
-      #3b61e9 -0.85%,
-      rgba(112, 0, 255, 0.97) -0.85%,
-      rgba(59, 170, 233, 0.38) 100%
+      #ffbd7f -0.85%,
+      rgb(255, 183, 89) -0.85%,
+      rgb(246, 176, 96) 18.58%,
+      rgba(255, 174, 23, 0.719) 100%
     );
-    box-shadow: 0px 1px 10px $boxShadowColor;
 
     .additionalInfoContainer {
       grid-area: container;
@@ -100,8 +98,8 @@
       }
       p {
         font-size: 18px;
-        color: white;
-        font-family: $regular-font;
+        color: $white;
+        font-family: $regularFont;
       }
       .servingsQuantity {
         font-size: 20px;
@@ -133,13 +131,13 @@
     grid-template-rows: 200px auto;
     gap: 0px 0px;
     grid-template-areas: "recipeImg" "recipeText";
-    font-family: $regular-font;
+    font-family: $regularFont;
     .recipeDescriptionImage {
       grid-area: recipeImg;
       display: block;
       height: 100%;
       width: 100%;
-      background-color: $purpleLight;
+      background-color: $mainOrangeLight;
       object-fit: cover;
     }
     .recipeText {
@@ -154,12 +152,11 @@
       .ingradients {
         font-size: 16px;
         width: 100%;
-        padding-left: 40px;
-        padding-bottom: 30px;
+        padding: 0 30px 30px 40px;
         p {
           margin: 15px 0;
           span {
-            color: $purpleLight;
+            color: $orangeDark;
           }
         }
         .ingradientsTitle {
@@ -172,9 +169,8 @@
         flex-direction: column;
         align-items: end;
         width: 100%;
-        padding-right: 40px;
-        padding-bottom: 30px;
-        background-color: rgb(251, 251, 251);
+        padding: 0 40px 30px 30px;
+        background-color: #ffe6b811;
 
         .howToCookIt {
           margin-top: 35px;
@@ -203,15 +199,15 @@
             border-radius: 50px;
             background: linear-gradient(
               90deg,
-              #4987fd 0%,
-              rgba(66, 0, 255, 0.65) 100%
+              #ec9e21 0%,
+              rgba(255, 174, 0, 0.945) 100%
             );
-            opacity: 0.5;
+            opacity: 0.8;
             box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
             backdrop-filter: blur(10px);
             cursor: pointer;
 
-            color: white;
+            color: $white;
             transition: 0.3s ease-in-out;
             &:hover {
               opacity: 1;
