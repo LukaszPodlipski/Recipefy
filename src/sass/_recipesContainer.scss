@@ -9,20 +9,20 @@
   }
   .arrowRight {
     transition: 0.3s ease-in;
-    margin-right: 2%;
+    margin-right: 1.8%;
     height: 20px;
     align-self: center;
-    filter: invert(50%);
+    filter: invert(80%);
     &:hover {
       transform: translateX(3px) scale(1.03);
     }
   }
   .arrowLeft {
     transition: 0.3s ease-in;
-    margin-left: 2%;
+    margin-left: 1.8%;
     height: 20px;
     align-self: center;
-    filter: invert(50%);
+    filter: invert(80%);
     &:hover {
       transform: translateX(-3px) scale(1.03);
     }

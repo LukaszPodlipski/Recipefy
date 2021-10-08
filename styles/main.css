@@ -427,13 +427,13 @@ html .animatedGradientBackground {
 .recipesBox .arrowRight {
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
-  margin-right: 2%;
+  margin-right: 1.8%;
   height: 20px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-filter: invert(50%);
-          filter: invert(50%);
+  -webkit-filter: invert(80%);
+          filter: invert(80%);
 }
 
 .recipesBox .arrowRight:hover {
@@ -444,13 +444,13 @@ html .animatedGradientBackground {
 .recipesBox .arrowLeft {
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
-  margin-left: 2%;
+  margin-left: 1.8%;
   height: 20px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-filter: invert(50%);
-          filter: invert(50%);
+  -webkit-filter: invert(80%);
+          filter: invert(80%);
 }
 
 .recipesBox .arrowLeft:hover {
