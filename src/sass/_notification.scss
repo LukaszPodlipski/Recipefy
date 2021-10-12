@@ -1,0 +1,45 @@
+.notification {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 300px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  -ms-filter: "alpha(opacity=50)";
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  text-align: center;
+  font-family: $regularFont;
+}
+.notification--active {
+  display: flex;
+  animation: slidein 1.5s ease-in-out 1;
+  animation-iteration-count: 1;
+}
+@keyframes slidein {
+  0% {
+    top: 30px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    top: 80px;
+    opacity: 0;
+  }
+}

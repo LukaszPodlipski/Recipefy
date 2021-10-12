@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 $headingFont: "Lobster", arial;
@@ -29,12 +29,18 @@ html {
   background: #f2994a;
   background: -webkit-linear-gradient(to right, #f2c94c, #f2994a);
   background: linear-gradient(to right, #f2c94c, #f2994a);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: 1s ease-in-out;
 
   body {
     max-width: 1000px;
-    min-height: 84vh;
+    // min-height: 84vh;
     margin: 80px auto;
-    padding: 80px 0 10px 0;
+    // padding: 80px 0 10px 0;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.75);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
@@ -58,7 +64,6 @@ html {
       font-size: 30px;
       text-align: center;
       line-height: 150%;
-      backdrop-filter: blur(10px);
       transition: 0.5s ease-in-out;
       animation: MoveUpDown s linear infinite;
     }
@@ -72,7 +77,6 @@ html {
       align-items: center;
       height: 0;
       width: 90%;
-      z-index: -1;
       margin: 80px auto;
       padding: 12px 0;
       border-radius: 5px;
