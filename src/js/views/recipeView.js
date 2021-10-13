@@ -1,3 +1,4 @@
+import "core-js/stable";
 import peopleIcon from "url:../../img/people_icon.svg";
 import plusIcon from "url:../../img/plus_icon.svg";
 import minusIcon from "url:../../img/minus_icon.svg";
@@ -60,7 +61,7 @@ class RecipeView {
     }, 4000);
   }
 
-  renderMessage(message = this.#errorMessage) {
+  renderMessage(message = this.#message) {
     const markup = `<div class="notificationAlert">
     <p class="alertText"><span>🔔 </span>${message}</p>
   </div>`;
