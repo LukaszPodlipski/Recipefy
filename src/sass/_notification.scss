@@ -1,45 +1,44 @@
-.notification {
-  position: absolute;
+.notificationAlert {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  left: calc(-50vw + 50%);
+  right: calc(-50vw + 50%);
   margin-left: auto;
   margin-right: auto;
-  top: 100px;
-  left: 0;
-  right: 0;
-  height: 50px;
-  width: 300px;
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $white;
-  opacity: 0.6;
-  filter: alpha(opacity=60);
-  -ms-filter: "alpha(opacity=50)";
-  -khtml-opacity: 0.6;
-  -moz-opacity: 0.6;
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  text-align: center;
-  font-family: $regularFont;
-}
-.notification--active {
-  display: flex;
-  animation: slidein 1.5s ease-in-out 1;
-  animation-iteration-count: 1;
+  animation: slidein 4.5s ease-in 1;
+  background: #e7842e;
+  background: -webkit-linear-gradient(to right, #d3a829, #e47f27);
+  background: linear-gradient(to right, #d3a829, #e47f27);
+  box-shadow: 0px 4px 24px -10px $boxShadowColor;
+  z-index: 5;
+  .alertText {
+    font-size: 16px;
+    padding: 15px 25px;
+    text-align: center;
+    font-family: $regularFont;
+    color: $white;
+    letter-spacing: 1px;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+  }
 }
 @keyframes slidein {
   0% {
-    top: 30px;
-    opacity: 0;
+    top: -10%;
   }
-  30% {
-    opacity: 0.6;
+  10% {
+    top: 0%;
   }
+
   70% {
-    opacity: 0.6;
+    top: 0%;
   }
   100% {
-    top: 80px;
-    opacity: 0;
+    top: -50%;
   }
 }

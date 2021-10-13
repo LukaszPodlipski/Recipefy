@@ -6,6 +6,9 @@ import { Fraction } from "fractional";
 
 class RecipeView {
   #parentElement = document.querySelector(".recipeFullBox");
+  #notificationPlaceHolder = document.querySelector(".notificationPlaceHolder");
+  #errorMessage = `We could not find that recipe. Please try another one!`;
+  #message = "";
   #data;
   render(data) {
     this.#data = data;
@@ -18,7 +21,7 @@ class RecipeView {
     this.#parentElement.innerHTML = "";
   }
 
-  renderSpinner = function () {
+  renderSpinner() {
     const markup = `  <div class="loader activeLoader">
     <div class="loader loader--style1" title="0">
       <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,10 +41,36 @@ class RecipeView {
   </div>`;
     this.#parentElement.innerHTML = "";
     this.#parentElement.insertAdjacentHTML("afterbegin", markup);
-  };
+  }
 
   addHandlerRender(handler) {
     ["hashchange", "load"].forEach(ev => window.addEventListener(ev, handler));
+  }
+
+  renderError(message = this.#errorMessage) {
+    const markup = `<div class="notificationAlert">
+    <p class="alertText"><span>🔔 </span>${message}</p>
+  </div>`;
+    this.#notificationPlaceHolder.insertAdjacentHTML("beforeend", markup);
+    const alertBox = document.querySelector(".notificationAlert");
+    alertBox.style.display = "flex";
+    setTimeout(() => {
+      alertBox.style.display = "none";
+      this.#notificationPlaceHolder.innerHTML = "";
+    }, 4000);
+  }
+
+  renderMessage(message = this.#errorMessage) {
+    const markup = `<div class="notificationAlert">
+    <p class="alertText"><span>🔔 </span>${message}</p>
+  </div>`;
+    this.#notificationPlaceHolder.insertAdjacentHTML("beforeend", markup);
+    const alertBox = document.querySelector(".notificationAlert");
+    alertBox.style.display = "flex";
+    setTimeout(() => {
+      alertBox.style.display = "none";
+      this.#notificationPlaceHolder.innerHTML = "";
+    }, 4000);
   }
 
   #generateMarkup() {
