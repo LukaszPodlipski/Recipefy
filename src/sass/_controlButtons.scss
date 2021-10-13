@@ -1,4 +1,7 @@
 .controlsContainer {
+  display: none;
+  width: 100%;
+  margin: 40px auto 0 auto;
   .searchButton {
     display: flex;
     justify-content: center;
@@ -27,12 +30,14 @@
     align-self: flex-end;
     margin-left: 20px;
     height: 45px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 50px;
     background: $white;
     box-shadow: 0px 4px 24px -10px $boxShadowColor;
     backdrop-filter: blur(40px);
     font-size: 16px;
+    font-family: $regularFont;
+    font-weight: 500;
     color: $orangeDark;
     letter-spacing: 1px;
     cursor: pointer;
@@ -49,11 +54,12 @@
   .addRecipeButton {
     img {
       height: 14px;
-      margin-right: 5px;
+      transform: translate(0, 1px);
     }
   }
   .bookmarksButton {
     img {
+      height: 16px;
       transform: translate(0, 3px);
     }
   }

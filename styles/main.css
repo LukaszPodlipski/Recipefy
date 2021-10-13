@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 * {
   margin: 0;
@@ -20,13 +20,27 @@ html {
   background: #f2994a;
   background: -webkit-gradient(linear, left top, right top, from(#f2c94c), to(#f2994a));
   background: linear-gradient(to right, #f2c94c, #f2994a);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 html body {
   max-width: 1000px;
-  min-height: 84vh;
   margin: 80px auto;
-  padding: 80px 0 10px 0;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
@@ -65,8 +79,6 @@ html body .letsStartText {
   font-size: 30px;
   text-align: center;
   line-height: 150%;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   -webkit-animation: MoveUpDown s linear infinite;
@@ -90,7 +102,6 @@ html body .bookmarkAlert {
           align-items: center;
   height: 0;
   width: 90%;
-  z-index: -1;
   margin: 80px auto;
   padding: 12px 0;
   border-radius: 5px;
@@ -200,11 +211,12 @@ html .animatedGradientBackground {
 }
 
 .head .headingText {
-  margin-top: 30px;
+  display: none;
   font-family: "Lobster", arial;
   text-align: center;
   text-shadow: 0px 1px 10px #facd93;
   color: #000000 22, 15, 0;
+  line-height: 650%;
 }
 
 .head .headingText h1 {
@@ -217,9 +229,7 @@ html .animatedGradientBackground {
 }
 
 .head .profile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -330,6 +340,12 @@ html .animatedGradientBackground {
   color: #e27f0d;
 }
 
+.controlsContainer {
+  display: none;
+  width: 100%;
+  margin: 40px auto 0 auto;
+}
+
 .controlsContainer .searchButton {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -371,7 +387,7 @@ html .animatedGradientBackground {
       align-self: flex-end;
   margin-left: 20px;
   height: 45px;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-radius: 50px;
   background: #ffffff;
   -webkit-box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
@@ -379,6 +395,8 @@ html .animatedGradientBackground {
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
   font-size: 16px;
+  font-family: "Roboto", arial;
+  font-weight: 500;
   color: #e27f0d;
   letter-spacing: 1px;
   cursor: pointer;
@@ -398,10 +416,12 @@ html .animatedGradientBackground {
 
 .controlsContainer .addRecipeButton img {
   height: 14px;
-  margin-right: 5px;
+  -webkit-transform: translate(0, 1px);
+          transform: translate(0, 1px);
 }
 
 .controlsContainer .bookmarksButton img {
+  height: 16px;
   -webkit-transform: translate(0, 3px);
           transform: translate(0, 3px);
 }
@@ -416,7 +436,7 @@ html .animatedGradientBackground {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 160px;
+  margin: 160px 0 50px 0;
   font-family: "Roboto", arial;
 }
 
@@ -598,7 +618,7 @@ html .animatedGradientBackground {
   position: relative;
   width: 90%;
   height: auto;
-  margin: 80px auto 50px auto;
+  margin: 30px auto 50px auto;
   background-color: #ffffff;
 }
 
@@ -715,7 +735,7 @@ html .animatedGradientBackground {
 }
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer .peopleIcon {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer img {
@@ -733,7 +753,7 @@ html .animatedGradientBackground {
 }
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer .arrowQuantity {
-  height: 12px;
+  width: 10px;
   margin: 8px;
   cursor: pointer;
   -webkit-transition: 0.5s ease-in-out;
@@ -748,7 +768,7 @@ html .animatedGradientBackground {
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer .timeIcon {
   height: 26px;
   margin-left: 80px;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .recipeDescription .additionalRecipeInfo .additionalInfoContainer .minWord {
@@ -761,8 +781,8 @@ html .animatedGradientBackground {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 200px auto;
-      grid-template-rows: 200px auto;
+  -ms-grid-rows: 300px auto;
+      grid-template-rows: 300px auto;
   gap: 0px 0px;
       grid-template-areas: "recipeImg" "recipeText";
   font-family: "Roboto", arial;
@@ -894,8 +914,9 @@ html .animatedGradientBackground {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-  height: 620px;
-  margin: 80px auto;
+  height: auto;
+  margin: 80px auto 20px auto;
+  padding-bottom: 30px;
   background-color: #ffffff;
 }
 
@@ -913,7 +934,7 @@ html .animatedGradientBackground {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 15%;
+  padding: 15px 0;
   background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
   background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
@@ -1045,7 +1066,7 @@ html .animatedGradientBackground {
 .burger {
   width: 252px;
   height: 178px;
-  margin: auto;
+  margin: 80px 50px;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
 }
@@ -1639,5 +1660,76 @@ svg {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 130px 0;
+}
+
+.notificationAlert {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  left: calc(-50vw + 50%);
+  right: calc(-50vw + 50%);
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: slidein 4.5s ease-in 1;
+          animation: slidein 4.5s ease-in 1;
+  background: #e7842e;
+  background: -webkit-gradient(linear, left top, right top, from(#d3a829), to(#e47f27));
+  background: linear-gradient(to right, #d3a829, #e47f27);
+  -webkit-box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.notificationAlert .alertText {
+  font-size: 16px;
+  padding: 15px 25px;
+  text-align: center;
+  font-family: "Roboto", arial;
+  color: #ffffff;
+  letter-spacing: 1px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
+@-webkit-keyframes slidein {
+  0% {
+    top: -10%;
+  }
+  10% {
+    top: 0%;
+  }
+  70% {
+    top: 0%;
+  }
+  100% {
+    top: -50%;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    top: -10%;
+  }
+  10% {
+    top: 0%;
+  }
+  70% {
+    top: 0%;
+  }
+  100% {
+    top: -50%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
