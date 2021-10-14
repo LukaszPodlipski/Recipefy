@@ -1,0 +1,79 @@
+//   <div class="startBox"><img src="./src/img/lukasz_podlipski_profile.jpg" alt="profileImage" class="startImage">
+//     <div class="startText">
+//       <p>Start</p>
+//       <p>by searching for recipe. Have fun!</p>
+//     </div>
+//   </div>
+.letsStartText {
+  display: none;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  transition: 0.5s ease-in-out;
+
+  .startBox {
+    height: 140px;
+    width: 45%;
+    display: none;
+    flex-direction: row;
+    margin: 50px auto;
+    background-color: rgb(255, 251, 245);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.17);
+    animation: expansion 0.2s ease-in 1, MoveUpDown 2s ease-in infinite;
+    .startImage {
+      width: 140px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    .startText {
+      margin-left: 20px;
+      font-family: $regularFont;
+      padding: 16px 15px 20px 10px;
+      opacity: 0;
+      animation: showUp 1s ease-out 1;
+      animation-delay: 0.2s;
+      animation-fill-mode: forwards;
+      p {
+        line-height: 150%;
+        font-size: 18px;
+      }
+      p:first-child {
+        font-size: 26px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+      }
+    }
+    @keyframes showUp {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 100%;
+      }
+    }
+  }
+  @keyframes MoveUpDown {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  @keyframes expansion {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 50%;
+    }
+  }
+}
