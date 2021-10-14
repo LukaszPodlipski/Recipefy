@@ -1,14 +1,20 @@
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
-
+import searchView from "./views/searchView.js";
+import resultsView from "./views/resultsView.js";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+import View from "./views/View.js";
+
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 ////
 const html = document.querySelector("html");
 const headBurger = document.querySelector(".burger");
 const headingText = document.querySelector(".headingText");
-const profile = document.querySelector(".profile");
+const profile = document.querySelector(".startBox");
 const controlsContainer = document.querySelector(".controlsContainer");
 const letsStartText = document.querySelector(".letsStartText");
 const body = document.querySelector("body");
@@ -19,7 +25,6 @@ const searchButton = document.querySelector(".searchButton");
 /////////////////////////////////////////////////
 window.addEventListener("load", function () {
   const id = window.location.hash.slice(1);
-  console.log(id);
   if (!id) {
     recipeFullBox.style.display = "none";
     recipesBox.style.display = "none";
@@ -32,6 +37,7 @@ window.addEventListener("load", function () {
       letsStartText.style.display = "flex";
       body.style.minHeight = "84vh";
       recipeFullBox.style.display = "inline-block";
+      // recipesBox.style.display = "flex";
     }, 2000);
   } else {
     html.style.display = "inline-block";
@@ -45,12 +51,11 @@ window.addEventListener("load", function () {
   }
 });
 
-searchButton.addEventListener("click", function () {
-  letsStartText.style.display = "none";
-  recipesBox.style.display = "flex";
-});
+// searchButton.addEventListener("click", function () {
+//   letsStartText.style.display = "none";
+// });
 /////////////////////////////////////
-const bookmark = false;
+const bookmark = true;
 
 const bookmarkBox = document.querySelector(".bookmarkListBox");
 const noBookmarkAlert = document.querySelector(".bookmarkAlert ");
@@ -86,8 +91,9 @@ const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
 
-    if (!id) return;
     recipeView.renderSpinner();
+    letsStartText.style.display = "none";
+    if (!id) return;
 
     //1. Loading recipe
     await model.loadRecipe(id);
@@ -95,10 +101,38 @@ const controlRecipes = async function () {
     recipeView.render(model.state.recipe);
   } catch (err) {
     recipeView.renderError();
+    setTimeout(function () {
+      letsStartText.style.display = "flex";
+
+      recipeView.stopSpinner();
+    }, 500);
+  }
+};
+
+const controlSearchResults = async function () {
+  try {
+    resultsView.renderSpinner();
+    const query = searchView.getQuery();
+    letsStartText.style.display = "none";
+    recipesBox.style.display = "flex";
+    if (!query) {
+      setTimeout(function () {
+        recipeView.renderError();
+        recipesBox.style.display = "none";
+        letsStartText.style.display = "flex";
+        resultsView.stopSpinner();
+      }, 1000);
+      return;
+    }
+    await model.loadSearchResult(query);
+    resultsView.render(model.state.search.results);
+  } catch (err) {
+    console.log(err);
   }
 };
 
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  searchView.addHanlderSearch(controlSearchResults);
 };
 init();

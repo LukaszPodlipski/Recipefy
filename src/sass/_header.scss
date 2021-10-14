@@ -1,4 +1,12 @@
 .head {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background: linear-gradient(
+    to top,
+    rgba(255, 179, 0, 0),
+    rgba(255, 179, 0, 0.164)
+  );
+  backdrop-filter: blur(5px);
   .headimage {
     display: block;
     width: 30%;
@@ -7,33 +15,19 @@
 
   .headingText {
     display: none;
-    font-family: $headingFont;
     text-align: center;
-    text-shadow: 0px 1px 10px rgb(250, 205, 147);
-    color: $black(22, 15, 0);
+    color: rgb(56, 56, 56);
     line-height: 650%;
-
+    margin-top: 50px;
     h1 {
-      font-size: 100px;
+      font-size: 70px;
+      font-family: $headingFont;
     }
     h2 {
-      margin-top: 10px;
-      font-size: 38px;
-    }
-  }
-  .profile {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin-top: 35px;
-    .profileImage {
-      width: 40px;
-      margin-right: 10px;
-      border-radius: 100%;
-      box-shadow: 0px 1px 10px $boxShadowColor;
-    }
-    .profileText {
-      font-family: $regularFont;
+      font-family: "ShartollLight";
+      font-weight: 200;
+      font-size: 44px;
+      margin-top: 30px;
     }
   }
 }
