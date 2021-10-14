@@ -38,6 +38,7 @@ window.addEventListener("load", function () {
       body.style.minHeight = "84vh";
       recipeFullBox.style.display = "inline-block";
       // recipesBox.style.display = "flex";
+      recipeView.stopSpinner();
     }, 2000);
   } else {
     html.style.display = "inline-block";

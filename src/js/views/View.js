@@ -4,8 +4,6 @@ export default class View {
 
   render(data) {
     if (!data || (Array.isArray(data) && data.length === 0)) {
-      console.log("data from render");
-      console.log(data);
       return this.renderError();
     }
 
