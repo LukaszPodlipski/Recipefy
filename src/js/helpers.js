@@ -1,6 +1,6 @@
 import { async } from "regenerator-runtime";
 import "core-js/stable";
-
+//asdas
 import { TIMEOUT_SEC } from "./config.js";
 const timeout = function (s) {
   return new Promise(function (_, reject) {
