@@ -1,38 +1,42 @@
 .recipesBox {
   display: none;
-  flex-direction: row;
-  justify-content: space-around;
+  grid-template-columns: 1fr 15fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "arrowLeft recipesContainer arrowRight";
   margin: 150px 0 50px 0;
   font-family: $regularFont;
+
   min-height: 280px;
   .arrow {
     cursor: pointer;
+    align-self: center;
+    justify-self: center;
+    transition: 0.3s ease-in;
+    height: 20px;
+    display: none;
+    filter: invert(80%);
   }
   .arrowRight {
-    transition: 0.3s ease-in;
-    margin-right: 1.8%;
-    height: 20px;
-    align-self: center;
-    filter: invert(80%);
+    grid-area: arrowRight;
+    margin-right: 5px;
     &:hover {
       transform: translateX(3px) scale(1.03);
     }
   }
   .arrowLeft {
-    transition: 0.3s ease-in;
-    margin-left: 1.8%;
-    height: 20px;
-    align-self: center;
-    filter: invert(80%);
+    grid-area: arrowLeft;
+    margin-left: 5px;
+
     &:hover {
       transform: translateX(-3px) scale(1.03);
     }
   }
   .recipesContainer {
+    grid-area: recipesContainer;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
     flex-wrap: nowrap;
     align-content: stretch;
     width: 95%;
