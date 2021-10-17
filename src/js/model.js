@@ -5,6 +5,7 @@ import { API_URL } from "./config.js";
 import { RES_PER_PAGE } from "./config.js";
 
 import { getJSON } from "./helpers.js";
+import exp from "constants";
 export const state = {
   recipe: {},
   search: {
@@ -59,4 +60,11 @@ export const getSearchResultsPage = function (page = state.search.page) {
   const end = page * state.search.resultsPerPage;
 
   return state.search.results.slice(start, end);
+};
+
+export const updateServings = function (newServings) {
+  state.recipe.ingredients.forEach(
+    ing => (ing.quantity = (ing.quantity * newServings) / state.recipe.servings)
+  );
+  state.recipe.servings = newServings;
 };

@@ -721,7 +721,7 @@ html body .notificationActive {
   font-size: 20px;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .arrowQuantity {
+.recipeDescription .additionalRecipeInfo .additionalInfoContainer .controlQuantity {
   width: 10px;
   margin: 8px;
   cursor: pointer;

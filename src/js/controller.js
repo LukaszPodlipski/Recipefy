@@ -55,7 +55,6 @@ const controlRecipes = async function () {
     recipeView.renderError();
     setTimeout(function () {
       letsStartText.style.display = "flex";
-
       recipeView.stopSpinner();
     }, 500);
   }
@@ -90,6 +89,11 @@ const controlPagination = function (goToPage) {
   paginationView._controlPagination(model.state.search);
 };
 
+const controlServings = function (newServings) {
+  model.updateServings(newServings);
+  recipeView.render(model.state.recipe);
+};
+
 const init = function () {
   window.addEventListener("load", function () {
     const id = window.location.hash.slice(1);
@@ -120,6 +124,7 @@ const init = function () {
   });
 
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHanlderSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };
