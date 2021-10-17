@@ -17,6 +17,10 @@ class SearchView {
       e.preventDefault();
       handler();
     });
+    this._searchForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      handler();
+    });
   }
 }
 

@@ -1,11 +1,11 @@
 node_modules
 dist
-.vscode/
-.cache/
-.parcel-cache/
+.vscode
+.cache
+.parcel-cache
 .DS_Store
 .parcel-cache/data.mdb
 .parcel-cache/lock.mdb
 node_modules/@parcel/fs-search
-.cache
+.cache/
 *.mdb

@@ -1,9 +1,15 @@
 export default class View {
   _data;
   _notificationPlaceHolder = document.querySelector(".notificationPlaceHolder");
+  _letsStartBox = document.querySelector(".letsStartText");
 
   render(data) {
     if (!data || (Array.isArray(data) && data.length === 0)) {
+      setTimeout(() => {
+        this._parentElement.innerHTML = "";
+        this._parentElement.parentElement.style.display = "none";
+        this._letsStartBox.style.display = "flex";
+      }, 500);
       return this.renderError();
     }
 

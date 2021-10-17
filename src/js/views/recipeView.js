@@ -15,6 +15,17 @@ class RecipeView extends View {
   addHandlerRender(handler) {
     ["hashchange", "load"].forEach(ev => window.addEventListener(ev, handler));
   }
+
+  addHandlerUpdateServings(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".controlQuantity");
+      if (!btn) return;
+      const updateTo = +btn.dataset.updateTo;
+
+      if (updateTo > 0) handler(updateTo);
+    });
+  }
+
   _generateMarkup() {
     return `
   <div class="recipeDescription">
@@ -30,9 +41,14 @@ class RecipeView extends View {
       <div class="additionalRecipeInfo">
         <div class="additionalInfoContainer">
           <img src="${peopleIcon}" alt="people_icon" class="peopleIcon">
-          <img src="${plusIcon}" alt="arrow_left" class="servingsArrowLeft arrowQuantity">
+          <img src="${minusIcon}" alt="decreaseIcon" class="servingsDecrease controlQuantity" data-update-to="${
+      this._data.servings - 1
+    }">
           <p class="servingsQuantity">${this._data.servings}</p>
-          <img src="${minusIcon}" alt="arrow_right" class="servingsArrowRight arrowQuantity">
+
+              <img src="${plusIcon}" alt="increaseIcon" class="servingsIncrease controlQuantity" data-update-to="${
+      this._data.servings + 1
+    }">
           <p class="personsWord">persons</p>
           <img src="${timeIcon}" alt="time_icon" class="timeIcon">
           <p>${this._data.cookingTime}</p>

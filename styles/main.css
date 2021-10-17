@@ -390,12 +390,12 @@ html body .notificationActive {
 
 .recipesBox {
   display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -ms-grid-columns: 1fr 15fr 1fr;
+      grid-template-columns: 1fr 15fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  gap: 0px 0px;
+      grid-template-areas: "arrowLeft recipesContainer arrowRight";
   margin: 150px 0 50px 0;
   font-family: "Roboto", arial;
   min-height: 280px;
@@ -403,18 +403,24 @@ html body .notificationActive {
 
 .recipesBox .arrow {
   cursor: pointer;
-}
-
-.recipesBox .arrowRight {
-  -webkit-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
-  margin-right: 1.8%;
-  height: 20px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+  height: 20px;
+  display: none;
   -webkit-filter: invert(80%);
           filter: invert(80%);
+}
+
+.recipesBox .arrowRight {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: arrowRight;
+  margin-right: 5px;
 }
 
 .recipesBox .arrowRight:hover {
@@ -423,15 +429,10 @@ html body .notificationActive {
 }
 
 .recipesBox .arrowLeft {
-  -webkit-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
-  margin-left: 1.8%;
-  height: 20px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -webkit-filter: invert(80%);
-          filter: invert(80%);
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: arrowLeft;
+  margin-left: 5px;
 }
 
 .recipesBox .arrowLeft:hover {
@@ -440,6 +441,9 @@ html body .notificationActive {
 }
 
 .recipesBox .recipesContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: recipesContainer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,9 +454,6 @@ html body .notificationActive {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -ms-flex-line-pack: stretch;
@@ -720,7 +721,7 @@ html body .notificationActive {
   font-size: 20px;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .arrowQuantity {
+.recipeDescription .additionalRecipeInfo .additionalInfoContainer .controlQuantity {
   width: 10px;
   margin: 8px;
   cursor: pointer;
