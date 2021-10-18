@@ -6,7 +6,7 @@ import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
 import controlsView from "./views/controlsView.js";
 import "../../node_modules/core-js/stable";
-import "regenerator-runtime/runtime";
+import "../../node_modules/regenerator-runtime/runtime";
 import View from "./views/View.js";
 
 // if (module.hot) {
