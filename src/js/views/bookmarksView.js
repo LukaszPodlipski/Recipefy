@@ -13,12 +13,12 @@ class BookmarksView extends View {
   _generateMarkupPreview(result) {
     return `
           <a href="#${result.id}" class="bookmarkResult">
-           <li class="bookmark"><img src="${result.image}" crossOrigin="anonymous" alt="${result.title}">
+           <div class="bookmark"><img src="${result.image}" crossOrigin="anonymous" alt="${result.title}">
           <div class="bookmarkInfo">
             <p class="bookmarkTitle">${result.title}</p>
             <p class="bookmarkPublisher">by ${result.publisher}</p>
           </div>
-        </li> </a>`;
+        </div> </a>`;
   }
   addHandlerHideBookmarks(handler) {
     document

@@ -109,7 +109,7 @@ const controlAddBookmark = function () {
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   else {
     model.deleteBookmark(model.state.recipe);
-    controlHideBookmarks();
+    if (model.state.bookmarks.length === 0) controlHideBookmarks();
   }
   recipeView.update(model.state.recipe);
   bookmarksView.renderBookmark(model.state.bookmarks);
