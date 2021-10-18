@@ -5,7 +5,7 @@ import resultsView from "./views/resultsView.js";
 import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
 import controlsView from "./views/controlsView.js";
-import "core-js/stable";
+import "../../node_modules/core-js/stable";
 import "regenerator-runtime/runtime";
 import View from "./views/View.js";
 
