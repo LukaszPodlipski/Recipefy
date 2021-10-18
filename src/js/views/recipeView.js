@@ -4,6 +4,9 @@ import peopleIcon from "url:../../img/people_icon.svg";
 import plusIcon from "url:../../img/plus_icon.svg";
 import minusIcon from "url:../../img/minus_icon.svg";
 import timeIcon from "url:../../img/time_icon.svg";
+import bookmarkUnsigned from "url:../../img/bookmark_unsigned.svg";
+import bookmarkSigned from "url:../../img/bookmark_signed.svg";
+
 import { Fraction } from "fractional";
 
 class RecipeView extends View {
@@ -26,6 +29,14 @@ class RecipeView extends View {
     });
   }
 
+  addHandlerAddBookmark(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".bookmarkIcon");
+      if (!btn) return;
+      handler();
+    });
+  }
+
   _generateMarkup() {
     return `
   <div class="recipeDescription">
@@ -33,7 +44,10 @@ class RecipeView extends View {
         <p>${this._data.title}</p>
         <div class="bookmarkContainer">
           <p>BOOKMARK</p>
-          <div class="bookmark">
+          <div class="bookmarkIcon">
+<img src="${
+      this._data.bookmarked ? bookmarkSigned : bookmarkUnsigned
+    }" alt="bookmarkIcon">
 
           </div>
         </div>
