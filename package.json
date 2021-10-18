@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/LukaszPodlipski/Recipefy#readme",
   "dependencies": {
+    "@babel/core": "^7.15.8",
     "core-js": "^3.18.1",
     "fractional": "^1.0.0",
     "regenerator-runtime": "^0.13.9"
