@@ -19,13 +19,13 @@
   "homepage": "https://github.com/LukaszPodlipski/Recipefy#readme",
   "dependencies": {
     "@babel/core": "^7.15.8",
-    "core-js": "^3.18.1",
+    "core-js": "^3.18.3",
     "fractional": "^1.0.0",
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
     "@types/node": "^16.10.2",
-    "parcel": "^2.0.0-rc.0"
+    "parcel": "^2.0.0"
   }
 }

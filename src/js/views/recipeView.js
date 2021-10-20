@@ -6,7 +6,7 @@ import minusIcon from "url:../../img/minus_icon.svg";
 import timeIcon from "url:../../img/time_icon.svg";
 import bookmarkUnsigned from "url:../../img/bookmark_unsigned.svg";
 import bookmarkSigned from "url:../../img/bookmark_signed.svg";
-
+import yourRecipeIcon from "url:../../img/your_recipe.svg";
 import { Fraction } from "fractional";
 
 class RecipeView extends View {
@@ -44,11 +44,14 @@ class RecipeView extends View {
         <p>${this._data.title}</p>
         <div class="bookmarkContainer">
           <p>BOOKMARK</p>
-          <div class="bookmarkIcon">
+          <div class="bookmarkIcons">
+          
 <img src="${
       this._data.bookmarked ? bookmarkSigned : bookmarkUnsigned
-    }" alt="bookmarkIcon">
-
+    }" class="bookmarkIcon" alt="bookmarkIcon">
+<img src="${yourRecipeIcon}" class="${
+      this._data.key ? "" : "hideIcon"
+    }" alt="yourRecipeIcon">
           </div>
         </div>
       </div>
@@ -58,6 +61,7 @@ class RecipeView extends View {
           <img src="${minusIcon}" alt="decreaseIcon" class="servingsDecrease controlQuantity" data-update-to="${
       this._data.servings - 1
     }">
+   
           <p class="servingsQuantity">${this._data.servings}</p>
 
               <img src="${plusIcon}" alt="increaseIcon" class="servingsIncrease controlQuantity" data-update-to="${
@@ -68,11 +72,10 @@ class RecipeView extends View {
           <p>${this._data.cookingTime}</p>
           <p class="minWord">min</p>
         </div>
+
       </div>
       <div class="recipeTextBox">
-        <img src="${
-          this._data.image
-        }"  crossOrigin="anonymous" class="recipeDescriptionImage" ></img>
+        <img src="${this._data.image}"   class="recipeDescriptionImage" ></img>
 
         <div class="recipeText">
           <div class="ingradients">

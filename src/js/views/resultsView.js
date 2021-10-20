@@ -11,7 +11,7 @@ class ResultsView extends View {
   _generateMarkupPreview(result) {
     console.log(result.id);
     return `<a href="#${result.id}" class="recipeResult">
-            <img class="recipeImage" src="${result.image}" crossOrigin="anonymous" alt="${result.title}">
+            <img class="recipeImage" src="${result.image}" alt="${result.title}">
             <div class="recipeBoard">
               <div class="recipeContent">
                 <p class="recipeTitle">${result.title}</p>

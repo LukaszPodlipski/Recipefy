@@ -2,12 +2,12 @@
   position: relative;
   width: 90%;
   height: auto;
-  margin: 30px auto 50px auto;
+  margin: 40px auto 50px auto;
   background-color: $white;
 
   .recipeTitleContainer {
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr 0.4fr;
+    grid-template-columns: 1.5fr 1.2fr 0.5fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas: "p p bookmark";
@@ -44,28 +44,35 @@
       margin-right: 20px;
       grid-area: bookmark;
 
-      .bookmarkIcon {
-        // background-image: url("../src/img/bookmark_unsigned.svg");
-        // background-position: center;
-        // background-size: cover;
-        cursor: pointer;
-        transition: 0.4s ease-in-out;
-        &:hover {
-          transform: scale(1.05);
-          // filter: saturate(5);
+      .bookmarkIcons {
+        display: flex;
+        flex-direction: row;
+        .bookmarkIcon {
+          cursor: pointer;
+          transition: 0.4s ease-in-out;
+
+          &:hover {
+            transform: scale(1.05);
+            // filter: saturate(5);
+          }
         }
         img {
           height: 35px;
           width: 35px;
+          margin-left: 10px;
+        }
+        .hideIcon {
+          display: none;
         }
       }
       p {
         font-size: 12px;
         width: 100px;
-        margin-right: 10px;
+        margin: 0;
         line-height: 35px;
         font-family: $regularFont;
-        text-align: right;
+        text-align: center;
+        transform: translateY(1px);
       }
     }
   }
@@ -74,11 +81,14 @@
     grid-template-columns: 1.5fr 1.9fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
-    grid-template-areas: "container container";
+    grid-template-areas: "container yourRecipe";
     align-items: center;
     width: 100%;
     height: 50px;
-
+    justify-content: end;
+    font-size: 18px;
+    color: $white;
+    font-family: $regularFont;
     background: linear-gradient(
       90deg,
       #ffbd7f -0.85%,
@@ -98,11 +108,7 @@
       img {
         height: 30px;
       }
-      p {
-        font-size: 18px;
-        color: $white;
-        font-family: $regularFont;
-      }
+
       .servingsQuantity {
         font-size: 20px;
       }
@@ -125,6 +131,15 @@
         margin-left: 5px;
         font-size: 16px;
       }
+    }
+    .yourRecipe {
+      grid-area: yourRecipe;
+      justify-self: end;
+      margin-right: 25px;
+      color: $orangeDark;
+    }
+    .hidden {
+      display: none;
     }
   }
   .recipeTextBox {
