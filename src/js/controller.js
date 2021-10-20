@@ -1,19 +1,20 @@
 import * as model from "./model.js";
+import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
 import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
 import controlsView from "./views/controlsView.js";
-import "../../node_modules/core-js/stable";
-import "../../node_modules/regenerator-runtime/runtime";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import View from "./views/View.js";
+import addRecipeView from "./views/addRecipeView.js";
 
 // if (module.hot) {
 //   module.hot.accept();
 // }
 
-////
 const html = document.querySelector("html");
 const headBurger = document.querySelector(".burger");
 const headingText = document.querySelector(".headingText");
@@ -24,41 +25,14 @@ const body = document.querySelector("body");
 const recipeFullBox = document.querySelector(".recipeFullBox");
 const recipesBox = document.querySelector(".recipesBox");
 
-/////////////////////////////////////////////////
-
-const addRecipeContainer = document.querySelector(".addRecipeContainer");
-
-document
-  .querySelector(".addRecipeButton")
-  .addEventListener("click", function () {
-    addRecipeContainer.classList.toggle("addRecipeVisible");
-  });
-
-document
-  .querySelector(".closeAddRecipeContainer")
-  .addEventListener("click", function () {
-    addRecipeContainer.classList.toggle("addRecipeVisible");
-  });
-
-/////////////////////////////////////////////
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
     letsStartText.style.display = "none";
-
     if (!id) return;
     recipeView.renderSpinner();
-
-    // 0) Update results view to mark selected search result
     resultsView.update(model.getSearchResultsPage());
-
-    // 1) Updating bookmarks view
-
-    // 2) Loading recipe
     await model.loadRecipe(id);
-
-    // 3) Rendering recipe
     recipeView.render(model.state.recipe);
     bookmarksView.update(model.state.bookmarks);
   } catch (err) {
@@ -87,7 +61,6 @@ const controlSearchResults = async function () {
     }
     await model.loadSearchResult(query);
     resultsView.render(model.getSearchResultsPage(2));
-
     paginationView._controlPagination(model.state.search);
   } catch (err) {
     console.log(err);
@@ -117,7 +90,6 @@ const controlAddBookmark = function () {
 
 const controlDisplayBookmarks = function () {
   const bookmarksBox = document.querySelector(".savedBookmarksContainer");
-
   if (model.state.bookmarks.length > 0)
     bookmarksBox.classList.toggle("savedBookmarksContainerVisible");
   else {
@@ -133,6 +105,32 @@ const controlHideBookmarks = function () {
 const controlBookmarks = function () {
   if (model.state.bookmarks.length > 0)
     bookmarksView.render(model.state.bookmarks);
+};
+
+const controlDisplayAddRecipe = function () {
+  const addRecipeBox = document.querySelector(".addRecipeContainer");
+  addRecipeBox.classList.toggle("savedBookmarksContainerVisible");
+};
+
+const controlHideAddRecipe = function () {
+  const addRecipeBox = document.querySelector(".addRecipeContainer");
+  addRecipeBox.classList.toggle("savedBookmarksContainerVisible");
+};
+
+const controlAddRecipe = async function (newRecipe) {
+  try {
+    console.log(newRecipe);
+    await model.uploadRecipe(newRecipe);
+    console.log("controladdrecipe");
+    console.log(model.state.recipe);
+    recipeView.render(model.state.recipe);
+    addRecipeView.renderMessage();
+    bookmarksView.render(model.state.bookmarks);
+    window.history.pushState(null, "", `#${model.state.recipe.id}`);
+  } catch (err) {
+    console.error(err);
+    addRecipeView.renderError(err.message);
+  }
 };
 
 const init = function () {
@@ -170,6 +168,9 @@ const init = function () {
   searchView.addHanlderSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   controlsView.addHandlerShowBookmarks(controlDisplayBookmarks);
+  controlsView.addHandlerShowAddRecipe(controlDisplayAddRecipe);
   bookmarksView.addHandlerHideBookmarks(controlHideBookmarks);
+  addRecipeView.addHandlerHideAddRecipe(controlHideAddRecipe);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();

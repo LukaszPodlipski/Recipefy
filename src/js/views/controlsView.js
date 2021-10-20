@@ -8,7 +8,14 @@ class controlsView extends View {
 
   addHandlerShowBookmarks(handler) {
     this._parentElement.addEventListener("click", function (e) {
-      const btn = e.target.closest(".bookmarksButton ");
+      const btn = e.target.closest(".bookmarksButton");
+      if (!btn) return;
+      handler();
+    });
+  }
+  addHandlerShowAddRecipe(handler) {
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".addRecipeButton");
       if (!btn) return;
       handler();
     });
