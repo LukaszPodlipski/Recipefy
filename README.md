@@ -1,3 +1,5 @@
-#RECIPEFY
-##Simple Cook Book site
-###by Łukasz Podlipski
+# RECIPEFY
+
+## Simple Cook Book site
+
+### by Łukasz Podlipski
