@@ -93,7 +93,7 @@ class RecipeView extends View {
               Please check out directions at their website.</p>
             <a href="${
               this._data.sourceUrl
-            }" class="linkButton"><div ><span>DIRECTIONS</span></div></a>
+            }" target="_blank" class="linkButton"><div ><span>DIRECTIONS</span></div></a>
           </div>
         </div>
       </div>

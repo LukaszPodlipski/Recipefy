@@ -1,11 +1,10 @@
 import "regenerator-runtime/runtime";
 import "core-js/stable";
-
 import { API_URL, RES_PER_PAGE, KEY } from "./config.js";
-
 import { AJAX } from "./helpers.js";
 import exp from "constants";
 import { stat } from "fs";
+
 export const state = {
   recipe: {},
   search: {
@@ -68,10 +67,13 @@ export const getSearchResultsPage = function (page = state.search.page) {
 };
 
 export const updateServings = function (newServings) {
-  state.recipe.ingredients.forEach(
-    ing => (ing.quantity = (ing.quantity * newServings) / state.recipe.servings)
-  );
+  state.recipe.ingredients.forEach(ing => {
+    ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
+  });
+
   state.recipe.servings = newServings;
+  console.log("-------NEW SERVINGS--------");
+  console.log(newServings);
 };
 
 const persistBookmarks = function () {
@@ -109,6 +111,7 @@ export const uploadRecipe = async function (newRecipe) {
             "Wrong ingreedient format! Please use correct format."
           );
         const [quantity, unit, description] = ingArr;
+
         return { quantity: quantity ? +quantity : null, unit, description };
       });
 

@@ -54,6 +54,7 @@
     height: 70%;
     justify-content: center;
     padding: 10px 0;
+    background-color: #ffd6af18;
     .bookmarksList {
       list-style-type: none;
       display: flex;
@@ -67,26 +68,31 @@
         .bookmark {
           display: flex;
           margin: 18px 0;
-          // width: 40%;
           flex-direction: row;
           align-items: center;
           cursor: pointer;
-          // background-color: #ffe4b87c;
           background: linear-gradient(
             90deg,
             #ffbd7f -0.85%,
             #ffb759 -0.85%,
-            #f6b060 18.58%,
-            rgba(255, 174, 23, 0.719) 100%
+            #f6b060 12.58%,
+            rgba(255, 174, 23, 0.335) 100%
           );
 
           border-radius: 10px;
-          box-shadow: 0px 4px 10px -10px $boxShadowColor;
+          box-shadow: 0px 4px 10px -5px $boxShadowColor;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 4px 10px 0px $boxShadowColor;
+          }
           img {
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             height: 100px;
-            width: 200px;
+            min-width: 140px;
+            max-width: 140px;
             object-fit: cover;
           }
           .bookmarkInfo {

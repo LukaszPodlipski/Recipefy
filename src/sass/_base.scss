@@ -74,6 +74,7 @@ $boxShadowColor: rgba(0, 0, 0, 0.15);
 *::before,
 *::after {
   box-sizing: inherit;
+  border: none;
 }
 
 html {

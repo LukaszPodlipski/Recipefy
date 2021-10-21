@@ -72,6 +72,7 @@
 *::after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+  border: none;
 }
 
 html {
@@ -185,10 +186,9 @@ html body .notificationActive {
 .head {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 179, 0, 0)), to(rgba(255, 179, 0, 0.164)));
   background: linear-gradient(to top, rgba(255, 179, 0, 0), rgba(255, 179, 0, 0.164));
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 
 .head .headimage {
@@ -1854,6 +1854,7 @@ svg {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 10px 0;
+  background-color: #ffd6af18;
 }
 
 .savedBookmarksContainer .bookmarksListContainer .bookmarksList {
@@ -1887,18 +1888,28 @@ svg {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ffbd7f), color-stop(-0.85%, #ffb759), color-stop(18.58%, #f6b060), to(rgba(255, 174, 23, 0.719)));
-  background: linear-gradient(90deg, #ffbd7f -0.85%, #ffb759 -0.85%, #f6b060 18.58%, rgba(255, 174, 23, 0.719) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ffbd7f), color-stop(-0.85%, #ffb759), color-stop(12.58%, #f6b060), to(rgba(255, 174, 23, 0.335)));
+  background: linear-gradient(90deg, #ffbd7f -0.85%, #ffb759 -0.85%, #f6b060 12.58%, rgba(255, 174, 23, 0.335) 100%);
   border-radius: 10px;
-  -webkit-box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
 .savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark img {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   height: 100px;
-  width: 200px;
+  min-width: 140px;
+  max-width: 140px;
   -o-object-fit: cover;
      object-fit: cover;
 }

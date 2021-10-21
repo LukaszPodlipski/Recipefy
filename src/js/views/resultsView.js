@@ -5,11 +5,9 @@ class ResultsView extends View {
   _errorMessage = `No recipes found for your query, Please try again!`;
   _message = "";
   _generateMarkup() {
-    console.log(this._data);
     return this._data.map(this._generateMarkupPreview).join("");
   }
   _generateMarkupPreview(result) {
-    console.log(result.id);
     return `<a href="#${result.id}" class="recipeResult">
             <img class="recipeImage" src="${result.image}" alt="${result.title}">
             <div class="recipeBoard">

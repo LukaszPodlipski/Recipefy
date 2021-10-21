@@ -13,7 +13,6 @@ class PaginationView extends View {
   }
   _controlPagination(data) {
     const numPages = Math.ceil(data.results.length / data.resultsPerPage);
-    console.log(numPages);
     if (data.page === 1 && numPages > 1) {
       this._leftPage.style.display = "none";
       this._rightPage.style.display = "inline-block";
