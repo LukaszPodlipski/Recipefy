@@ -76,12 +76,31 @@
 }
 
 html {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
   min-height: 100vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #f2994a;
   background: -webkit-gradient(linear, left top, right top, from(#f2c94c), to(#f2994a));
   background: linear-gradient(to right, #f2c94c, #f2994a);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+html body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,98 +108,14 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-}
-
-html body {
   max-width: 1000px;
   margin: 80px auto;
-  border-radius: 20px;
   background: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-@-webkit-keyframes upAndDown {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes upAndDown {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-html body .noresultAlert,
-html body .bookmarkAlert {
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 0;
-  width: 90%;
-  margin: 80px auto;
-  padding: 12px 0;
-  border-radius: 5px;
-  color: #ffffff;
-  font-family: "Roboto", arial;
-  font-size: 20px;
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-html body .notificationActive {
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
 }
 
 .head {
@@ -191,13 +126,7 @@ html body .notificationActive {
   background: linear-gradient(to top, rgba(255, 179, 0, 0), rgba(255, 179, 0, 0.164));
 }
 
-.head .headimage {
-  display: block;
-  width: 30%;
-  margin: 0px auto 0 auto;
-}
-
-.head .headingText {
+.head .head_text {
   display: none;
   text-align: center;
   color: #383838;
@@ -205,29 +134,16 @@ html body .notificationActive {
   margin-top: 50px;
 }
 
-.head .headingText h1 {
+.head .head_text h1 {
   font-size: 70px;
   font-family: "BiteChocolate", arial;
 }
 
-.head .headingText h2 {
+.head .head_text h2 {
   font-family: "ShartollLight", arial;
   font-weight: 200;
   font-size: 44px;
   margin-top: 30px;
-}
-
-.controlsContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
-  margin-top: 40px;
-  font-family: "Roboto", arial;
 }
 
 .form__group {
@@ -306,13 +222,20 @@ html body .notificationActive {
   color: #e27f0d;
 }
 
-.controlsContainer {
+.controls_container {
   display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
   width: 100%;
   margin: 30px auto 0 auto;
+  margin-top: 40px;
+  font-family: "Roboto", arial;
 }
 
-.controlsContainer .searchButton {
+.controls_container .search_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -336,17 +259,17 @@ html body .notificationActive {
   transition: 0.1s ease-in-out;
 }
 
-.controlsContainer .searchButton:hover {
+.controls_container .search_button:hover {
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
 }
 
-.controlsContainer .searchButton img {
+.controls_container .search_button img {
   height: 90%;
   margin: 1px 0 0 2px;
 }
 
-.controlsContainer .controlButton {
+.controls_container .control_button {
   -ms-flex-item-align: end;
       align-self: flex-end;
   margin-left: 20px;
@@ -367,41 +290,41 @@ html body .notificationActive {
   border: 0;
 }
 
-.controlsContainer .controlButton img {
+.controls_container .control_button img {
   margin-right: 10px;
 }
 
-.controlsContainer .controlButton:hover {
+.controls_container .control_button:hover {
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
 }
 
-.controlsContainer .addRecipeButton img {
+.controls_container .add_recipe_button img {
   height: 17px;
   -webkit-transform: translate(0, 1px);
           transform: translate(0, 1px);
 }
 
-.controlsContainer .bookmarksButton img {
+.controls_container .bookmarks_button img {
   height: 19px;
   -webkit-transform: translate(0, 3px);
           transform: translate(0, 3px);
 }
 
-.recipesBox {
+.searched_recipes_container {
   display: none;
   -ms-grid-columns: 1fr 15fr 1fr;
       grid-template-columns: 1fr 15fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   gap: 0px 0px;
-      grid-template-areas: "arrowLeft recipesContainer arrowRight";
+      grid-template-areas: "arrow_left recipes_container arrow_right";
   margin: 150px 0 50px 0;
   font-family: "Roboto", arial;
   min-height: 280px;
 }
 
-.recipesBox .arrow {
+.searched_recipes_container .arrow {
   cursor: pointer;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -416,34 +339,34 @@ html body .notificationActive {
           filter: invert(80%);
 }
 
-.recipesBox .arrowRight {
+.searched_recipes_container .arrow_right {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
-  grid-area: arrowRight;
+  grid-area: arrow_right;
   margin-right: 5px;
 }
 
-.recipesBox .arrowRight:hover {
+.searched_recipes_container .arrow_right:hover {
   -webkit-transform: translateX(3px) scale(1.03);
           transform: translateX(3px) scale(1.03);
 }
 
-.recipesBox .arrowLeft {
+.searched_recipes_container .arrow_left {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: arrowLeft;
+  grid-area: arrow_left;
   margin-left: 5px;
 }
 
-.recipesBox .arrowLeft:hover {
+.searched_recipes_container .arrow_left:hover {
   -webkit-transform: translateX(-3px) scale(1.03);
           transform: translateX(-3px) scale(1.03);
 }
 
-.recipesBox .recipesContainer {
+.searched_recipes_container .recipes_container {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  grid-area: recipesContainer;
+  grid-area: recipes_container;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -462,7 +385,7 @@ html body .notificationActive {
   height: auto;
 }
 
-.recipesBox .recipesContainer .recipeResult {
+.searched_recipes_container .recipes_container .recipe_result {
   position: relative;
   margin: 0 10px;
   -webkit-box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
@@ -475,14 +398,14 @@ html body .notificationActive {
   text-decoration: none;
 }
 
-.recipesBox .recipesContainer .recipeResult:hover {
+.searched_recipes_container .recipes_container .recipe_result:hover {
   -webkit-transform: translateY(3px) scale(1.03);
           transform: translateY(3px) scale(1.03);
   -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
 }
 
-.recipesBox .recipesContainer .recipeResult .recipeImage {
+.searched_recipes_container .recipes_container .recipe_result .recipe_image {
   position: absolute;
   top: -25%;
   left: 0;
@@ -500,7 +423,7 @@ html body .notificationActive {
           box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
-.recipesBox .recipesContainer .recipeResult .recipeBoard {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board {
   width: 210px;
   height: 280px;
   background-color: #fffcf5ca;
@@ -517,7 +440,7 @@ html body .notificationActive {
           justify-content: flex-end;
 }
 
-.recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -539,7 +462,7 @@ html body .notificationActive {
   margin-bottom: 30px;
 }
 
-.recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .recipeTitle {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content .recipe_title {
   font-size: 20px;
   text-align: center;
   color: black;
@@ -551,39 +474,20 @@ html body .notificationActive {
   padding: 0 20px;
 }
 
-.recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .recipeAuthor {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content .recipe_author {
   margin-top: 10px;
   font-size: 12px;
   color: #555555;
 }
 
-.recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .line {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content .line {
   width: 75%;
   margin: 15px 0 20px 0;
   border-top: 1px solid #bbb8b8;
   color: transparent;
 }
 
-.recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .recipeInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  width: 75%;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555555;
-}
-
-.recipesBox .recipesContainer .recipeResult .recipeBoard .recipeContent .setInfoText {
-  color: #000000;
-}
-
-.recipeDescription {
+.chosen_recipe {
   position: relative;
   width: 90%;
   height: auto;
@@ -591,7 +495,7 @@ html body .notificationActive {
   background-color: #ffffff;
 }
 
-.recipeDescription .recipeTitleContainer {
+.chosen_recipe .chosen_recipe_title {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.5fr 1.2fr 0.5fr;
@@ -609,7 +513,7 @@ html body .notificationActive {
   background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
-.recipeDescription .recipeTitleContainer p {
+.chosen_recipe .chosen_recipe_title p {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
@@ -627,7 +531,7 @@ html body .notificationActive {
   overflow: hidden;
 }
 
-.recipeDescription .recipeTitleContainer .bookmarkContainer {
+.chosen_recipe .chosen_recipe_title .recipe_icons {
   width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -644,7 +548,7 @@ html body .notificationActive {
   grid-area: bookmark;
 }
 
-.recipeDescription .recipeTitleContainer .bookmarkContainer .bookmarkIcons {
+.chosen_recipe .chosen_recipe_title .recipe_icons .icons_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -654,28 +558,28 @@ html body .notificationActive {
           flex-direction: row;
 }
 
-.recipeDescription .recipeTitleContainer .bookmarkContainer .bookmarkIcons .bookmarkIcon {
+.chosen_recipe .chosen_recipe_title .recipe_icons .icons_box .bookmark_icon {
   cursor: pointer;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
 }
 
-.recipeDescription .recipeTitleContainer .bookmarkContainer .bookmarkIcons .bookmarkIcon:hover {
+.chosen_recipe .chosen_recipe_title .recipe_icons .icons_box .bookmark_icon:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.recipeDescription .recipeTitleContainer .bookmarkContainer .bookmarkIcons img {
+.chosen_recipe .chosen_recipe_title .recipe_icons .icons_box img {
   height: 35px;
   width: 35px;
   margin-left: 10px;
 }
 
-.recipeDescription .recipeTitleContainer .bookmarkContainer .bookmarkIcons .hideIcon {
+.chosen_recipe .chosen_recipe_title .recipe_icons .icons_box .hide_icon {
   display: none;
 }
 
-.recipeDescription .recipeTitleContainer .bookmarkContainer p {
+.chosen_recipe .chosen_recipe_title .recipe_icons p {
   font-size: 12px;
   width: 100px;
   margin: 0;
@@ -686,7 +590,7 @@ html body .notificationActive {
           transform: translateY(1px);
 }
 
-.recipeDescription .additionalRecipeInfo {
+.chosen_recipe .chosen_recipe_head {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.5fr 1.9fr;
@@ -710,7 +614,7 @@ html body .notificationActive {
   background: linear-gradient(90deg, #ffbd7f -0.85%, #ffb759 -0.85%, #f6b060 18.58%, rgba(255, 174, 23, 0.719) 100%);
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: container;
@@ -723,19 +627,19 @@ html body .notificationActive {
           align-items: center;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .peopleIcon {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .people_icon {
   margin-right: 7px;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer img {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info img {
   height: 30px;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .servingsQuantity {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .servings_quantity {
   font-size: 20px;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .controlQuantity {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .control_quantity {
   width: 10px;
   margin: 8px;
   cursor: pointer;
@@ -743,23 +647,23 @@ html body .notificationActive {
   transition: 0.5s ease-in-out;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .personsWord {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .persons_word {
   margin-left: 5px;
   font-size: 16px;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .timeIcon {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .time_icon {
   height: 26px;
   margin-left: 80px;
   margin-right: 12px;
 }
 
-.recipeDescription .additionalRecipeInfo .additionalInfoContainer .minWord {
+.chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .min_word {
   margin-left: 5px;
   font-size: 16px;
 }
 
-.recipeDescription .additionalRecipeInfo .yourRecipe {
+.chosen_recipe .chosen_recipe_head .your_recipe {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: yourRecipe;
@@ -769,11 +673,11 @@ html body .notificationActive {
   color: #e27f0d;
 }
 
-.recipeDescription .additionalRecipeInfo .hidden {
+.chosen_recipe .chosen_recipe_head .hidden {
   display: none;
 }
 
-.recipeDescription .recipeTextBox {
+.chosen_recipe .chosen_recipe_content {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -781,11 +685,11 @@ html body .notificationActive {
   -ms-grid-rows: 300px auto;
       grid-template-rows: 300px auto;
   gap: 0px 0px;
-      grid-template-areas: "recipeImg" "recipeText";
+      grid-template-areas: "recipeImg" "chosen_recipe_info";
   font-family: "Roboto", arial;
 }
 
-.recipeDescription .recipeTextBox .recipeDescriptionImage {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_image {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: recipeImg;
@@ -797,10 +701,10 @@ html body .notificationActive {
      object-fit: cover;
 }
 
-.recipeDescription .recipeTextBox .recipeText {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  grid-area: recipeText;
+  grid-area: chosen_recipe_info;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -810,32 +714,32 @@ html body .notificationActive {
           flex-direction: row;
 }
 
-.recipeDescription .recipeTextBox .recipeText .ingradientsTitle,
-.recipeDescription .recipeTextBox .recipeText .howToCookIt {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients_title,
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .how_to_cook {
   width: 100%;
   font-size: 22px;
 }
 
-.recipeDescription .recipeTextBox .recipeText .ingradients {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients {
   font-size: 16px;
   width: 100%;
   padding: 0 30px 30px 40px;
 }
 
-.recipeDescription .recipeTextBox .recipeText .ingradients p {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients p {
   margin: 15px 0;
 }
 
-.recipeDescription .recipeTextBox .recipeText .ingradients p span {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients p span {
   color: #e27f0d;
 }
 
-.recipeDescription .recipeTextBox .recipeText .ingradients .ingradientsTitle {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients .recipe_ingredients_title {
   margin: 35px 0;
   margin-bottom: 15px;
 }
 
-.recipeDescription .recipeTextBox .recipeText .linkBox {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -851,27 +755,27 @@ html body .notificationActive {
   background-color: #ffe6b811;
 }
 
-.recipeDescription .recipeTextBox .recipeText .linkBox .howToCookIt {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .how_to_cook {
   margin-top: 35px;
   margin-bottom: 15px;
   text-align: right;
 }
 
-.recipeDescription .recipeTextBox .recipeText .linkBox .recipeCopyright {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .recipe_copyright {
   width: 90%;
   margin: 15px 0;
   text-align: right;
   line-height: 150%;
 }
 
-.recipeDescription .recipeTextBox .recipeText .linkBox .linkButton {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .link_button {
   text-decoration: none;
   width: 150px;
   height: 40px;
   margin-top: 20px;
 }
 
-.recipeDescription .recipeTextBox .recipeText .linkBox .linkButton div {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .link_button div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -897,11 +801,11 @@ html body .notificationActive {
   transition: 0.3s ease-in-out;
 }
 
-.recipeDescription .recipeTextBox .recipeText .linkBox .linkButton div:hover {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .link_button div:hover {
   opacity: 1;
 }
 
-.addRecipeContainer {
+.add_recipe_container {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -917,7 +821,7 @@ html body .notificationActive {
   background-color: #ffffff;
 }
 
-.addRecipeContainer .addrecipeContainerHead {
+.add_recipe_container .add_recipe_head {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -936,7 +840,7 @@ html body .notificationActive {
   background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
-.addRecipeContainer .addrecipeContainerHead p {
+.add_recipe_container .add_recipe_head p {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: title;
@@ -948,7 +852,7 @@ html body .notificationActive {
   text-align: center;
 }
 
-.addRecipeContainer .addrecipeContainerHead img {
+.add_recipe_container .add_recipe_head img {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: close;
@@ -960,11 +864,11 @@ html body .notificationActive {
   transition: 0.3s ease-in-out;
 }
 
-.addRecipeContainer .addrecipeContainerHead img:hover {
+.add_recipe_container .add_recipe_head img:hover {
   opacity: 0.6;
 }
 
-.addRecipeContainer .addRecipeContentBox {
+.add_recipe_container .add_recipe_content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -976,7 +880,7 @@ html body .notificationActive {
   height: 70%;
 }
 
-.addRecipeContainer .addRecipeContentBox fieldset {
+.add_recipe_container .add_recipe_content fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -994,11 +898,11 @@ html body .notificationActive {
   border: none;
 }
 
-.addRecipeContainer .addRecipeContentBox fieldset label {
+.add_recipe_container .add_recipe_content fieldset label {
   margin: 10px 0;
 }
 
-.addRecipeContainer .addRecipeContentBox fieldset input {
+.add_recipe_container .add_recipe_content fieldset input {
   width: 80%;
   border: 1px solid #bbb8b8;
   background: #fff;
@@ -1008,22 +912,22 @@ html body .notificationActive {
   font-family: "Roboto", arial;
 }
 
-.addRecipeContainer .addRecipeContentBox fieldset input:focus {
+.add_recipe_container .add_recipe_content fieldset input:focus {
   background-color: #fffefe;
   outline: 2px solid #e27f0d;
   border: 1px solid #f3a156;
 }
 
-.addRecipeContainer .addRecipeContentBox fieldset p {
+.add_recipe_container .add_recipe_content fieldset p {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.addRecipeContainer .addRecipeContentBox fieldset p:nth-child(1) {
+.add_recipe_container .add_recipe_content fieldset p:nth-child(1) {
   font-weight: 500;
 }
 
-.addRecipeContainer .uploadRecipeButton {
+.add_recipe_container .upload_recipe_button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1055,24 +959,18 @@ html body .notificationActive {
   transition: all 0.3s ease-in-out;
 }
 
-.addRecipeContainer .uploadRecipeButton:hover {
+.add_recipe_container .upload_recipe_button:hover {
   opacity: 1;
 }
 
-.addRecipeContainer .uploadRecipeButton p {
+.add_recipe_container .upload_recipe_button p {
   display: block;
   margin-left: 10px;
   font-family: "Roboto", arial;
 }
 
-.addRecipeContainer .uploadRecipeButton img {
+.add_recipe_container .upload_recipe_button img {
   height: 16px;
-}
-
-.addRecipeVisible {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .burger {
@@ -1570,7 +1468,7 @@ svg {
   margin: 50px 0;
 }
 
-.notificationAlert {
+.fixed_notification {
   position: fixed;
   top: 0px;
   width: 100%;
@@ -1598,7 +1496,7 @@ svg {
   z-index: 5;
 }
 
-.notificationAlert .alertText {
+.fixed_notification .notification_text {
   font-size: 16px;
   padding: 15px 25px;
   text-align: center;
@@ -1640,7 +1538,7 @@ svg {
   }
 }
 
-.letsStartText {
+.lets_start_container {
   display: none;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -1660,30 +1558,30 @@ svg {
   transition: 0.5s ease-in-out;
 }
 
-.letsStartText .startBox {
-  height: 140px;
-  width: 45%;
+.lets_start_container .start_content {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: 140px;
+  width: 45%;
   margin: 50px auto;
   background-color: #fffbf5;
   border-radius: 10px;
   -webkit-box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.17);
           box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.17);
-  -webkit-animation: expansion 0.2s ease-in 1, MoveUpDown 2s ease-in infinite;
-          animation: expansion 0.2s ease-in 1, MoveUpDown 2s ease-in infinite;
+  -webkit-animation: expansion 0.2s ease-in 1, moveUpDown 2s ease-in infinite;
+          animation: expansion 0.2s ease-in 1, moveUpDown 2s ease-in infinite;
 }
 
-.letsStartText .startBox .startImage {
+.lets_start_container .start_content .start_mage {
   width: 140px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.letsStartText .startBox .startText {
+.lets_start_container .start_content .start_text {
   margin-left: 20px;
   font-family: "Roboto", arial;
   padding: 16px 15px 20px 10px;
@@ -1696,12 +1594,12 @@ svg {
           animation-fill-mode: forwards;
 }
 
-.letsStartText .startBox .startText p {
+.lets_start_container .start_content .start_text p {
   line-height: 150%;
   font-size: 18px;
 }
 
-.letsStartText .startBox .startText p:first-child {
+.lets_start_container .start_content .start_text p:first-child {
   font-size: 26px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -1726,7 +1624,7 @@ svg {
   }
 }
 
-@-webkit-keyframes MoveUpDown {
+@-webkit-keyframes moveUpDown {
   0% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
@@ -1741,7 +1639,7 @@ svg {
   }
 }
 
-@keyframes MoveUpDown {
+@keyframes moveUpDown {
   0% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
@@ -1774,7 +1672,7 @@ svg {
   }
 }
 
-.savedBookmarksContainer {
+.saved_bookmarks_container {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1791,7 +1689,7 @@ svg {
           box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.15);
 }
 
-.savedBookmarksContainer .savedBookmarksHead {
+.saved_bookmarks_container .saved_bookmarks_head {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -1810,7 +1708,7 @@ svg {
   background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
-.savedBookmarksContainer .savedBookmarksHead p {
+.saved_bookmarks_container .saved_bookmarks_head p {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: title;
@@ -1818,12 +1716,12 @@ svg {
       justify-self: center;
   width: 300px;
   color: #ffffff;
-  font-family: "ShartollLight";
+  font-family: "ShartollLight", arial;
   font-size: 34px;
   text-align: center;
 }
 
-.savedBookmarksContainer .savedBookmarksHead img {
+.saved_bookmarks_container .saved_bookmarks_head img {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: close;
@@ -1836,11 +1734,11 @@ svg {
   transition: 0.3s ease-in-out;
 }
 
-.savedBookmarksContainer .savedBookmarksHead img:hover {
+.saved_bookmarks_container .saved_bookmarks_head img:hover {
   opacity: 0.6;
 }
 
-.savedBookmarksContainer .bookmarksListContainer {
+.saved_bookmarks_container .bookmarks_list_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1857,7 +1755,7 @@ svg {
   background-color: #ffd6af18;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1870,12 +1768,12 @@ svg {
   width: 95%;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result {
   text-decoration: none;
   width: 48%;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1897,14 +1795,14 @@ svg {
   transition: 0.2s ease-in-out;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark:hover {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark:hover {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
   -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark img {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark img {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   height: 100px;
@@ -1914,7 +1812,7 @@ svg {
      object-fit: cover;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark .bookmarkInfo {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content {
   width: 100%;
   height: 100%;
   padding: 10px 35px;
@@ -1930,26 +1828,26 @@ svg {
           align-items: flex-start;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark .bookmarkInfo p {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content p {
   font-family: "Roboto", arial;
   font-size: 22px;
   color: #000000;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark .bookmarkInfo .bookmarkTitle {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content .bookmark_title {
   width: 200px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.savedBookmarksContainer .bookmarksListContainer .bookmarksList .bookmarkResult .bookmark .bookmarkInfo .bookmarkPublisher {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content .bookmark_publisher {
   font-size: 16px;
   color: #555555;
   margin-top: 6px;
 }
 
-.savedBookmarksContainerVisible {
+.saved_bookmarks_container_visible {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -11,13 +11,13 @@ import addRecipeView from "./views/addRecipeView.js";
 
 const html = document.querySelector("html");
 const headBurger = document.querySelector(".burger");
-const headingText = document.querySelector(".headingText");
-const profile = document.querySelector(".startBox");
-const controlsContainer = document.querySelector(".controlsContainer");
-const letsStartText = document.querySelector(".letsStartText");
+const headingText = document.querySelector(".head_text");
+const profile = document.querySelector(".start_content");
+const controlsContainer = document.querySelector(".controls_container");
+const letsStartText = document.querySelector(".lets_start_container");
 const body = document.querySelector("body");
-const recipeFullBox = document.querySelector(".recipeFullBox");
-const recipesBox = document.querySelector(".recipesBox");
+const recipeFullBox = document.querySelector(".chosen_recipe_container");
+const recipesBox = document.querySelector(".searched_recipes_container");
 
 const controlRecipes = async function () {
   try {
@@ -67,9 +67,6 @@ const controlPagination = function (goToPage) {
 };
 
 const controlServings = function (newServings) {
-  console.log("-------model.state.recipe--------");
-
-  console.log(model.state.recipe);
   model.updateServings(newServings);
   recipeView.update(model.state.recipe);
 };
@@ -85,17 +82,17 @@ const controlAddBookmark = function () {
 };
 
 const controlDisplayBookmarks = function () {
-  const bookmarksBox = document.querySelector(".savedBookmarksContainer");
+  const bookmarksBox = document.querySelector(".saved_bookmarks_container");
   if (model.state.bookmarks.length > 0)
-    bookmarksBox.classList.toggle("savedBookmarksContainerVisible");
+    bookmarksBox.classList.toggle("saved_bookmarks_container_visible");
   else {
     controlsView.renderError();
   }
 };
 
 const controlHideBookmarks = function () {
-  const bookmarksBox = document.querySelector(".savedBookmarksContainer");
-  bookmarksBox.classList.remove("savedBookmarksContainerVisible");
+  const bookmarksBox = document.querySelector(".saved_bookmarks_container");
+  bookmarksBox.classList.remove("saved_bookmarks_container_visible");
 };
 
 const controlBookmarks = function () {
@@ -104,13 +101,13 @@ const controlBookmarks = function () {
 };
 
 const controlDisplayAddRecipe = function () {
-  const addRecipeBox = document.querySelector(".addRecipeContainer");
-  addRecipeBox.classList.toggle("savedBookmarksContainerVisible");
+  const addRecipeBox = document.querySelector(".add_recipe_container");
+  addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
 };
 
 const controlHideAddRecipe = function () {
-  const addRecipeBox = document.querySelector(".addRecipeContainer");
-  addRecipeBox.classList.toggle("savedBookmarksContainerVisible");
+  const addRecipeBox = document.querySelector(".add_recipe_container");
+  addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
 };
 
 const controlAddRecipe = async function (newRecipe) {

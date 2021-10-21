@@ -1,8 +1,8 @@
 import View from "./View.js";
 class PaginationView extends View {
-  _parentElement = document.querySelector(".recipesBox");
-  _leftPage = document.querySelector(".arrowLeft");
-  _rightPage = document.querySelector(".arrowRight");
+  _parentElement = document.querySelector(".searched_recipes_container");
+  _leftPage = document.querySelector(".arrow_left");
+  _rightPage = document.querySelector(".arrow_right");
   addHandlerClick(handler) {
     this._parentElement.addEventListener("click", function (e) {
       const btn = e.target.closest(".arrow");

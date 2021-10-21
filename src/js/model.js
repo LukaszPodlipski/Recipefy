@@ -72,8 +72,6 @@ export const updateServings = function (newServings) {
   });
 
   state.recipe.servings = newServings;
-  console.log("-------NEW SERVINGS--------");
-  console.log(newServings);
 };
 
 const persistBookmarks = function () {

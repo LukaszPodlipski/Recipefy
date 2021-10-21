@@ -10,8 +10,10 @@ import yourRecipeIcon from "url:../../img/your_recipe.svg";
 import { Fraction } from "fractional";
 
 class RecipeView extends View {
-  _parentElement = document.querySelector(".recipeFullBox");
-  _notificationPlaceHolder = document.querySelector(".notificationPlaceHolder");
+  _parentElement = document.querySelector(".chosen_recipe_container");
+  _notificationPlaceHolder = document.querySelector(
+    ".notification_place_holder"
+  );
   _errorMessage = `We could not find that recipe. Please try another one!`;
   _message = "";
 
@@ -21,7 +23,7 @@ class RecipeView extends View {
 
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener("click", function (e) {
-      const btn = e.target.closest(".controlQuantity");
+      const btn = e.target.closest(".control_quantity");
       if (!btn) return;
       const updateTo = +btn.dataset.updateTo;
 
@@ -31,7 +33,7 @@ class RecipeView extends View {
 
   addHandlerAddBookmark(handler) {
     this._parentElement.addEventListener("click", function (e) {
-      const btn = e.target.closest(".bookmarkIcon");
+      const btn = e.target.closest(".bookmark_icon");
       if (!btn) return;
       handler();
     });
@@ -39,61 +41,61 @@ class RecipeView extends View {
 
   _generateMarkup() {
     return `
-  <div class="recipeDescription">
-      <div class="recipeTitleContainer">
+  <div class="chosen_recipe">
+      <div class="chosen_recipe_title">
         <p>${this._data.title}</p>
-        <div class="bookmarkContainer">
+        <div class="recipe_icons">
           <p>BOOKMARK</p>
-          <div class="bookmarkIcons">
+          <div class="icons_box">
           
 <img src="${
       this._data.bookmarked ? bookmarkSigned : bookmarkUnsigned
-    }" class="bookmarkIcon" alt="bookmarkIcon">
-<img src="${yourRecipeIcon}" class="${
-      this._data.key ? "" : "hideIcon"
+    }" class="bookmark_icon" alt="bookmarkIcon">
+<img src="${yourRecipeIcon}" class="your_recipe ${
+      this._data.key ? "" : "hide_icon"
     }" alt="yourRecipeIcon">
           </div>
         </div>
       </div>
-      <div class="additionalRecipeInfo">
-        <div class="additionalInfoContainer">
-          <img src="${peopleIcon}" alt="people_icon" class="peopleIcon">
-          <img src="${minusIcon}" alt="decreaseIcon" class="servingsDecrease controlQuantity" data-update-to="${
+      <div class="chosen_recipe_head">
+        <div class="chosen_recipe_head_info">
+          <img src="${peopleIcon}" alt="people_icon" class="people_icon">
+          <img src="${minusIcon}" alt="decreaseIcon" class="servings_decrease control_quantity" data-update-to="${
       this._data.servings - 1
     }">
    
-          <p class="servingsQuantity">${this._data.servings}</p>
+          <p class="servings_quantity">${this._data.servings}</p>
 
-              <img src="${plusIcon}" alt="increaseIcon" class="servingsIncrease controlQuantity" data-update-to="${
+              <img src="${plusIcon}" alt="increaseIcon" class="servings_increase control_quantity" data-update-to="${
       this._data.servings + 1
     }">
-          <p class="personsWord">persons</p>
-          <img src="${timeIcon}" alt="time_icon" class="timeIcon">
+          <p class="persons_word">persons</p>
+          <img src="${timeIcon}" alt="time_icon" class="time_icon">
           <p>${this._data.cookingTime}</p>
-          <p class="minWord">min</p>
+          <p class="min_word">min</p>
         </div>
 
       </div>
-      <div class="recipeTextBox">
-        <img src="${this._data.image}"   class="recipeDescriptionImage" ></img>
+      <div class="chosen_recipe_content">
+        <img src="${this._data.image}"   class="chosen_recipe_image" ></img>
 
-        <div class="recipeText">
-          <div class="ingradients">
-            <p class="ingradientsTitle">RECIPE INGRADIENTS</p>
+        <div class="chosen_recipe_info">
+          <div class="recipe_ingredients">
+            <p class="recipe_ingredients_title">RECIPE INGRADIENTS</p>
             ${this._data.ingredients
               .map(this._generateMarkupIngredients)
               .join("")}
           </div>
-          <div class="linkBox">
-            <p class="howToCookIt">HOW TO COOK IT</p>
+          <div class="recipe_link">
+            <p class="how_to_cook">HOW TO COOK IT</p>
 
-            <p class="recipeCopyright">This recipe was created by ${
+            <p class="recipe_copyright">This recipe was created by ${
               this._data.publisher
             }
               Please check out directions at their website.</p>
             <a href="${
               this._data.sourceUrl
-            }" target="_blank" class="linkButton"><div ><span>DIRECTIONS</span></div></a>
+            }" target="_blank" class="link_button"><div ><span>DIRECTIONS</span></div></a>
           </div>
         </div>
       </div>

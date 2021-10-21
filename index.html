@@ -117,48 +117,48 @@
       <div class="roll roll--bottom"></div>
     </div></a>
 
-    <div class="headingText">
+    <div class="head_text">
       <h1>Recipefy</h1>
       <h2>Simple recipes from around the world.</h2>
     </div>
   </div>
 
-  <div class="controlsContainer">
+  <div class="controls_container">
     <div class="form__group">
-      <input type="input" class="form__field" placeholder="Search for recipe" name="Search for recipe"
-        id="Search for recipe" required />
+      <input type="input" class="form__field" placeholder="Search for recipe" name="Search for recipe" id="form"
+        required />
       <label for="Search for recipe" class="form__label">Search for recipe</label>
     </div>
-    <div class="searchButton">
-      <img class="searchIcon" src="./src/img/search_icon.svg" alt="search_icon" />
+    <div class="search_button">
+      <img class="search_icon" src="./src/img/search_icon.svg" alt="search_icon" />
     </div>
 
-    <button class="addRecipeButton controlButton">
+    <button class="add_recipe_button control_button">
       <img src="./src/img/add_recipe_icon.svg" alt="recipe_icon" />
       <span>ADD RECIPE</span>
     </button>
-    <button class="bookmarksButton controlButton">
+    <button class="bookmarks_button control_button">
       <img src="./src/img/bookmarks_icon.svg" alt="bookmarks_icon" />
       <span>BOOKMARKS</span>
     </button>
   </div>
 
-  <div class="savedBookmarksContainer">
-    <div class="savedBookmarksHead">
-      <p>Your Bookmarks</p><img src="./src/img/x_icon.svg" alt="closeIcon" class="closeBookmarksContainer">
+  <div class="saved_bookmarks_container">
+    <div class="saved_bookmarks_head">
+      <p>Your Bookmarks</p><img src="./src/img/x_icon.svg" alt="closeIcon" class="close_bookmarks_button">
     </div>
-    <div class="bookmarksListContainer">
-      <div class="bookmarksList">
+    <div class="bookmarks_list_container">
+      <div class="bookmarks_list">
       </div>
     </div>
   </div>
 
-  <div class="addRecipeContainer">
-    <div class="addrecipeContainerHead">
+  <div class="add_recipe_container">
+    <div class="add_recipe_head">
       <p>Add Recipe</p><img src="./src/img/x_icon.svg" alt="closeIcon" class="closeAddRecipeContainer">
     </div>
-    <form class="addRecipeContentBox">
-      <fieldset class="recipeData">
+    <form class="add_recipe_content">
+      <fieldset class="recipe_data">
         <p>RECIPE DATA</p>
         <label for="recipeTitle">Title:</label>
         <input type="text" id="recipeTitle" name="recipeTitle"><br><br>
@@ -174,8 +174,8 @@
         <input type="text" id="recipeServings" name="recipeServings"><br><br>
       </fieldset>
 
-      <fieldset class="ingradients">
-        <p>INGRADIENTS</p>
+      <fieldset class="recipe_ingredients">
+        <p>INGREDIENTS</p>
         <label for="recipeIngredient1">Ingredient 1:</label>
         <input type="text" id="recipeIngredient1" name="recipeIngredient1"
           placeholder="Format: 'Quantity,Unit,Description'"><br><br>
@@ -197,15 +197,15 @@
       </fieldset>
 
     </form>
-    <div class="uploadRecipeButton"><img src="./src/img/upload_icon.svg" alt="upload_icon">
+    <div class="upload_recipe_button"><img src="./src/img/upload_icon.svg" alt="upload_icon">
       <p> UPLOAD RECIPE</p>
     </div>
 
   </div>
 
-  <div class="letsStartText">
-    <div class="startBox"><img src="./src/img/profile_photo.png" alt="profileImage" class="startImage">
-      <div class="startText">
+  <div class="lets_start_container">
+    <div class="start_content"><img src="./src/img/profile_photo.png" alt="profileImage" class="start_mage">
+      <div class="start_text">
         <p>Hi! Let's start</p>
         <p>by searching for a recipe e.g. (my favorite) pancakes 🥞. Have fun!</p>
       </div>
@@ -213,14 +213,14 @@
   </div>
 
 
-  <div class="recipesBox">
-    <img class="arrowLeft arrow" data-goto='' src="./src/img/arrow_left.svg" alt="arrow_left" />
-    <div class="recipesContainer"> </div>
-    <img class="arrowRight arrow" data-goto='' src="./src/img/arrow_right.svg" alt="arrow_right" />
+  <div class="searched_recipes_container">
+    <img class="arrow_left arrow" data-goto='' src="./src/img/arrow_left.svg" alt="arrow_left" />
+    <div class="recipes_container"> </div>
+    <img class="arrow_right arrow" data-goto='' src="./src/img/arrow_right.svg" alt="arrow_right" />
   </div>
-  <div class="recipeFullBox"></div>
+  <div class="chosen_recipe_container"></div>
 
-  <div class="notificationPlaceHolder"></div>
+  <div class="notification_place_holder"></div>
 </body>
 
 </html>

@@ -1,11 +1,11 @@
-.recipeDescription {
+.chosen_recipe {
   position: relative;
   width: 90%;
   height: auto;
   margin: 40px auto 50px auto;
   background-color: $white;
 
-  .recipeTitleContainer {
+  .chosen_recipe_title {
     display: grid;
     grid-template-columns: 1.5fr 1.2fr 0.5fr;
     grid-template-rows: 1fr;
@@ -36,7 +36,7 @@
       text-overflow: ellipsis;
       overflow: hidden;
     }
-    .bookmarkContainer {
+    .recipe_icons {
       width: 200px;
       display: flex;
       align-items: center;
@@ -44,10 +44,10 @@
       margin-right: 20px;
       grid-area: bookmark;
 
-      .bookmarkIcons {
+      .icons_box {
         display: flex;
         flex-direction: row;
-        .bookmarkIcon {
+        .bookmark_icon {
           cursor: pointer;
           transition: 0.4s ease-in-out;
           &:hover {
@@ -59,7 +59,7 @@
           width: 35px;
           margin-left: 10px;
         }
-        .hideIcon {
+        .hide_icon {
           display: none;
         }
       }
@@ -74,7 +74,7 @@
       }
     }
   }
-  .additionalRecipeInfo {
+  .chosen_recipe_head {
     display: grid;
     grid-template-columns: 1.5fr 1.9fr;
     grid-template-rows: 1fr;
@@ -95,42 +95,42 @@
       rgba(255, 174, 23, 0.719) 100%
     );
 
-    .additionalInfoContainer {
+    .chosen_recipe_head_info {
       grid-area: container;
       margin-left: 50px;
       display: flex;
       align-items: center;
-      .peopleIcon {
+      .people_icon {
         margin-right: 7px;
       }
       img {
         height: 30px;
       }
 
-      .servingsQuantity {
+      .servings_quantity {
         font-size: 20px;
       }
-      .controlQuantity {
+      .control_quantity {
         width: 10px;
         margin: 8px;
         cursor: pointer;
         transition: 0.5s ease-in-out;
       }
-      .personsWord {
+      .persons_word {
         margin-left: 5px;
         font-size: 16px;
       }
-      .timeIcon {
+      .time_icon {
         height: 26px;
         margin-left: 80px;
         margin-right: 12px;
       }
-      .minWord {
+      .min_word {
         margin-left: 5px;
         font-size: 16px;
       }
     }
-    .yourRecipe {
+    .your_recipe {
       grid-area: yourRecipe;
       justify-self: end;
       margin-right: 25px;
@@ -140,14 +140,14 @@
       display: none;
     }
   }
-  .recipeTextBox {
+  .chosen_recipe_content {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 300px auto;
     gap: 0px 0px;
-    grid-template-areas: "recipeImg" "recipeText";
+    grid-template-areas: "recipeImg" "chosen_recipe_info";
     font-family: $regularFont;
-    .recipeDescriptionImage {
+    .chosen_recipe_image {
       grid-area: recipeImg;
       display: block;
       height: 100%;
@@ -155,16 +155,16 @@
       background-color: $mainOrangeLight;
       object-fit: cover;
     }
-    .recipeText {
-      grid-area: recipeText;
+    .chosen_recipe_info {
+      grid-area: chosen_recipe_info;
       display: flex;
       flex-direction: row;
-      .ingradientsTitle,
-      .howToCookIt {
+      .recipe_ingredients_title,
+      .how_to_cook {
         width: 100%;
         font-size: 22px;
       }
-      .ingradients {
+      .recipe_ingredients {
         font-size: 16px;
         width: 100%;
         padding: 0 30px 30px 40px;
@@ -174,12 +174,12 @@
             color: $orangeDark;
           }
         }
-        .ingradientsTitle {
+        .recipe_ingredients_title {
           margin: 35px 0;
           margin-bottom: 15px;
         }
       }
-      .linkBox {
+      .recipe_link {
         display: flex;
         flex-direction: column;
         align-items: end;
@@ -187,19 +187,19 @@
         padding: 0 40px 30px 30px;
         background-color: #ffe6b811;
 
-        .howToCookIt {
+        .how_to_cook {
           margin-top: 35px;
           margin-bottom: 15px;
           text-align: right;
         }
-        .recipeCopyright {
+        .recipe_copyright {
           width: 90%;
           margin: 15px 0;
           text-align: right;
           line-height: 150%;
         }
 
-        .linkButton {
+        .link_button {
           text-decoration: none;
           width: 150px;
           height: 40px;

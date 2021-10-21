@@ -1,8 +1,12 @@
-.controlsContainer {
+.controls_container {
   display: none;
+  justify-content: center;
+  align-content: flex-end;
   width: 100%;
   margin: 30px auto 0 auto;
-  .searchButton {
+  margin-top: 40px;
+  font-family: $regularFont;
+  .search_button {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -25,7 +29,7 @@
     }
   }
 
-  .controlButton {
+  .control_button {
     align-self: flex-end;
     margin-left: 20px;
     height: 45px;
@@ -50,13 +54,13 @@
     }
   }
 
-  .addRecipeButton {
+  .add_recipe_button {
     img {
       height: 17px;
       transform: translate(0, 1px);
     }
   }
-  .bookmarksButton {
+  .bookmarks_button {
     img {
       height: 19px;
       transform: translate(0, 3px);
