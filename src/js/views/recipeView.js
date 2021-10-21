@@ -8,7 +8,7 @@ import bookmarkUnsigned from "url:../../img/bookmark_unsigned.svg";
 import bookmarkSigned from "url:../../img/bookmark_signed.svg";
 import yourRecipeIcon from "url:../../img/your_recipe.svg";
 import { Fraction } from "fractional";
-
+const Fraction = require("fractional").Fraction;
 class RecipeView extends View {
   _parentElement = document.querySelector(".chosen_recipe_container");
   _notificationPlaceHolder = document.querySelector(
