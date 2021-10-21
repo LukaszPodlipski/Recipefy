@@ -640,6 +640,7 @@ html body {
 }
 
 .chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .control_quantity {
+  height: auto;
   width: 10px;
   margin: 8px;
   cursor: pointer;
