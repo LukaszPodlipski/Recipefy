@@ -1,4 +1,4 @@
-.savedBookmarksContainer {
+.saved_bookmarks_container {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
   background-color: #fdf5ed;
   box-shadow: 0px 4px 10px -10px $boxShadowColor;
 
-  .savedBookmarksHead {
+  .saved_bookmarks_head {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -31,7 +31,7 @@
       justify-self: center;
       width: 300px;
       color: $white;
-      font-family: "ShartollLight";
+      font-family: $headingSecondFont;
       font-size: 34px;
       text-align: center;
     }
@@ -47,49 +47,55 @@
       }
     }
   }
-  .bookmarksListContainer {
+  .bookmarks_list_container {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 70%;
     justify-content: center;
     padding: 10px 0;
-    .bookmarksList {
+    background-color: #ffd6af18;
+    .bookmarks_list {
       list-style-type: none;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       width: 95%;
 
-      .bookmarkResult {
+      .bookmark_result {
         text-decoration: none;
         width: 48%;
         .bookmark {
           display: flex;
           margin: 18px 0;
-          // width: 40%;
           flex-direction: row;
           align-items: center;
           cursor: pointer;
-          // background-color: #ffe4b87c;
           background: linear-gradient(
             90deg,
             #ffbd7f -0.85%,
             #ffb759 -0.85%,
-            #f6b060 18.58%,
-            rgba(255, 174, 23, 0.719) 100%
+            #f6b060 12.58%,
+            rgba(255, 174, 23, 0.335) 100%
           );
 
           border-radius: 10px;
-          box-shadow: 0px 4px 10px -10px $boxShadowColor;
+          box-shadow: 0px 4px 10px -5px $boxShadowColor;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 4px 10px 0px $boxShadowColor;
+          }
           img {
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             height: 100px;
-            width: 200px;
+            min-width: 140px;
+            max-width: 140px;
             object-fit: cover;
           }
-          .bookmarkInfo {
+          .bookmark_content {
             width: 100%;
             height: 100%;
             padding: 10px 35px;
@@ -101,13 +107,13 @@
               font-size: 22px;
               color: $black;
             }
-            .bookmarkTitle {
+            .bookmark_title {
               width: 200px;
               white-space: nowrap;
               text-overflow: ellipsis;
               overflow: hidden;
             }
-            .bookmarkPublisher {
+            .bookmark_publisher {
               font-size: 16px;
               color: $gray;
               margin-top: 6px;
@@ -118,6 +124,6 @@
     }
   }
 }
-.savedBookmarksContainerVisible {
+.saved_bookmarks_container_visible {
   display: flex;
 }

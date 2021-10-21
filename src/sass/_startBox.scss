@@ -1,10 +1,4 @@
-//   <div class="startBox"><img src="./src/img/lukasz_podlipski_profile.jpg" alt="profileImage" class="startImage">
-//     <div class="startText">
-//       <p>Start</p>
-//       <p>by searching for recipe. Have fun!</p>
-//     </div>
-//   </div>
-.letsStartText {
+.lets_start_container {
   display: none;
   flex-grow: 1;
   flex-shrink: 1;
@@ -14,22 +8,22 @@
   margin: 50px 0;
   transition: 0.5s ease-in-out;
 
-  .startBox {
-    height: 140px;
-    width: 45%;
+  .start_content {
     display: none;
     flex-direction: row;
+    height: 140px;
+    width: 45%;
     margin: 50px auto;
     background-color: rgb(255, 251, 245);
     border-radius: 10px;
     box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.17);
-    animation: expansion 0.2s ease-in 1, MoveUpDown 2s ease-in infinite;
-    .startImage {
+    animation: expansion 0.2s ease-in 1, moveUpDown 2s ease-in infinite;
+    .start_mage {
       width: 140px;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
     }
-    .startText {
+    .start_text {
       margin-left: 20px;
       font-family: $regularFont;
       padding: 16px 15px 20px 10px;
@@ -57,7 +51,7 @@
       }
     }
   }
-  @keyframes MoveUpDown {
+  @keyframes moveUpDown {
     0% {
       transform: translateY(0px);
     }

@@ -1,7 +1,9 @@
 export default class View {
   _data;
-  _notificationPlaceHolder = document.querySelector(".notificationPlaceHolder");
-  _letsStartBox = document.querySelector(".letsStartText");
+  _notificationPlaceHolder = document.querySelector(
+    ".notification_place_holder"
+  );
+  _letsStartBox = document.querySelector(".lets_start_container");
 
   render(data) {
     if (!data || (Array.isArray(data) && data.length === 0)) {
@@ -29,11 +31,9 @@ export default class View {
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup();
-
     const newDOM = document.createRange().createContextualFragment(newMarkup);
     const newElements = Array.from(newDOM.querySelectorAll("*"));
     const curElements = Array.from(this._parentElement.querySelectorAll("*"));
-
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
       if (
@@ -79,11 +79,11 @@ export default class View {
   }
 
   renderError(message = this._errorMessage) {
-    const markup = `<div class="notificationAlert">
-    <p class="alertText"><span>🔔 </span>${message}</p>
+    const markup = `<div class="fixed_notification">
+    <p class="notification_text"><span>🔔 </span>${message}</p>
   </div>`;
     this._notificationPlaceHolder.insertAdjacentHTML("beforeend", markup);
-    const alertBox = document.querySelector(".notificationAlert");
+    const alertBox = document.querySelector(".fixed_notification");
     alertBox.style.display = "flex";
     setTimeout(() => {
       alertBox.style.display = "none";
@@ -92,11 +92,11 @@ export default class View {
   }
 
   renderMessage(message = this._message) {
-    const markup = `<div class="notificationAlert">
-    <p class="alertText"><span>🔔 </span>${message}</p>
+    const markup = `<div class="fixed_notification">
+    <p class="notification_text"><span>🔔 </span>${message}</p>
   </div>`;
     this._notificationPlaceHolder.insertAdjacentHTML("beforeend", markup);
-    const alertBox = document.querySelector(".notificationAlert");
+    const alertBox = document.querySelector(".fixed_notification");
     alertBox.style.display = "flex";
     setTimeout(() => {
       alertBox.style.display = "none";

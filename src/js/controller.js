@@ -1,5 +1,4 @@
 import * as model from "./model.js";
-import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
@@ -8,22 +7,17 @@ import bookmarksView from "./views/bookmarksView.js";
 import controlsView from "./views/controlsView.js";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import View from "./views/View.js";
 import addRecipeView from "./views/addRecipeView.js";
-
-// if (module.hot) {
-//   module.hot.accept();
-// }
 
 const html = document.querySelector("html");
 const headBurger = document.querySelector(".burger");
-const headingText = document.querySelector(".headingText");
-const profile = document.querySelector(".startBox");
-const controlsContainer = document.querySelector(".controlsContainer");
-const letsStartText = document.querySelector(".letsStartText");
+const headingText = document.querySelector(".head_text");
+const profile = document.querySelector(".start_content");
+const controlsContainer = document.querySelector(".controls_container");
+const letsStartText = document.querySelector(".lets_start_container");
 const body = document.querySelector("body");
-const recipeFullBox = document.querySelector(".recipeFullBox");
-const recipesBox = document.querySelector(".recipesBox");
+const recipeFullBox = document.querySelector(".chosen_recipe_container");
+const recipesBox = document.querySelector(".searched_recipes_container");
 
 const controlRecipes = async function () {
   try {
@@ -60,10 +54,9 @@ const controlSearchResults = async function () {
       return;
     }
     await model.loadSearchResult(query);
-    resultsView.render(model.getSearchResultsPage(2));
+    resultsView.render(model.getSearchResultsPage(1));
     paginationView._controlPagination(model.state.search);
   } catch (err) {
-    console.log(err);
     console.error(err);
   }
 };
@@ -89,17 +82,17 @@ const controlAddBookmark = function () {
 };
 
 const controlDisplayBookmarks = function () {
-  const bookmarksBox = document.querySelector(".savedBookmarksContainer");
+  const bookmarksBox = document.querySelector(".saved_bookmarks_container");
   if (model.state.bookmarks.length > 0)
-    bookmarksBox.classList.toggle("savedBookmarksContainerVisible");
+    bookmarksBox.classList.toggle("saved_bookmarks_container_visible");
   else {
     controlsView.renderError();
   }
 };
 
 const controlHideBookmarks = function () {
-  const bookmarksBox = document.querySelector(".savedBookmarksContainer");
-  bookmarksBox.classList.remove("savedBookmarksContainerVisible");
+  const bookmarksBox = document.querySelector(".saved_bookmarks_container");
+  bookmarksBox.classList.remove("saved_bookmarks_container_visible");
 };
 
 const controlBookmarks = function () {
@@ -108,25 +101,25 @@ const controlBookmarks = function () {
 };
 
 const controlDisplayAddRecipe = function () {
-  const addRecipeBox = document.querySelector(".addRecipeContainer");
-  addRecipeBox.classList.toggle("savedBookmarksContainerVisible");
+  const addRecipeBox = document.querySelector(".add_recipe_container");
+  addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
 };
 
 const controlHideAddRecipe = function () {
-  const addRecipeBox = document.querySelector(".addRecipeContainer");
-  addRecipeBox.classList.toggle("savedBookmarksContainerVisible");
+  const addRecipeBox = document.querySelector(".add_recipe_container");
+  addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
 };
 
 const controlAddRecipe = async function (newRecipe) {
   try {
-    console.log(newRecipe);
     await model.uploadRecipe(newRecipe);
-    console.log("controladdrecipe");
-    console.log(model.state.recipe);
     recipeView.render(model.state.recipe);
     addRecipeView.renderMessage();
     bookmarksView.render(model.state.bookmarks);
     window.history.pushState(null, "", `#${model.state.recipe.id}`);
+    setTimeout(function () {
+      controlHideAddRecipe();
+    }, 1000);
   } catch (err) {
     console.error(err);
     addRecipeView.renderError(err.message);

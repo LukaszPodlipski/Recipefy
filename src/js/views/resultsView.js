@@ -1,22 +1,20 @@
 import View from "./View.js";
 
 class ResultsView extends View {
-  _parentElement = document.querySelector(".recipesContainer");
+  _parentElement = document.querySelector(".recipes_container");
   _errorMessage = `No recipes found for your query, Please try again!`;
   _message = "";
   _generateMarkup() {
-    console.log(this._data);
     return this._data.map(this._generateMarkupPreview).join("");
   }
   _generateMarkupPreview(result) {
-    console.log(result.id);
-    return `<a href="#${result.id}" class="recipeResult">
-            <img class="recipeImage" src="${result.image}" alt="${result.title}">
-            <div class="recipeBoard">
-              <div class="recipeContent">
-                <p class="recipeTitle">${result.title}</p>
+    return `<a href="#${result.id}" class="recipe_result">
+            <img class="recipe_image" src="${result.image}" alt="${result.title}">
+            <div class="recipe_board">
+              <div class="recipe_content">
+                <p class="recipe_title">${result.title}</p>
                 <hr class="line" />
-                <p class="recipeAuthor">${result.publisher}o</p>
+                <p class="recipe_author">${result.publisher}o</p>
               </div>
             </div>
           </a>`;

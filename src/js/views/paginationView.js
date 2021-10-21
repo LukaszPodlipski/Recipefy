@@ -1,8 +1,8 @@
 import View from "./View.js";
 class PaginationView extends View {
-  _parentElement = document.querySelector(".recipesBox");
-  _leftPage = document.querySelector(".arrowLeft");
-  _rightPage = document.querySelector(".arrowRight");
+  _parentElement = document.querySelector(".searched_recipes_container");
+  _leftPage = document.querySelector(".arrow_left");
+  _rightPage = document.querySelector(".arrow_right");
   addHandlerClick(handler) {
     this._parentElement.addEventListener("click", function (e) {
       const btn = e.target.closest(".arrow");
@@ -13,7 +13,6 @@ class PaginationView extends View {
   }
   _controlPagination(data) {
     const numPages = Math.ceil(data.results.length / data.resultsPerPage);
-    console.log(numPages);
     if (data.page === 1 && numPages > 1) {
       this._leftPage.style.display = "none";
       this._rightPage.style.display = "inline-block";

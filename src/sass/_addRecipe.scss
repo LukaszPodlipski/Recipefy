@@ -1,4 +1,4 @@
-.addRecipeContainer {
+.add_recipe_container {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
   padding-bottom: 30px;
   background-color: $white;
 
-  .addrecipeContainerHead {
+  .add_recipe_head {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -48,7 +48,7 @@
       }
     }
   }
-  .addRecipeContentBox {
+  .add_recipe_content {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -89,7 +89,7 @@
       }
     }
   }
-  .uploadRecipeButton {
+  .upload_recipe_button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -125,7 +125,4 @@
       height: 16px;
     }
   }
-}
-.addRecipeVisible {
-  display: flex;
 }
