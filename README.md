@@ -20,4 +20,6 @@ Add your own recipe 👩‍🍳
 Bookmark your favorite recipies 📚
 
 ![image](https://user-images.githubusercontent.com/73656796/138492567-10578661-d318-43e6-baee-ee978f0f2159.png)
+
+Bookmarks are always available in your browser local storage 💾
 ![image](https://user-images.githubusercontent.com/73656796/138492902-b0302e57-6be0-43ea-9ff3-b1485e5edf12.png)
