@@ -75,6 +75,10 @@
   border: none;
 }
 
+br {
+  display: none;
+}
+
 html {
   display: -webkit-box;
   display: -ms-flexbox;
