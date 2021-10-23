@@ -1,28 +1,19 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import * as model from "./model.js";
+import * as selectors from "./selectors";
 import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
 import paginationView from "./views/paginationView.js";
 import bookmarksView from "./views/bookmarksView.js";
 import controlsView from "./views/controlsView.js";
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 import addRecipeView from "./views/addRecipeView.js";
-
-const html = document.querySelector("html");
-const headBurger = document.querySelector(".burger");
-const headingText = document.querySelector(".head_text");
-const profile = document.querySelector(".start_content");
-const controlsContainer = document.querySelector(".controls_container");
-const letsStartText = document.querySelector(".lets_start_container");
-const body = document.querySelector("body");
-const recipeFullBox = document.querySelector(".chosen_recipe_container");
-const recipesBox = document.querySelector(".searched_recipes_container");
 
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
-    letsStartText.style.display = "none";
+    selectors.startBox.style.display = "none";
     if (!id) return;
     recipeView.renderSpinner();
     resultsView.update(model.getSearchResultsPage());
@@ -31,7 +22,7 @@ const controlRecipes = async function () {
     bookmarksView.update(model.state.bookmarks);
   } catch (err) {
     setTimeout(function () {
-      letsStartText.style.display = "flex";
+      selectors.startBox.style.display = "flex";
       recipeView.stopSpinner();
     }, 500);
     recipeView.renderError();
@@ -42,13 +33,13 @@ const controlSearchResults = async function () {
   try {
     resultsView.renderSpinner();
     const query = searchView.getQuery();
-    letsStartText.style.display = "none";
-    recipesBox.style.display = "grid";
+    selectors.startBox.style.display = "none";
+    selectors.recipesBox.style.display = "grid";
     if (!query) {
       setTimeout(function () {
         recipeView.renderError();
-        recipesBox.style.display = "none";
-        letsStartText.style.display = "flex";
+        selectors.recipesBox.style.display = "none";
+        selectors.startBox.style.display = "flex";
         resultsView.stopSpinner();
       }, 1000);
       return;
@@ -82,17 +73,17 @@ const controlAddBookmark = function () {
 };
 
 const controlDisplayBookmarks = function () {
-  const bookmarksBox = document.querySelector(".saved_bookmarks_container");
   if (model.state.bookmarks.length > 0)
-    bookmarksBox.classList.toggle("saved_bookmarks_container_visible");
+    selectors.bookmarksBox.classList.toggle(
+      "saved_bookmarks_container_visible"
+    );
   else {
     controlsView.renderError();
   }
 };
 
 const controlHideBookmarks = function () {
-  const bookmarksBox = document.querySelector(".saved_bookmarks_container");
-  bookmarksBox.classList.remove("saved_bookmarks_container_visible");
+  selectors.bookmarksBox.classList.remove("saved_bookmarks_container_visible");
 };
 
 const controlBookmarks = function () {
@@ -101,13 +92,11 @@ const controlBookmarks = function () {
 };
 
 const controlDisplayAddRecipe = function () {
-  const addRecipeBox = document.querySelector(".add_recipe_container");
-  addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
+  selectors.addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
 };
 
 const controlHideAddRecipe = function () {
-  const addRecipeBox = document.querySelector(".add_recipe_container");
-  addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
+  selectors.addRecipeBox.classList.toggle("saved_bookmarks_container_visible");
 };
 
 const controlAddRecipe = async function (newRecipe) {
@@ -126,34 +115,43 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+selectors.startBox.addEventListener("click", function () {
+  selectors.startBox.style.transform = "scale(1.1)";
+  setTimeout(function () {
+    selectors.startBox.style.transform = "scale(1)";
+  }, 200);
+});
+
+const displayInitView = function () {
+  const id = window.location.hash.slice(1);
+  if (!id) {
+    selectors.chosenRecipeContainer.style.display = "none";
+    selectors.recipesBox.style.display = "none";
+    setTimeout(function () {
+      selectors.html.style.display = "inline-block";
+      selectors.headBurger.style.margin = "50px auto 30px auto";
+      selectors.headText.style.display = "block";
+      selectors.profile.style.display = "flex";
+      selectors.controlsContainer.style.display = "flex";
+      selectors.startBox.style.display = "flex";
+      selectors.body.style.minHeight = "84vh";
+      selectors.chosenRecipeContainer.style.display = "inline-block";
+      recipeView.stopSpinner();
+    }, 2000);
+  } else {
+    selectors.html.style.display = "inline-block";
+    selectors.headBurger.style.margin = "50px auto 30px auto";
+    selectors.headText.style.display = "block";
+    selectors.profile.style.display = "flex";
+    selectors.controlsContainer.style.display = "flex";
+    selectors.startBox.style.display = "flex";
+    selectors.body.style.minHeight = "84vh";
+    selectors.chosenRecipeContainer.style.display = "inline-block";
+  }
+};
+
 const init = function () {
-  window.addEventListener("load", function () {
-    const id = window.location.hash.slice(1);
-    if (!id) {
-      recipeFullBox.style.display = "none";
-      recipesBox.style.display = "none";
-      setTimeout(function () {
-        html.style.display = "inline-block";
-        headBurger.style.margin = "50px auto 30px auto";
-        headingText.style.display = "block";
-        profile.style.display = "flex";
-        controlsContainer.style.display = "flex";
-        letsStartText.style.display = "flex";
-        body.style.minHeight = "84vh";
-        recipeFullBox.style.display = "inline-block";
-        recipeView.stopSpinner();
-      }, 2000);
-    } else {
-      html.style.display = "inline-block";
-      headBurger.style.margin = "50px auto 30px auto";
-      headingText.style.display = "block";
-      profile.style.display = "flex";
-      controlsContainer.style.display = "flex";
-      letsStartText.style.display = "flex";
-      body.style.minHeight = "84vh";
-      recipeFullBox.style.display = "inline-block";
-    }
-  });
+  window.addEventListener("load", displayInitView());
   bookmarksView.addhandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
