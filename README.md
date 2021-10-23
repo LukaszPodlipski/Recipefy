@@ -7,10 +7,6 @@
   Simple Cook Book site
 </h2>
 
-<h2 align="left">
- by Łukasz Podlipski
-</h2>
-<br/><br/>
 <p align="left">
  <img src="./src/img/preview.png" style="margin:0px auto;" width="800">
 </p>
