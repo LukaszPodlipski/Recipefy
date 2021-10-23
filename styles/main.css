@@ -54,14 +54,12 @@
 
 @font-face {
   font-family: "BiteChocolate";
-  src: url("../src/fonts/BiteChocolate.woff") format("woff"),
-    url("../src/fonts/BiteChocolate.ttf") format("truetype");
+  src: url("../src/fonts/BiteChocolate.woff") format("woff"), url("../src/fonts/BiteChocolate.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "ShartollLight";
-  src: url("../src/fonts/ShartollLight.woff") format("woff"),
-    url("../src/fonts/ShartollLight.otf") format("opentype");
+  src: url("../src/fonts/ShartollLight.woff") format("woff"), url("../src/fonts/ShartollLight.otf") format("opentype");
 }
 
 * {
@@ -73,7 +71,7 @@
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+          box-sizing: inherit;
   border: none;
 }
 
@@ -87,29 +85,24 @@ html {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   min-height: 100vh;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   background: #f2994a;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#f2c94c),
-    to(#f2994a)
-  );
+  background: -webkit-gradient(linear, left top, right top, from(#f2c94c), to(#f2994a));
   background: linear-gradient(to right, #f2c94c, #f2994a);
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
+  contain: none !important;
 }
 
 html body {
@@ -118,15 +111,13 @@ html body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   max-width: 1000px;
   margin: 80px auto;
   background: rgba(255, 255, 255, 0.75);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
   border-radius: 10px;
 }
 
@@ -134,18 +125,8 @@ html body {
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   background: rgba(255, 255, 255, 0.75);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(rgba(255, 179, 0, 0)),
-    to(rgba(255, 179, 0, 0.164))
-  );
-  background: linear-gradient(
-    to top,
-    rgba(255, 179, 0, 0),
-    rgba(255, 179, 0, 0.164)
-  );
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 179, 0, 0)), to(rgba(255, 179, 0, 0.164)));
+  background: linear-gradient(to top, rgba(255, 179, 0, 0), rgba(255, 179, 0, 0.164));
 }
 
 .head .head_text {
@@ -174,10 +155,9 @@ html body {
   padding: 15px 0 0;
 }
 
-.form__group .form__field:required,
-.form__group .form__field:invalid {
+.form__group .form__field:required, .form__group .form__field:invalid {
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
 }
 
 .form__group .form__field {
@@ -230,14 +210,8 @@ html body {
   padding-bottom: 6px;
   border-width: 3px;
   -o-border-image: linear-gradient(to left, #f3a156, #e27f0d);
-  border-image: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(#f3a156),
-    to(#e27f0d)
-  );
-  border-image: linear-gradient(to left, #f3a156, #e27f0d);
+     border-image: -webkit-gradient(linear, right top, left top, from(#f3a156), to(#e27f0d));
+     border-image: linear-gradient(to left, #f3a156, #e27f0d);
   border-image-slice: 1;
 }
 
@@ -254,10 +228,10 @@ html body {
 .controls_container {
   display: none;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-line-pack: end;
-  align-content: flex-end;
+      align-content: flex-end;
   width: 100%;
   margin: 30px auto 0 auto;
   margin-top: 40px;
@@ -269,12 +243,12 @@ html body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -ms-flex-item-align: end;
-  align-self: flex-end;
+      align-self: flex-end;
   width: 45px;
   height: 45px;
   padding: 10px;
@@ -283,14 +257,14 @@ html body {
   background: #f3a156;
   cursor: pointer;
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
 }
 
 .controls_container .search_button:hover {
   -webkit-transform: scale(1.04);
-  transform: scale(1.04);
+          transform: scale(1.04);
 }
 
 .controls_container .search_button img {
@@ -300,14 +274,14 @@ html body {
 
 .controls_container .control_button {
   -ms-flex-item-align: end;
-  align-self: flex-end;
+      align-self: flex-end;
   margin-left: 20px;
   height: 45px;
   padding: 10px 20px;
   border-radius: 5px;
   background: #f3a156;
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   font-size: 16px;
   font-family: "Roboto", arial;
   font-weight: 400;
@@ -325,29 +299,29 @@ html body {
 
 .controls_container .control_button:hover {
   -webkit-transform: scale(1.04);
-  transform: scale(1.04);
+          transform: scale(1.04);
 }
 
 .controls_container .add_recipe_button img {
   height: 17px;
   -webkit-transform: translate(0, 1px);
-  transform: translate(0, 1px);
+          transform: translate(0, 1px);
 }
 
 .controls_container .bookmarks_button img {
   height: 19px;
   -webkit-transform: translate(0, 3px);
-  transform: translate(0, 3px);
+          transform: translate(0, 3px);
 }
 
 .searched_recipes_container {
   display: none;
   -ms-grid-columns: 1fr 15fr 1fr;
-  grid-template-columns: 1fr 15fr 1fr;
+      grid-template-columns: 1fr 15fr 1fr;
   -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
+      grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: "arrow_left recipes_container arrow_right";
+      grid-template-areas: "arrow_left recipes_container arrow_right";
   margin: 150px 0 50px 0;
   font-family: "Roboto", arial;
   min-height: 280px;
@@ -356,16 +330,16 @@ html body {
 .searched_recipes_container .arrow {
   cursor: pointer;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
   height: 20px;
   display: none;
   -webkit-filter: invert(80%);
-  filter: invert(80%);
+          filter: invert(80%);
 }
 
 .searched_recipes_container .arrow_right {
@@ -377,7 +351,7 @@ html body {
 
 .searched_recipes_container .arrow_right:hover {
   -webkit-transform: translateX(3px) scale(1.03);
-  transform: translateX(3px) scale(1.03);
+          transform: translateX(3px) scale(1.03);
 }
 
 .searched_recipes_container .arrow_left {
@@ -389,7 +363,7 @@ html body {
 
 .searched_recipes_container .arrow_left:hover {
   -webkit-transform: translateX(-3px) scale(1.03);
-  transform: translateX(-3px) scale(1.03);
+          transform: translateX(-3px) scale(1.03);
 }
 
 .searched_recipes_container .recipes_container {
@@ -401,15 +375,15 @@ html body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -ms-flex-line-pack: stretch;
-  align-content: stretch;
+      align-content: stretch;
   width: 95%;
   height: auto;
 }
@@ -418,9 +392,9 @@ html body {
   position: relative;
   margin: 0 10px;
   -webkit-box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   cursor: pointer;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -429,9 +403,9 @@ html body {
 
 .searched_recipes_container .recipes_container .recipe_result:hover {
   -webkit-transform: translateY(3px) scale(1.03);
-  transform: translateY(3px) scale(1.03);
+          transform: translateY(3px) scale(1.03);
   -webkit-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.15);
 }
 
 .searched_recipes_container .recipes_container .recipe_result .recipe_image {
@@ -449,7 +423,7 @@ html body {
   margin-right: auto;
   border-radius: 50%;
   -webkit-box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.15);
 }
 
 .searched_recipes_container .recipes_container .recipe_result .recipe_board {
@@ -462,45 +436,36 @@ html body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.searched_recipes_container
-  .recipes_container
-  .recipe_result
-  .recipe_board
-  .recipe_content {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -ms-flex-line-pack: stretch;
-  align-content: stretch;
+      align-content: stretch;
   font-family: "Roboto", arial;
   margin-bottom: 30px;
 }
 
-.searched_recipes_container
-  .recipes_container
-  .recipe_result
-  .recipe_board
-  .recipe_content
-  .recipe_title {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content .recipe_title {
   font-size: 20px;
   text-align: center;
   color: black;
@@ -512,23 +477,13 @@ html body {
   padding: 0 20px;
 }
 
-.searched_recipes_container
-  .recipes_container
-  .recipe_result
-  .recipe_board
-  .recipe_content
-  .recipe_author {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content .recipe_author {
   margin-top: 10px;
   font-size: 12px;
   color: #555555;
 }
 
-.searched_recipes_container
-  .recipes_container
-  .recipe_result
-  .recipe_board
-  .recipe_content
-  .line {
+.searched_recipes_container .recipes_container .recipe_result .recipe_board .recipe_content .line {
   width: 75%;
   margin: 15px 0 20px 0;
   border-top: 1px solid #bbb8b8;
@@ -547,32 +502,18 @@ html body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.5fr 1.2fr 0.5fr;
-  grid-template-columns: 1.5fr 1.2fr 0.5fr;
+      grid-template-columns: 1.5fr 1.2fr 0.5fr;
   -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
+      grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: "p p bookmark";
+      grid-template-areas: "p p bookmark";
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 80px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(-0.85%, #ff7b00),
-    color-stop(-0.85%, #ff9100),
-    color-stop(18.58%, #e78312),
-    to(#eeb600)
-  );
-  background: linear-gradient(
-    90deg,
-    #ff7b00 -0.85%,
-    #ff9100 -0.85%,
-    #e78312 18.58%,
-    #eeb600 100%
-  );
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
 .chosen_recipe .chosen_recipe_title p {
@@ -599,11 +540,11 @@ html body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   margin-right: 20px;
   -ms-grid-row: 1;
   -ms-grid-column: 3;
@@ -616,8 +557,8 @@ html body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .chosen_recipe .chosen_recipe_title .recipe_icons .icons_box .bookmark_icon {
@@ -626,13 +567,9 @@ html body {
   transition: 0.4s ease-in-out;
 }
 
-.chosen_recipe
-  .chosen_recipe_title
-  .recipe_icons
-  .icons_box
-  .bookmark_icon:hover {
+.chosen_recipe .chosen_recipe_title .recipe_icons .icons_box .bookmark_icon:hover {
   -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .chosen_recipe .chosen_recipe_title .recipe_icons .icons_box img {
@@ -653,45 +590,31 @@ html body {
   font-family: "Roboto", arial;
   text-align: center;
   -webkit-transform: translateY(1px);
-  transform: translateY(1px);
+          transform: translateY(1px);
 }
 
 .chosen_recipe .chosen_recipe_head {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1.5fr 1.9fr;
-  grid-template-columns: 1.5fr 1.9fr;
+      grid-template-columns: 1.5fr 1.9fr;
   -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
+      grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: "container yourRecipe";
+      grid-template-areas: "container yourRecipe";
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 50px;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   font-size: 18px;
   color: #ffffff;
   font-family: "Roboto", arial;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(-0.85%, #ffbd7f),
-    color-stop(-0.85%, #ffb759),
-    color-stop(18.58%, #f6b060),
-    to(rgba(255, 174, 23, 0.719))
-  );
-  background: linear-gradient(
-    90deg,
-    #ffbd7f -0.85%,
-    #ffb759 -0.85%,
-    #f6b060 18.58%,
-    rgba(255, 174, 23, 0.719) 100%
-  );
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ffbd7f), color-stop(-0.85%, #ffb759), color-stop(18.58%, #f6b060), to(rgba(255, 174, 23, 0.719)));
+  background: linear-gradient(90deg, #ffbd7f -0.85%, #ffb759 -0.85%, #f6b060 18.58%, rgba(255, 174, 23, 0.719) 100%);
 }
 
 .chosen_recipe .chosen_recipe_head .chosen_recipe_head_info {
@@ -703,8 +626,8 @@ html body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .chosen_recipe .chosen_recipe_head .chosen_recipe_head_info .people_icon {
@@ -749,7 +672,7 @@ html body {
   -ms-grid-column: 2;
   grid-area: yourRecipe;
   -ms-grid-column-align: end;
-  justify-self: end;
+      justify-self: end;
   margin-right: 25px;
   color: #e27f0d;
 }
@@ -762,11 +685,11 @@ html body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
   -ms-grid-rows: 300px auto;
-  grid-template-rows: 300px auto;
+      grid-template-rows: 300px auto;
   gap: 0px 0px;
-  grid-template-areas: "recipeImg" "chosen_recipe_info";
+      grid-template-areas: "recipeImg" "chosen_recipe_info";
   font-family: "Roboto", arial;
 }
 
@@ -779,7 +702,7 @@ html body {
   width: 100%;
   background-color: #f3a156;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .chosen_recipe .chosen_recipe_content .chosen_recipe_info {
@@ -791,14 +714,11 @@ html body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_ingredients_title,
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients_title,
 .chosen_recipe .chosen_recipe_content .chosen_recipe_info .how_to_cook {
   width: 100%;
   font-size: 22px;
@@ -810,28 +730,15 @@ html body {
   padding: 0 30px 30px 40px;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_ingredients
-  p {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients p {
   margin: 15px 0;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_ingredients
-  p
-  span {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients p span {
   color: #e27f0d;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_ingredients
-  .recipe_ingredients_title {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_ingredients .recipe_ingredients_title {
   margin: 35px 0;
   margin-bottom: 15px;
 }
@@ -842,91 +749,63 @@ html body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end;
+      -ms-flex-align: end;
+          align-items: end;
   width: 100%;
   padding: 0 40px 30px 30px;
   background-color: #ffe6b811;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_link
-  .how_to_cook {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .how_to_cook {
   margin-top: 35px;
   margin-bottom: 15px;
   text-align: right;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_link
-  .recipe_copyright {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .recipe_copyright {
   width: 90%;
   margin: 15px 0;
   text-align: right;
   line-height: 150%;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_link
-  .link_button {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .link_button {
   text-decoration: none;
   width: 150px;
   height: 40px;
   margin-top: 20px;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_link
-  .link_button
-  div {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .link_button div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 150px;
   height: 40px;
   border-radius: 50px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ec9e21),
-    to(rgba(255, 174, 0, 0.945))
-  );
+  background: -webkit-gradient(linear, left top, right top, from(#ec9e21), to(rgba(255, 174, 0, 0.945)));
   background: linear-gradient(90deg, #ec9e21 0%, rgba(255, 174, 0, 0.945) 100%);
   opacity: 0.8;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   cursor: pointer;
   color: #ffffff;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 
-.chosen_recipe
-  .chosen_recipe_content
-  .chosen_recipe_info
-  .recipe_link
-  .link_button
-  div:hover {
+.chosen_recipe .chosen_recipe_content .chosen_recipe_info .recipe_link .link_button div:hover {
   opacity: 1;
 }
 
@@ -934,11 +813,11 @@ html body {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 90%;
   height: auto;
   margin: 40px auto 20px auto;
@@ -950,40 +829,26 @@ html body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
+      grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: ". title close";
+      grid-template-areas: ". title close";
   gap: 0px 0px;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding: 15px 0;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(-0.85%, #ff7b00),
-    color-stop(-0.85%, #ff9100),
-    color-stop(18.58%, #e78312),
-    to(#eeb600)
-  );
-  background: linear-gradient(
-    90deg,
-    #ff7b00 -0.85%,
-    #ff9100 -0.85%,
-    #e78312 18.58%,
-    #eeb600 100%
-  );
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
 .add_recipe_container .add_recipe_head p {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: title;
-  justify-self: center;
+      justify-self: center;
   width: 300px;
   color: #ffffff;
   font-family: "ShartollLight", arial;
@@ -995,7 +860,7 @@ html body {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: close;
-  justify-self: right;
+      justify-self: right;
   width: 20px;
   margin-right: 30px;
   cursor: pointer;
@@ -1013,8 +878,8 @@ html body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   height: 70%;
 }
@@ -1025,11 +890,11 @@ html body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   width: 50%;
   padding: 20px;
@@ -1072,14 +937,14 @@ html body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 230px;
   margin-top: 20px;
   padding: 15px 25px;
@@ -1088,26 +953,12 @@ html body {
   border-radius: 50px;
   border: 0;
   opacity: 0.8;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(-0.85%, #ff7b00),
-    color-stop(-0.85%, #ff9100),
-    color-stop(18.58%, #e78312),
-    to(#eeb600)
-  );
-  background: linear-gradient(
-    90deg,
-    #ff7b00 -0.85%,
-    #ff9100 -0.85%,
-    #e78312 18.58%,
-    #eeb600 100%
-  );
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
   color: #ffffff;
   cursor: pointer;
   -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -1131,7 +982,7 @@ html body {
   height: 178px;
   margin: 80px 50px;
   -webkit-transform: scale(0.8);
-  transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .burger:after {
@@ -1149,16 +1000,16 @@ html body {
 }
 
 .roll--top {
+  position: relative;
   height: 85px;
   overflow: hidden;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   z-index: 3;
   -webkit-transform: translateY(-125px) rotate(-20deg);
-  transform: translateY(-125px) rotate(-20deg);
+          transform: translateY(-125px) rotate(-20deg);
   -webkit-animation: rotateRoll 1s linear 0.27s forwards;
-  animation: rotateRoll 1s linear 0.27s forwards;
-  position: relative;
+          animation: rotateRoll 1s linear 0.27s forwards;
 }
 
 .roll--top:after {
@@ -1271,44 +1122,44 @@ html body {
 @-webkit-keyframes rotateRoll {
   30% {
     -webkit-transform: translateY(-40px) rotate(-20deg);
-    transform: translateY(-40px) rotate(-20deg);
+            transform: translateY(-40px) rotate(-20deg);
   }
   50% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
   75% {
     -webkit-transform: translateY(-4px) rotate(2deg);
-    transform: translateY(-4px) rotate(2deg);
+            transform: translateY(-4px) rotate(2deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 @keyframes rotateRoll {
   30% {
     -webkit-transform: translateY(-40px) rotate(-20deg);
-    transform: translateY(-40px) rotate(-20deg);
+            transform: translateY(-40px) rotate(-20deg);
   }
   50% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
   75% {
     -webkit-transform: translateY(-4px) rotate(2deg);
-    transform: translateY(-4px) rotate(2deg);
+            transform: translateY(-4px) rotate(2deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 .lettuce {
   -webkit-transform: translateY(-75px) rotate(-15deg);
-  transform: translateY(-75px) rotate(-15deg);
+          transform: translateY(-75px) rotate(-15deg);
   width: 252px;
   height: 8px;
   border-radius: 20px;
@@ -1318,16 +1169,15 @@ html body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   z-index: 2;
   -webkit-animation: rotateLettuce 0.5s linear forwards;
-  animation: rotateLettuce 0.5s linear forwards;
+          animation: rotateLettuce 0.5s linear forwards;
 }
 
-.lettuce__top,
-.lettuce__bottom {
+.lettuce__top, .lettuce__bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1351,28 +1201,28 @@ html body {
 @-webkit-keyframes rotateLettuce {
   35% {
     -webkit-transform: translateY(-55px) rotate(-10deg);
-    transform: translateY(-55px) rotate(-10deg);
+            transform: translateY(-55px) rotate(-10deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 @keyframes rotateLettuce {
   35% {
     -webkit-transform: translateY(-55px) rotate(-10deg);
-    transform: translateY(-55px) rotate(-10deg);
+            transform: translateY(-55px) rotate(-10deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 .cheese {
   -webkit-transform: translateY(-45px) rotate(-10deg);
-  transform: translateY(-45px) rotate(-10deg);
+          transform: translateY(-45px) rotate(-10deg);
   width: 252px;
   height: 8px;
   border-radius: 20px;
@@ -1380,7 +1230,7 @@ html body {
   position: relative;
   margin-bottom: -6px;
   -webkit-animation: rotateCheese 0.5s linear forwards;
-  animation: rotateCheese 0.5s linear forwards;
+          animation: rotateCheese 0.5s linear forwards;
   z-index: 1;
 }
 
@@ -1392,12 +1242,12 @@ html body {
 .cheese__el--right {
   right: 57px;
   -webkit-animation-delay: 0.9s;
-  animation-delay: 0.9s;
+          animation-delay: 0.9s;
 }
 
 .cheese__el--left {
   -webkit-animation-delay: 0.7s;
-  animation-delay: 0.7s;
+          animation-delay: 0.7s;
   left: 25px;
 }
 
@@ -1408,10 +1258,10 @@ html body {
   right: 20px;
   top: -25px;
   -webkit-transform: translateY(-42px) rotate(45deg);
-  transform: translateY(-42px) rotate(45deg);
+          transform: translateY(-42px) rotate(45deg);
   opacity: 0;
   -webkit-animation: meltCheese 0.9s 1.1s forwards;
-  animation: meltCheese 0.9s 1.1s forwards;
+          animation: meltCheese 0.9s 1.1s forwards;
 }
 
 .cheese__el--small {
@@ -1420,14 +1270,14 @@ html body {
   border-radius: 1.5px;
   top: -1px;
   -webkit-transform: translateY(-16px) rotate(45deg);
-  transform: translateY(-16px) rotate(45deg);
+          transform: translateY(-16px) rotate(45deg);
   opacity: 0;
   -webkit-animation-name: meltCheese;
-  animation-name: meltCheese;
+          animation-name: meltCheese;
   -webkit-animation-duration: 0.55s;
-  animation-duration: 0.55s;
+          animation-duration: 0.55s;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes meltCheese {
@@ -1436,7 +1286,7 @@ html body {
   }
   100% {
     -webkit-transform: translateY(0) rotate(45deg);
-    transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
     opacity: 1;
   }
 }
@@ -1447,7 +1297,7 @@ html body {
   }
   100% {
     -webkit-transform: translateY(0) rotate(45deg);
-    transform: translateY(0) rotate(45deg);
+            transform: translateY(0) rotate(45deg);
     opacity: 1;
   }
 }
@@ -1455,28 +1305,28 @@ html body {
 @-webkit-keyframes rotateCheese {
   35% {
     -webkit-transform: translateY(-35px) rotate(-7deg);
-    transform: translateY(-35px) rotate(-7deg);
+            transform: translateY(-35px) rotate(-7deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 @keyframes rotateCheese {
   35% {
     -webkit-transform: translateY(-35px) rotate(-7deg);
-    transform: translateY(-35px) rotate(-7deg);
+            transform: translateY(-35px) rotate(-7deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 .chop {
   -webkit-transform: translateY(-30px) rotate(-5deg);
-  transform: translateY(-30px) rotate(-5deg);
+          transform: translateY(-30px) rotate(-5deg);
   position: relative;
   width: 252px;
   height: 38px;
@@ -1487,24 +1337,23 @@ html body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   z-index: 0;
   overflow: hidden;
   -webkit-animation: rotateChop 0.5s linear forwards;
-  animation: rotateChop 0.5s linear forwards;
+          animation: rotateChop 0.5s linear forwards;
 }
 
-.chop__top,
-.chop__bottom {
+.chop__top, .chop__bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
 }
 
 .chop__trace {
@@ -1517,22 +1366,22 @@ html body {
 @-webkit-keyframes rotateChop {
   35% {
     -webkit-transform: translateY(-10px) rotate(-3deg);
-    transform: translateY(-10px) rotate(-3deg);
+            transform: translateY(-10px) rotate(-3deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 @keyframes rotateChop {
   35% {
     -webkit-transform: translateY(-10px) rotate(-3deg);
-    transform: translateY(-10px) rotate(-3deg);
+            transform: translateY(-10px) rotate(-3deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
@@ -1541,8 +1390,8 @@ html body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   z-index: 3;
 }
@@ -1557,44 +1406,44 @@ html body {
 
 .tomato-section__el:nth-child(1) {
   -webkit-transform: translateY(-85px) rotate(-25deg);
-  transform: translateY(-85px) rotate(-25deg);
+          transform: translateY(-85px) rotate(-25deg);
   -webkit-animation: rotateTomato 0.55s linear forwards;
-  animation: rotateTomato 0.55s linear forwards;
+          animation: rotateTomato 0.55s linear forwards;
 }
 
 .tomato-section__el:nth-child(2) {
   -webkit-transform: translateY(-105px) rotate(-25deg);
-  transform: translateY(-105px) rotate(-25deg);
+          transform: translateY(-105px) rotate(-25deg);
   -webkit-animation: rotateTomato 0.55s linear 0.12s forwards;
-  animation: rotateTomato 0.55s linear 0.12s forwards;
+          animation: rotateTomato 0.55s linear 0.12s forwards;
 }
 
 .tomato-section__el:nth-child(3) {
   -webkit-transform: translateY(-125px) rotate(-25deg);
-  transform: translateY(-125px) rotate(-25deg);
+          transform: translateY(-125px) rotate(-25deg);
   -webkit-animation: rotateTomato 0.55s linear 0.24s forwards;
-  animation: rotateTomato 0.55s linear 0.24s forwards;
+          animation: rotateTomato 0.55s linear 0.24s forwards;
 }
 
 @-webkit-keyframes rotateTomato {
   90% {
     -webkit-transform: translateY(-5px) rotate(-10deg);
-    transform: translateY(-5px) rotate(-10deg);
+            transform: translateY(-5px) rotate(-10deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
 @keyframes rotateTomato {
   90% {
     -webkit-transform: translateY(-5px) rotate(-10deg);
-    transform: translateY(-5px) rotate(-10deg);
+            transform: translateY(-5px) rotate(-10deg);
   }
   100% {
     -webkit-transform: translateY(0px) rotate(0deg);
-    transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
   }
 }
 
@@ -1604,7 +1453,7 @@ html body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 svg {
@@ -1618,14 +1467,13 @@ svg {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 50px 0;
 }
 
 .fixed_notification {
   position: fixed;
-  top: 0px;
   width: 100%;
   left: calc(-50vw + 50%);
   right: calc(-50vw + 50%);
@@ -1635,25 +1483,19 @@ svg {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #e7842e;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#d3a829),
-    to(#e47f27)
-  );
+  background: -webkit-gradient(linear, left top, right top, from(#d3a829), to(#e47f27));
   background: linear-gradient(to right, #d3a829, #e47f27);
   -webkit-box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.15);
   z-index: 5;
 }
 
@@ -1665,7 +1507,7 @@ svg {
   color: #ffffff;
   letter-spacing: 1px;
   -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 10px;
 }
 
@@ -1702,18 +1544,18 @@ svg {
 .lets_start_container {
   display: none;
   -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -ms-flex-negative: 1;
-  flex-shrink: 1;
+      flex-shrink: 1;
   -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+      flex-basis: auto;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 50px 0;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
@@ -1728,17 +1570,17 @@ svg {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   height: 140px;
   width: 45%;
   margin: 50px auto;
   background-color: #fffbf5;
   border-radius: 10px;
   -webkit-box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.17);
-  box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.17);
+          box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.17);
   -webkit-animation: expansion 0.2s ease-in 1, moveUpDown 2s ease-in infinite;
-  animation: expansion 0.2s ease-in 1, moveUpDown 2s ease-in infinite;
+          animation: expansion 0.2s ease-in 1, moveUpDown 2s ease-in infinite;
 }
 
 .lets_start_container .start_content .start_mage {
@@ -1753,11 +1595,11 @@ svg {
   padding: 16px 15px 20px 10px;
   opacity: 0;
   -webkit-animation: showUp 1s ease-out 1;
-  animation: showUp 1s ease-out 1;
+          animation: showUp 1s ease-out 1;
   -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
+          animation-delay: 0.2s;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .lets_start_container .start_content .start_text p {
@@ -1793,30 +1635,30 @@ svg {
 @-webkit-keyframes moveUpDown {
   0% {
     -webkit-transform: translateY(0px);
-    transform: translateY(0px);
+            transform: translateY(0px);
   }
   50% {
     -webkit-transform: translateY(10px);
-    transform: translateY(10px);
+            transform: translateY(10px);
   }
   100% {
     -webkit-transform: translateY(0px);
-    transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 
 @keyframes moveUpDown {
   0% {
     -webkit-transform: translateY(0px);
-    transform: translateY(0px);
+            transform: translateY(0px);
   }
   50% {
     -webkit-transform: translateY(10px);
-    transform: translateY(10px);
+            transform: translateY(10px);
   }
   100% {
     -webkit-transform: translateY(0px);
-    transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 
@@ -1842,50 +1684,36 @@ svg {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 90%;
   height: auto;
   margin: 40px auto 30px auto;
   background-color: #fdf5ed;
   -webkit-box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 10px -10px rgba(0, 0, 0, 0.15);
 }
 
 .saved_bookmarks_container .saved_bookmarks_head {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
+      grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas: ". title close";
+      grid-template-areas: ". title close";
   gap: 0px 0px;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding: 15px 0;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(-0.85%, #ff7b00),
-    color-stop(-0.85%, #ff9100),
-    color-stop(18.58%, #e78312),
-    to(#eeb600)
-  );
-  background: linear-gradient(
-    90deg,
-    #ff7b00 -0.85%,
-    #ff9100 -0.85%,
-    #e78312 18.58%,
-    #eeb600 100%
-  );
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ff7b00), color-stop(-0.85%, #ff9100), color-stop(18.58%, #e78312), to(#eeb600));
+  background: linear-gradient(90deg, #ff7b00 -0.85%, #ff9100 -0.85%, #e78312 18.58%, #eeb600 100%);
 }
 
 .saved_bookmarks_container .saved_bookmarks_head p {
@@ -1893,7 +1721,7 @@ svg {
   -ms-grid-column: 2;
   grid-area: title;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
   width: 300px;
   color: #ffffff;
   font-family: "ShartollLight", arial;
@@ -1906,7 +1734,7 @@ svg {
   -ms-grid-column: 3;
   grid-area: close;
   -ms-grid-column-align: right;
-  justify-self: right;
+      justify-self: right;
   width: 20px;
   margin-right: 30px;
   cursor: pointer;
@@ -1924,13 +1752,13 @@ svg {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   height: 70%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 10px 0;
   background-color: #ffd6af18;
 }
@@ -1941,93 +1769,58 @@ svg {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 95%;
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result {
   text-decoration: none;
   width: 48%;
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result
-  .bookmark {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 18px 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(-0.85%, #ffbd7f),
-    color-stop(-0.85%, #ffb759),
-    color-stop(12.58%, #f6b060),
-    to(rgba(255, 174, 23, 0.335))
-  );
-  background: linear-gradient(
-    90deg,
-    #ffbd7f -0.85%,
-    #ffb759 -0.85%,
-    #f6b060 12.58%,
-    rgba(255, 174, 23, 0.335) 100%
-  );
+  background: -webkit-gradient(linear, left top, right top, color-stop(-0.85%, #ffbd7f), color-stop(-0.85%, #ffb759), color-stop(12.58%, #f6b060), to(rgba(255, 174, 23, 0.335)));
+  background: linear-gradient(90deg, #ffbd7f -0.85%, #ffb759 -0.85%, #f6b060 12.58%, rgba(255, 174, 23, 0.335) 100%);
   border-radius: 10px;
   -webkit-box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.15);
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result
-  .bookmark:hover {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark:hover {
   -webkit-transform: scale(1.01);
-  transform: scale(1.01);
+          transform: scale(1.01);
   -webkit-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result
-  .bookmark
-  img {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark img {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   height: 100px;
   min-width: 140px;
   max-width: 140px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result
-  .bookmark
-  .bookmark_content {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content {
   width: 100%;
   height: 100%;
   padding: 10px 35px;
@@ -2036,45 +1829,27 @@ svg {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result
-  .bookmark
-  .bookmark_content
-  p {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content p {
   font-family: "Roboto", arial;
   font-size: 22px;
   color: #000000;
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result
-  .bookmark
-  .bookmark_content
-  .bookmark_title {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content .bookmark_title {
   width: 200px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.saved_bookmarks_container
-  .bookmarks_list_container
-  .bookmarks_list
-  .bookmark_result
-  .bookmark
-  .bookmark_content
-  .bookmark_publisher {
+.saved_bookmarks_container .bookmarks_list_container .bookmarks_list .bookmark_result .bookmark .bookmark_content .bookmark_publisher {
   font-size: 16px;
   color: #555555;
   margin-top: 6px;

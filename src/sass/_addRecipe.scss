@@ -35,6 +35,7 @@
       font-size: 34px;
       text-align: center;
     }
+
     img {
       grid-area: close;
       justify-self: right;
@@ -48,6 +49,7 @@
       }
     }
   }
+
   .add_recipe_content {
     display: flex;
     flex-direction: row;
@@ -63,9 +65,11 @@
       padding: 20px;
       font-family: $regularFont;
       border: none;
+
       label {
         margin: 10px 0;
       }
+
       input {
         width: 80%;
         border: 1px solid $grayLight;
@@ -74,16 +78,19 @@
         padding: 10px;
         border-radius: 4px;
         font-family: $regularFont;
+
         &:focus {
           background-color: rgb(255, 254, 254);
           outline: 2px solid $orangeDark;
           border: 1px solid $mainOrangeLight;
         }
       }
+
       p {
         font-size: 20px;
         margin-bottom: 20px;
       }
+
       p:nth-child(1) {
         font-weight: 500;
       }
@@ -113,14 +120,17 @@
     cursor: pointer;
     backdrop-filter: blur(40px);
     transition: all 0.3s ease-in-out;
+
     &:hover {
       opacity: 1;
     }
+
     p {
       display: block;
       margin-left: 10px;
       font-family: $regularFont;
     }
+
     img {
       height: 16px;
     }

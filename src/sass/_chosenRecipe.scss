@@ -36,6 +36,7 @@
       text-overflow: ellipsis;
       overflow: hidden;
     }
+
     .recipe_icons {
       width: 200px;
       display: flex;
@@ -47,6 +48,7 @@
       .icons_box {
         display: flex;
         flex-direction: row;
+
         .bookmark_icon {
           cursor: pointer;
           transition: 0.4s ease-in-out;
@@ -54,15 +56,18 @@
             transform: scale(1.05);
           }
         }
+
         img {
           height: 35px;
           width: 35px;
           margin-left: 10px;
         }
+
         .hide_icon {
           display: none;
         }
       }
+
       p {
         font-size: 12px;
         width: 100px;
@@ -74,6 +79,7 @@
       }
     }
   }
+
   .chosen_recipe_head {
     display: grid;
     grid-template-columns: 1.5fr 1.9fr;
@@ -100,9 +106,11 @@
       margin-left: 50px;
       display: flex;
       align-items: center;
+
       .people_icon {
         margin-right: 7px;
       }
+
       img {
         height: 30px;
       }
@@ -110,6 +118,7 @@
       .servings_quantity {
         font-size: 20px;
       }
+
       .control_quantity {
         height: auto;
         width: 10px;
@@ -117,30 +126,36 @@
         cursor: pointer;
         transition: 0.5s ease-in-out;
       }
+
       .persons_word {
         margin-left: 5px;
         font-size: 16px;
       }
+
       .time_icon {
         height: 26px;
         margin-left: 80px;
         margin-right: 12px;
       }
+
       .min_word {
         margin-left: 5px;
         font-size: 16px;
       }
     }
+
     .your_recipe {
       grid-area: yourRecipe;
       justify-self: end;
       margin-right: 25px;
       color: $orangeDark;
     }
+
     .hidden {
       display: none;
     }
   }
+
   .chosen_recipe_content {
     display: grid;
     grid-template-columns: 1fr;
@@ -148,6 +163,7 @@
     gap: 0px 0px;
     grid-template-areas: "recipeImg" "chosen_recipe_info";
     font-family: $regularFont;
+
     .chosen_recipe_image {
       grid-area: recipeImg;
       display: block;
@@ -156,6 +172,7 @@
       background-color: $mainOrangeLight;
       object-fit: cover;
     }
+
     .chosen_recipe_info {
       grid-area: chosen_recipe_info;
       display: flex;
@@ -165,21 +182,25 @@
         width: 100%;
         font-size: 22px;
       }
+
       .recipe_ingredients {
         font-size: 16px;
         width: 100%;
         padding: 0 30px 30px 40px;
+
         p {
           margin: 15px 0;
           span {
             color: $orangeDark;
           }
         }
+
         .recipe_ingredients_title {
           margin: 35px 0;
           margin-bottom: 15px;
         }
       }
+
       .recipe_link {
         display: flex;
         flex-direction: column;
@@ -193,6 +214,7 @@
           margin-bottom: 15px;
           text-align: right;
         }
+
         .recipe_copyright {
           width: 90%;
           margin: 15px 0;
