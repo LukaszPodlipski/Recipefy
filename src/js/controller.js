@@ -122,24 +122,12 @@ selectors.startBox.addEventListener("click", function () {
   }, 200);
 });
 
-const init = function () {
-  window.addEventListener("load", function () {
-    const id = window.location.hash.slice(1);
-    if (!id) {
-      selectors.chosenRecipeContainer.style.display = "none";
-      selectors.recipesBox.style.display = "none";
-      setTimeout(function () {
-        selectors.html.style.display = "inline-block";
-        selectors.headBurger.style.margin = "50px auto 30px auto";
-        selectors.headText.style.display = "block";
-        selectors.profile.style.display = "flex";
-        selectors.controlsContainer.style.display = "flex";
-        selectors.startBox.style.display = "flex";
-        selectors.body.style.minHeight = "84vh";
-        selectors.chosenRecipeContainer.style.display = "inline-block";
-        recipeView.stopSpinner();
-      }, 2000);
-    } else {
+const displayInitView = function () {
+  const id = window.location.hash.slice(1);
+  if (!id) {
+    selectors.chosenRecipeContainer.style.display = "none";
+    selectors.recipesBox.style.display = "none";
+    setTimeout(function () {
       selectors.html.style.display = "inline-block";
       selectors.headBurger.style.margin = "50px auto 30px auto";
       selectors.headText.style.display = "block";
@@ -148,8 +136,22 @@ const init = function () {
       selectors.startBox.style.display = "flex";
       selectors.body.style.minHeight = "84vh";
       selectors.chosenRecipeContainer.style.display = "inline-block";
-    }
-  });
+      recipeView.stopSpinner();
+    }, 2000);
+  } else {
+    selectors.html.style.display = "inline-block";
+    selectors.headBurger.style.margin = "50px auto 30px auto";
+    selectors.headText.style.display = "block";
+    selectors.profile.style.display = "flex";
+    selectors.controlsContainer.style.display = "flex";
+    selectors.startBox.style.display = "flex";
+    selectors.body.style.minHeight = "84vh";
+    selectors.chosenRecipeContainer.style.display = "inline-block";
+  }
+};
+
+const init = function () {
+  window.addEventListener("load", displayInitView());
   bookmarksView.addhandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
