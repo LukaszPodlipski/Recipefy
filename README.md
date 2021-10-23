@@ -66,5 +66,5 @@ Create a production bundle.
 </h3>
 
 ```
-npm run biuld
+npm run build
 ```
