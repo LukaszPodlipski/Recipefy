@@ -1,7 +1,8 @@
 import View from "./View.js";
-
+import addRecipeBox from "../selectors.js";
 class addRecipeView extends View {
   _parentElement = document.querySelector(".add_recipe_container");
+
   _message = "Recipe was successfully uploaded :)";
 
   addHandlerHideAddRecipe(handler) {
