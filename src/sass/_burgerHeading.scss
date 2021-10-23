@@ -13,6 +13,7 @@ $chopTraceBackground: #8f3b3b;
   height: 178px;
   margin: 80px 50px;
   transform: scale(0.8);
+
   &:after {
     content: "";
     display: block;
@@ -27,8 +28,10 @@ $chopTraceBackground: #8f3b3b;
     z-index: -2;
   }
 }
+
 .roll {
   &--top {
+    position: relative;
     height: 85px;
     overflow: hidden;
     border-bottom-left-radius: 7px;
@@ -50,7 +53,7 @@ $chopTraceBackground: #8f3b3b;
       top: 6px;
       margin: auto;
     }
-    position: relative;
+
     &:before {
       content: "";
       display: block;
@@ -64,12 +67,14 @@ $chopTraceBackground: #8f3b3b;
       z-index: 0;
     }
   }
+
   &--bottom {
     width: 252px;
     height: 27px;
     border-radius: 30px 30px 60px 60px;
     background: $rollBackground;
     position: relative;
+
     &:after {
       content: "";
       display: block;
@@ -82,6 +87,7 @@ $chopTraceBackground: #8f3b3b;
       z-index: -1;
     }
   }
+
   &__sesame {
     background: $rollSesameBackground;
     height: 6px;
@@ -90,6 +96,7 @@ $chopTraceBackground: #8f3b3b;
     position: absolute;
     border-radius: 100%;
     z-index: 3;
+
     &:nth-child(1) {
       left: 45px;
       top: 40px;
@@ -133,6 +140,7 @@ $chopTraceBackground: #8f3b3b;
     }
   }
 }
+
 @keyframes rotateRoll {
   30% {
     transform: translateY(-40px) rotate(-20deg);
@@ -265,11 +273,13 @@ $chopTraceBackground: #8f3b3b;
   z-index: 0;
   overflow: hidden;
   animation: rotateChop 0.5s linear forwards;
+
   &__top,
   &__bottom {
     display: flex;
     justify-content: space-around;
   }
+
   &__trace {
     border-radius: 5px 5px 0 0;
     width: 5px;
@@ -292,6 +302,7 @@ $chopTraceBackground: #8f3b3b;
   justify-content: space-between;
   position: relative;
   z-index: 3;
+
   &__el {
     width: 80px;
     height: 12px;
